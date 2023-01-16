@@ -1,0 +1,5 @@
+http://127.0.0.1/hmarket/address_book.txt
+이효리 제주
+김태희 서울
+김경호 부산
+최서영 안산

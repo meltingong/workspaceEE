@@ -1,0 +1,3 @@
+Hello text[static resource]!!
+Hello text[static resource]!!
+Hello text[static resource]!!

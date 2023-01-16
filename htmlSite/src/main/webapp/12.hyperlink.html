@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />	
+	<title>hyperlink 요소 연습</title>
+</head>
+<body>
+	<!-- 
+		a 태그    : 다른 페이지로 이동할 때 사용하는 요소 
+		 -  href속성  : 요청uri 
+		 -  target속성: target속성을 지정해서 어느 창에 보일지 선택할 수 있습니다.
+    -->
+	<!--  -->
+	[절대경로(uri)]--> http:// 로시작하는경로
+	<ul>
+		<li>======= 12.hyperlink.html 과 다른사이트에있는 리소스 =====</li>
+		<li><a href="http://www.naver.com">네이버</a></li>
+		<li><a href="http://www.daum.net">다음</a></li>
+		<li><a href="http://www.google.com" target="_blank">google[새창]</a></li>
+		<li><a href="http://www.google.com" target="_self">google[현재창]</a></li>
+		<li><a href="http://220.74.119.202/servletSite/gugudan.do">동현씨 구구단</a></li>
+		<li>======= 12.hyperlink.html 과 같은사이트(servletSite)에있는 리소스 =====</li>
+		<li>[ http://127.0.0.1/servletSite/html2/12.hyperlink.html ]</li>
+		<li><a href="http://127.0.0.1/servletSite/images/penguin1.gif">servletSite 펭귄이미지[image]</a></li>
+		<li><a href="http://127.0.0.1/servletSite/gugudan.do">servletSite 구구단[Servlet]</a></li>
+		<li><a href="http://127.0.0.1/servletSite/lifecycle.do">servletSite 요청횟수카운터[Servlet]</a></li>
+		<li><a href="http://127.0.0.1/servletSite/05-01.login_get.html">servletSite 로그인폼[html]</a></li>
+		<li><a href="http://127.0.0.1/servletSite/05-03.form.html">servletSite 회원가입폼[html]</a></li>
+	</ul>
+	[상대경로(uri)]--> http://으로 시작하지않는경로
+	<ul>
+		<li>======= 12.hyperlink.html[http://127.0.0.1/servletSite/html2/12.hyperlink.html] 과 같은사이트(servletSite)에있는 리소스 =====</li>
+		<li> 기준경로: http://127.0.0.1/servletSite/html2/</li>
+		<li><a href="../images/penguin1.gif">servletSite 펭귄이미지[image]</a></li>
+		<li><a href="../gugudan.do">servletSite 구구단[Servlet]</a></li>
+		<li><a href="../lifecycle.do">servletSite 요청횟수카운터[Servlet]</a></li>
+		<li><a href="../05-01.login_get.html">servletSite 로그인폼[html]</a></li>
+		<li><a href="../05-03.form.html">servletSite 회원가입폼[html]</a></li>
+		
+		<li> 기준경로: http://127.0.0.1/servletSite/html2/ 와동일한위치의리소스</li>
+		<li><a href="./02.head.html">./02.head.html</a></li>
+		<li><a href="./03.div.html">./03.div.html</a></li>
+		<li><a href="./04.p.html">./04.p.html</a></li>
+		<li><a href="./05.pre.html">./05.pre.html</a></li>
+		<li><a href="02.head.html">02.head.html</a></li>
+		<li><a href="03.div.html">03.div.html</a></li>
+		<li><a href="04.p.html">04.p.html</a></li>
+		<li><a href="05.pre.html">05.pre.html</a></li>
+		
+	</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

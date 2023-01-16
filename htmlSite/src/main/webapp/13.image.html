@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="UTF-8" />	
+	<title>image 요소 연습</title>
+</head>
+<!-- 
+	img : 이미지태그
+	  - src속성 : image uri
+ -->
+<body>
+	<h2>절대경로[http://~ 로시작하는경로]</h2><hr>
+	<h4>다른 싸이트에있는 이미지</h4>
+	<div>
+		<img src="http://image.chosun.com/sitedata/image/201808/02/2018080202421_0.jpg" width="50" height="50">
+		<img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" width="50" height="50">
+		<img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" width="50" height="50">
+		<img src="http://220.74.119.202/servletSite/tomcat.gif" width="50" height="50">
+	</div>
+	<h4>같은 싸이트에있는 이미지</h4>
+	<div>
+		<img src="http://127.0.0.1/servletSite/html2/female.gif" width="50" height="50">
+		<img src="http://127.0.0.1/servletSite/html2/male.jpg" width="50" height="50">
+		<img src="http://127.0.0.1/servletSite/images/penguin1.gif" width="50" height="50">
+		<img src="http://127.0.0.1/servletSite/images/penguin2.gif" width="50" height="50">
+		<img src="http://127.0.0.1/servletSite/images/penguin3.gif" width="50" height="50">
+		
+	</div>5
+	<hr>
+	<h2>상대경로[http://~ 로시작하지않는경로]</h2><hr>
+	<h4>같은 싸이트에있는 이미지-->기준경로 [http://127.0.0.1/servletSite/html2/]</h4>
+	<div>
+		<img src="./female.gif" width="50" height="50">
+		<img src="./male.jpg" width="50" height="50">
+		<img src="../images/penguin1.gif" width="50" height="50">
+		<img src="../images/penguin2.gif" width="50" height="50">
+		<img src="../images/penguin3.gif" width="50" height="50">
+		<img src="../tomcat.gif" width="50" height="50">
+		
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
