@@ -26,7 +26,7 @@ public class HttpServletRequestServlet extends HttpServlet {
 		String remoteAddress = request.getRemoteAddr();
 		
 		//클라이언트요청URL ==>
-		//
+		//http://localhost/servletSite/request.do?name=kim&phone=1234&address=seoul
 		String queryString = request.getQueryString();
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
