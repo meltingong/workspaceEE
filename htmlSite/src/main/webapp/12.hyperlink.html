@@ -1,53 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8" />	
-	<title>hyperlink 요소 연습</title>
+<meta charset="UTF-8" />
+<title>hyperlink 요소 연습</title>
 </head>
 <body>
 	<!-- 
 		a 태그    : 다른 페이지로 이동할 때 사용하는 요소 
 		 -  href속성  : 요청uri 
 		 -  target속성: target속성을 지정해서 어느 창에 보일지 선택할 수 있습니다.
+		 <a href="http://192.168.15.5/htmlSite/08.table.html" target="윈도우이름">테이블</a>
     -->
 	<!--  -->
-	[절대경로(uri)]--> http:// 로시작하는경로
+	<h3>[절대경로(uri)]--> http://,https:// 로시작하는경로</h3>
+	<hr>
 	<ul>
-		<li>======= 12.hyperlink.html 과 다른사이트에있는 리소스 =====</li>
-		<li><a href="http://www.naver.com">네이버</a></li>
-		<li><a href="http://www.daum.net">다음</a></li>
-		<li><a href="http://www.google.com" target="_blank">google[새창]</a></li>
-		<li><a href="http://www.google.com" target="_self">google[현재창]</a></li>
-		<li><a href="http://220.74.119.202/servletSite/gugudan.do">동현씨 구구단</a></li>
-		<li>======= 12.hyperlink.html 과 같은사이트(servletSite)에있는 리소스 =====</li>
-		<li>[ http://127.0.0.1/servletSite/html2/12.hyperlink.html ]</li>
-		<li><a href="http://127.0.0.1/servletSite/images/penguin1.gif">servletSite 펭귄이미지[image]</a></li>
-		<li><a href="http://127.0.0.1/servletSite/gugudan.do">servletSite 구구단[Servlet]</a></li>
-		<li><a href="http://127.0.0.1/servletSite/lifecycle.do">servletSite 요청횟수카운터[Servlet]</a></li>
-		<li><a href="http://127.0.0.1/servletSite/05-01.login_get.html">servletSite 로그인폼[html]</a></li>
-		<li><a href="http://127.0.0.1/servletSite/05-03.form.html">servletSite 회원가입폼[html]</a></li>
+		<li>### 12.hyperlink.html 과 다른사이트에있는 리소스 ###</li>
+		<li><a href='http://www.naver.com/index.html'>네이버[클릭시
+				href속성에있는 URL로 요청(이동)]</a></li>
+
+		<li><a href='http://192.168.15.31/htmlSite/tomcat.svg'>클릭시강사서버에있는
+				고양이사진요청[static image] </a></li>
+		<li><a href='http://192.168.15.31/htmlSite/female.gif'>클릭시강사서버에있는
+				이효리사진요청[static image] </a></li>
+		<li><a href='http://192.168.15.31/servletSite/images/test.mp3'>클릭시강사서버에있는
+				mp3요청[static mp3] </a></li>
+		<li><a
+			href='http://192.168.15.31/htmlSite/08.table.html'>클릭시강사서버에있는
+				html파일요청[static html] </a></li>
+		<li><a href='http://192.168.15.31/servletSite/gugudan.do'>클릭시강사서버에있는
+				구구단동적리소스요청[dynamic 서블릿] </a></li>
+		<li><a
+			href='http://192.168.15.31/htmlSite/11.form.html'
+			target="_blank">클릭시강사서버에있는 html파일요청[새로운창응답][static html] </a></li>
+		<li><a href='http://192.168.15.31/servletSite/gugudan.do'
+			target="_blank">클릭시강사서버에있는 구구단동적리소스요청[새로운창응답][dynamic 서블릿] </a></li>
+
+		<li>### 12.hyperlink.html 과 같은사이트(htmlSite)에있는 리소스 ###</li>
+		<li>[ http://192.168.15.9/htmlSite/12.hyperlink.html ]</li>
+		<li><a href="http://192.168.15.9/htmlSite/01.structure1.html">01.structure1.html</a></li>
+		<li><a href="http://192.168.15.9/htmlSite/03.div1.html">03.div1.html</a></li>
+		<li><a href="http://192.168.15.9/htmlSite/04.p1.html">04.p1.html</a></li>
+
+		<li><a href="http://192.168.15.9/htmlSite/penguin1.gif">penguin1.gif</a></li>
+		<li><a href="http://192.168.15.9/htmlSite/penguin2.gif">penguin2.gif</a></li>
+		<li><a href="http://192.168.15.9/htmlSite/penguin3.gif">penguin3.gif</a></li>
+
+		<li><a href="http://192.168.15.9/htmlSite/images/car1.jpg">image/car1.jpg</a></li>
+		<li><a href="http://192.168.15.9/htmlSite/images/car2.jpg">image/car2.jpg</a></li>
+		<li><a href="http://192.168.15.9/htmlSite/images/car3.jpg">image/car3.jpg</a></li>
+
+
 	</ul>
-	[상대경로(uri)]--> http://으로 시작하지않는경로
+	<h3>[상대경로(uri)]--> http://으로 시작하지않는경로</h3>
+	<pre>
+		
+		- 현재보여지는 리소스의URL(http://127.0.0.1/htmlSite/12.hyperlink.html) 의 
+		 	리소스이름(12.hyperlink.html)을 제외한 경로가 기준경로가 된다.
+		- 기준경로(http://127.0.0.1/htmlSite/)와 동일한 싸이트리소스들은 
+			기준경로를 생략하고 URL을 기술하면된다.  	
+		- 기준경로를 생략하고 기술하는 경로를 상대경로라고한다.
+	</pre>
 	<ul>
-		<li>======= 12.hyperlink.html[http://127.0.0.1/servletSite/html2/12.hyperlink.html] 과 같은사이트(servletSite)에있는 리소스 =====</li>
-		<li> 기준경로: http://127.0.0.1/servletSite/html2/</li>
-		<li><a href="../images/penguin1.gif">servletSite 펭귄이미지[image]</a></li>
-		<li><a href="../gugudan.do">servletSite 구구단[Servlet]</a></li>
-		<li><a href="../lifecycle.do">servletSite 요청횟수카운터[Servlet]</a></li>
-		<li><a href="../05-01.login_get.html">servletSite 로그인폼[html]</a></li>
-		<li><a href="../05-03.form.html">servletSite 회원가입폼[html]</a></li>
+		<li>### 12.hyperlink.html 과 같은사이트(htmlSite)에있는 리소스 ###</li>
+		<li>[ http://192.168.15.9/htmlSite/12.hyperlink.html ]</li>
+		<li><a href="./01.structure1.html">01.structure1.html</a></li>
+		<li><a href="03.div1.html">03.div1.html</a></li>
+		<li><a href="04.p1.html">04.p1.html</a></li>
 		
-		<li> 기준경로: http://127.0.0.1/servletSite/html2/ 와동일한위치의리소스</li>
-		<li><a href="./02.head.html">./02.head.html</a></li>
-		<li><a href="./03.div.html">./03.div.html</a></li>
-		<li><a href="./04.p.html">./04.p.html</a></li>
-		<li><a href="./05.pre.html">./05.pre.html</a></li>
-		<li><a href="02.head.html">02.head.html</a></li>
-		<li><a href="03.div.html">03.div.html</a></li>
-		<li><a href="04.p.html">04.p.html</a></li>
-		<li><a href="05.pre.html">05.pre.html</a></li>
-		
+		<li><a href="penguin1.gif">penguin1.gif</a></li>
+		<li><a href="penguin2.gif">penguin2.gif</a></li>
+		<li><a href="penguin3.gif">penguin3.gif</a></li>
+
+		<li><a href="images/car1.jpg">image/car1.jpg</a></li>
+		<li><a href="images/car2.jpg">image/car2.jpg</a></li>
+		<li><a href="images/car3.jpg">image/car3.jpg</a></li>
+
+
+
 	</ul>
+	
 </body>
 </html>
 
