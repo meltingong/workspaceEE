@@ -35,7 +35,8 @@ public class HttpServletResponseServlet extends HttpServlet {
 		if(cmd.equals("1")) {
 			out.println("<h3> 정상응답 </h3><hr>");
 		}else if(cmd.equals("2")) {
-			
+			response.sendError(403);
+			//response.sendError(500);
 		}else if(cmd.equals("3")) {
 			
 		}else{
