@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/post_login.do")
 public class PostLoginServlet extends HttpServlet {
-	
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			response.sendRedirect("05-02.login_post.html");
