@@ -38,10 +38,26 @@ public class SearchServlet extends HttpServlet {
 			 * searchkeyword가 emtyString인 경우 ==> search.do?searchkeyword=
 			 * searchkeyword가 null인 경우 		 ==> search.do
 			 */
-			out.println("검색어를 입력하지 않은 경우 재미있는 지식 결과를 랜덤하게 보여드립니다.");
+			out.println("검색어를 입력하지 않은 경우 재미있는 지식 결과를 랜덤하게 보여드립니다.<br>");
+			out.println("<a href = '05-00.search_form.html'>검색페이지</a>");
+			return;
 		}
 		
+		/*
+		 * 2. 검색업무실행 --> Service객체 사용
+		 */
 		
+		/*
+		 * 3. 클라이언트로 검색결과전송(HTML)
+		 */
+		out.println("<h1>"+ searchkeyword +"검색결과</h1>");
+		out.println("<ol>");
+		int searchResultNo = (int)(Math.random()*10);
+		for(int i =0; i < searchResultNo; i++) {
+			out.println("<li>"+ searchkeyword+" 검색결과</li>");
+		}
+		out.println("</ol>");
+		out.println("<a href=\"05-00.search_form.html\">검색페이지</a>");
 	}
 
 }
