@@ -2,6 +2,7 @@ package com.itwill.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,18 +28,14 @@ public class LifeCycleImageCounterServlet extends HttpServlet {
 		out.println("</head>");
 		out.println("<body bgcolor=#40e0d0 style=\"font-size: 9pt; line-height: 140%;\">");
 		out.println("	<center>");
-		out.println("		현재까지의 페이지뷰수 <font color=#0000FF>"+ ++count +" </font> 번입니다");
-		if(count%10 ==0) {
-			i++;
+		count++;
+		out.println("		현재까지의 페이지뷰수 <font color=#0000FF>");
+		String countStr = count+"";
+		for (int i = 0; i < countStr.length(); i++) {
+			char tempChar = countStr.charAt(i);
+			out.println("<img src='images/"+tempChar+".png'>");
 		}
-		out.println("<image src = 'images/"+i+".png'>");
-		if(j == 9) {
-			j = 0;
-			out.println("<image src = 'images/"+ j +".png'>");
-		}else {
-			out.println("<image src = 'images/"+ ++j +".png'>");
-		}
-		
+		out.println(" </font> 번입니다");
 		out.println("	</center>");
 		out.println("</body>");
 		out.println("</html>");
