@@ -17,15 +17,15 @@ import javax.servlet.http.HttpServletResponse;
 public class LifeCycleCounterServlet extends HttpServlet {
 	private int count;
 	public LifeCycleCounterServlet() {
-		System.out.println("0.LifeCycleCounterService() ±âº»»ı¼ºÀÚÈ£Ãâ[ÃÖÃÊ¿äÃ»½Ã ´Ü ÇÑ¹ø È£Ãâ] °´Ã¼ÁÖ¼Ò: " + this);
+		System.out.println("0.LifeCycleCounterService() ê¸°ë³¸ìƒì„±ìí˜¸ì¶œ[ìµœì´ˆìš”ì²­ì‹œ ë‹¨ í•œë²ˆ í˜¸ì¶œ] ê°ì²´ì£¼ì†Œ: " + this);
 	}
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 			super.init(config);
-			System.out.println("1. init()¸Ş¼Òµå »ı¼ºÀÚ È£Ãâ Á÷ÈÄ¿¡ ´Ü ÇÑ¹ø È£Ãâ[°´Ã¼ÃÊ±âÈ­,¸®¼Ò½ºÈ¹µæ]");
+			System.out.println("1. init()ë©”ì†Œë“œ ìƒì„±ì í˜¸ì¶œ ì§í›„ì— ë‹¨ í•œë²ˆ í˜¸ì¶œ[ê°ì²´ì´ˆê¸°í™”,ë¦¬ì†ŒìŠ¤íšë“]");
 		}
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("2. service¸Ş¼Òµå ½ÇÇà");
+		System.out.println("2. serviceë©”ì†Œë“œ ì‹¤í–‰");
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">");
@@ -35,14 +35,14 @@ public class LifeCycleCounterServlet extends HttpServlet {
 		out.println("</head>");
 		out.println("<body bgcolor=#40e0d0 style=\"font-size: 9pt; line-height: 140%;\">");
 		out.println("	<center>");
-		out.println("		ÇöÀç±îÁöÀÇ ÆäÀÌÁöºä¼ö <font color=#0000FF>"+ ++count +" </font> ¹øÀÔ´Ï´Ù");
+		out.println("		í˜„ì¬ê¹Œì§€ì˜ í˜ì´ì§€ë·°ìˆ˜ <font color=#0000FF>"+ ++count +" </font> ë²ˆì…ë‹ˆë‹¤");
 		out.println("	</center>");
 		out.println("</body>");
 		out.println("</html>");
 	}
 	@Override
 	public void destroy() {
-		System.out.println("3.destory()¸Ş¼Òµå --> ¼­ºí¸´°´Ã¼°¡ ¸Ş¸ğ¸®¿¡¼­ ÇØÁ¦µÇ±â Á÷Àü¿¡ È£Ãâ[¸®¼Ò½º¹İ³³]");
+		System.out.println("3.destory()ë©”ì†Œë“œ --> ì„œë¸”ë¦¿ê°ì²´ê°€ ë©”ëª¨ë¦¬ì—ì„œ í•´ì œë˜ê¸° ì§ì „ì— í˜¸ì¶œ[ë¦¬ì†ŒìŠ¤ë°˜ë‚©]");
 	}
 	
 	

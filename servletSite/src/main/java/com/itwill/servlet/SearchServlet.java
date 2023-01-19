@@ -19,15 +19,15 @@ public class SearchServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		/*
-		 * Å¬¶óÀÌ¾ğÆ® ¿äÃ» URL
+		 * í´ë¼ì´ì–¸íŠ¸ ìš”ì²­ URL
 		 * http://192.168.15.9/servletSite/search.do?searchkeyword=java
 		 * http://192.168.15.9/servletSite/search.do?searchkeyword=
 		 * http://192.168.15.9/servletSite/search.do
 		 */
 		
 		/*
-		 * 1.¿äÃ»°´Ã¼¸¦»ç¿ëÇØ¼­ ¿äÃ»½Ã Àü¼ÛµÇ´Â Äõ¸®½ºÆ®¸µ¿¡ ÀÖ´Â ÆÄ¶ó¸ŞÅ¸¹Ş±â
-		 *    - ÆÄ¶ó¸ŞÅ¸ÀÌ¸§Àº input elementÀÇ name¼Ó¼º°úÀÏÄ¡
+		 * 1.ìš”ì²­ê°ì²´ë¥¼ì‚¬ìš©í•´ì„œ ìš”ì²­ì‹œ ì „ì†¡ë˜ëŠ” ì¿¼ë¦¬ìŠ¤íŠ¸ë§ì— ìˆëŠ” íŒŒë¼ë©”íƒ€ë°›ê¸°
+		 *    - íŒŒë¼ë©”íƒ€ì´ë¦„ì€ input elementì˜ nameì†ì„±ê³¼ì¼ì¹˜
 		 *       <input type="text" name="searchkeyword">
 		 *    - search.do?searchkeyword=java   
 		 */
@@ -35,29 +35,29 @@ public class SearchServlet extends HttpServlet {
 		String searchkeyword = request.getParameter("searchkeyword");
 		if(searchkeyword == null || searchkeyword.equals("")) {
 			/*
-			 * searchkeyword°¡ emtyStringÀÎ °æ¿ì ==> search.do?searchkeyword=
-			 * searchkeyword°¡ nullÀÎ °æ¿ì 		 ==> search.do
+			 * searchkeywordê°€ emtyStringì¸ ê²½ìš° ==> search.do?searchkeyword=
+			 * searchkeywordê°€ nullì¸ ê²½ìš° 		 ==> search.do
 			 */
-			out.println("°Ë»ö¾î¸¦ ÀÔ·ÂÇÏÁö ¾ÊÀº °æ¿ì Àç¹ÌÀÖ´Â Áö½Ä °á°ú¸¦ ·£´ıÇÏ°Ô º¸¿©µå¸³´Ï´Ù.<br>");
-			out.println("<a href = '05-00.search_form.html'>°Ë»öÆäÀÌÁö</a>");
+			out.println("ê²€ìƒ‰ì–´ë¥¼ ì…ë ¥í•˜ì§€ ì•Šì€ ê²½ìš° ì¬ë¯¸ìˆëŠ” ì§€ì‹ ê²°ê³¼ë¥¼ ëœë¤í•˜ê²Œ ë³´ì—¬ë“œë¦½ë‹ˆë‹¤.<br>");
+			out.println("<a href = '05-00.search_form.html'>ê²€ìƒ‰í˜ì´ì§€</a>");
 			return;
 		}
 		
 		/*
-		 * 2. °Ë»ö¾÷¹«½ÇÇà --> Service°´Ã¼ »ç¿ë
+		 * 2. ê²€ìƒ‰ì—…ë¬´ì‹¤í–‰ --> Serviceê°ì²´ ì‚¬ìš©
 		 */
 		
 		/*
-		 * 3. Å¬¶óÀÌ¾ğÆ®·Î °Ë»ö°á°úÀü¼Û(HTML)
+		 * 3. í´ë¼ì´ì–¸íŠ¸ë¡œ ê²€ìƒ‰ê²°ê³¼ì „ì†¡(HTML)
 		 */
-		out.println("<h1>"+ searchkeyword +"°Ë»ö°á°ú</h1>");
+		out.println("<h1>"+ searchkeyword +"ê²€ìƒ‰ê²°ê³¼</h1>");
 		out.println("<ol>");
 		int searchResultNo = (int)(Math.random()*10);
 		for(int i =0; i < searchResultNo; i++) {
-			out.println("<li>"+ searchkeyword+" °Ë»ö°á°ú</li>");
+			out.println("<li>"+ searchkeyword+" ê²€ìƒ‰ê²°ê³¼</li>");
 		}
 		out.println("</ol>");
-		out.println("<a href=\"05-00.search_form.html\">°Ë»öÆäÀÌÁö</a>");
+		out.println("<a href=\"05-00.search_form.html\">ê²€ìƒ‰í˜ì´ì§€</a>");
 	}
 
 }

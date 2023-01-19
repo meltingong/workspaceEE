@@ -24,13 +24,13 @@ public class GugudanServlet extends HttpServlet {
 		out.println("<HTML>");
 		out.println("<HEAD>");
 		out.println("<meta charset='UTF-8'>");
-		out.println("<TITLE>¹æ°¡¿ö¿ä ¼­ºí¸´</TITLE>");
+		out.println("<TITLE>ë°©ê°€ì›Œìš” ì„œë¸”ë¦¿</TITLE>");
 		out.println("</HEAD>");
 		out.println("<BODY>");
-		out.println("<center><H2>¼­ºí¸´ Àß³µ¾î Á¤¸» º°²ÃÀÌ¾ß!!!!!!!!!</H2><center>");
+		out.println("<center><H2>ì„œë¸”ë¦¿ ì˜ë‚¬ì–´ ì •ë§ ë³„ê¼´ì´ì•¼!!!!!!!!!</H2><center>");
 		out.println("<img src='tomcat.svg'/>");
 
-		out.println("<center><H2>¼­ºí¸´ ±¸±¸´Ü</H2></center>");
+		out.println("<center><H2>ì„œë¸”ë¦¿ êµ¬êµ¬ë‹¨</H2></center>");
 		out.println("<table border=1 width=600 bgcolor=#CCFF33 bordercolordark=#FF6600 cellspacing=0>");
 		for(int i = 1; i <= 9; i++) {
 			out.print("<tr>");

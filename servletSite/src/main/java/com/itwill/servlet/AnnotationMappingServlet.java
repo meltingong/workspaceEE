@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /*
-web.xml¼³Á¤
+web.xmlì„¤ì •
 <servlet>
 	<servlet-name>annotation_mapping</servlet-name>
 	<servlet-class>com.itwill.servlet.AnnotationMappingServlet</servlet-class>
@@ -21,7 +21,7 @@ web.xml¼³Á¤
 </servlet-mapping>
 */
 /*
-* web.xml´ë½Å¿¡ annotation[@] »ç¿ë
+* web.xmlëŒ€ì‹ ì— annotation[@] ì‚¬ìš©
 */
 //@WebServlet(name = "annotation_mapping",urlPatterns = {"/annotation_mapping.do"})
 //@WebServlet(urlPatterns = {"/annotation_mapping.do"})
@@ -34,12 +34,12 @@ public class AnnotationMappingServlet extends HttpServlet {
 		out.println("<!DOCTYPE html>");
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title>¾î³ëÅ×ÀÌ¼Ç¸ÅÇÎ¼­ºí¸´</title>");
+		out.println("<title>ì–´ë…¸í…Œì´ì…˜ë§¤í•‘ì„œë¸”ë¦¿</title>");
 		out.println("<meta charset='UTF-8'>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<p>AnnotationMappingServlet[Dynamic Resource] ¾î³ëÅ×ÀÌ¼Ç¸ÅÇÎ</p><hr>");
-		out.println("web.xml´ë½Å¿¡ annotation[@] »ç¿ë");
+		out.println("<p>AnnotationMappingServlet[Dynamic Resource] ì–´ë…¸í…Œì´ì…˜ë§¤í•‘</p><hr>");
+		out.println("web.xmlëŒ€ì‹ ì— annotation[@] ì‚¬ìš©");
 		out.println("</body>");
 		out.println("</html>");
 	}

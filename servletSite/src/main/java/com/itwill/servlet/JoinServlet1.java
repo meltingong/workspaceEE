@@ -25,11 +25,11 @@ public class JoinServlet1 extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		/*
-		 * 0. ¿äÃ»°´Ã¼ ÀÎÄÚµù ¼³Á¤
+		 * 0. ìš”ì²­ê°ì²´ ì¸ì½”ë”© ì„¤ì •
 		 */
 		request.setCharacterEncoding("UTF-8");
 		/*
-		 * 1. ÆÄ¶ó¸ŞÅ¸ ¹Ş±â
+		 * 1. íŒŒë¼ë©”íƒ€ ë°›ê¸°
 		 */
 		
 		String id = request.getParameter("id");
@@ -42,20 +42,20 @@ public class JoinServlet1 extends HttpServlet {
 		String message = request.getParameter("message");
 		
 		/*
-		 * 2. ¾÷¹«½ÇÇà(Service°´Ã¼ ¸Ş¼Òµå È£Ãâ)
+		 * 2. ì—…ë¬´ì‹¤í–‰(Serviceê°ì²´ ë©”ì†Œë“œ í˜¸ì¶œ)
 		 */
 		
 		/*
-		 * 3. Å¬¶óÀÌ¾ğÆ®·Î ÀÀ´äÃâ·Â
+		 * 3. í´ë¼ì´ì–¸íŠ¸ë¡œ ì‘ë‹µì¶œë ¥
 		 */
-		out.println("<h1>°¡ÀÔÁ¤º¸</h>");
+		out.println("<h1>ê°€ì…ì •ë³´</h>");
 
 		out.println("<ul>");
-		out.println("<li>¾ÆÀÌµğ: "+id+"</li>");
-		out.println("<li>ÆĞ¾²¿öµå:"+pass+"</li>");
-		out.println("<li>ÀÌ¸ŞÀÏ:"+email+"</li>");
-		out.println("<li>¼ºº°:"+gender+"</li>");
-		out.println("<li>°ü½É»ç");
+		out.println("<li>ì•„ì´ë””: "+id+"</li>");
+		out.println("<li>íŒ¨ì“°ì›Œë“œ:"+pass+"</li>");
+		out.println("<li>ì´ë©”ì¼:"+email+"</li>");
+		out.println("<li>ì„±ë³„:"+gender+"</li>");
+		out.println("<li>ê´€ì‹¬ì‚¬");
 		out.println("<ul>");
 		if(favorites!=null) {
 			for(String favorite : favorites) {
@@ -64,7 +64,7 @@ public class JoinServlet1 extends HttpServlet {
 		}
 		out.println("</ul>");
 		out.println("</li>");
-		out.println("<li>°¡ÀÔÀÎ»ç:"+message+"</li>");
+		out.println("<li>ê°€ì…ì¸ì‚¬:"+message+"</li>");
 		out.println("</ul>");
 
 		

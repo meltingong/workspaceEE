@@ -27,55 +27,55 @@ public class HttpServletRequestServlet extends HttpServlet {
 		
 		/***********************************************************************************
 		 << query string >> 
-	  	- Å¬¶óÀÌ¾ğÆ®°¡ ¼­¹ö·Î ¿äÃ»½Ãµ¥ÀÌÅ¸¸¦ Àü¼ÛÇÏ´Â¹æ¹ı 
-	  	- Çü½Ä:name1=value1&name2=value2
+	  	- í´ë¼ì´ì–¸íŠ¸ê°€ ì„œë²„ë¡œ ìš”ì²­ì‹œë°ì´íƒ€ë¥¼ ì „ì†¡í•˜ëŠ”ë°©ë²• 
+	  	- í˜•ì‹:name1=value1&name2=value2
 	  ex> name=kim&phone=1234&address=seoul
 	  
-		  1.GET  ¿äÃ»¹æ½Ä : request.do?
+		  1.GET  ìš”ì²­ë°©ì‹ : request.do?
 		    ex>request.do?name=kim&phone=1234&address=kyunggi
 		    			-----------------------------------------------------------------
-		    ¿äÃ»¶óÀÎ  	|GET request.do?name=kim&phone=1234&address=kyunggi HTTP/1.1	|	
-		    ¿äÃ»Çì´õ  	|HOST:192.168.15.31												|
+		    ìš”ì²­ë¼ì¸  	|GET request.do?name=kim&phone=1234&address=kyunggi HTTP/1.1	|	
+		    ìš”ì²­í—¤ë”  	|HOST:192.168.15.31												|
 		    ...			|...															|
 		    			|--------------------------------------------------------------	|
-		    ¿äÃ»¹Ùµğ	|¾ø´Ù															|
+		    ìš”ì²­ë°”ë””	|ì—†ë‹¤															|
 		    			-----------------------------------------------------------------
 		    
-		  2.POST ¿äÃ»¹æ½Ä : request.do  
+		  2.POST ìš”ì²­ë°©ì‹ : request.do  
 		    			-----------------------------------------------------------------
-		    ¿äÃ»¶óÀÎ  	|POST request.do HTTP/1.1										|						
-		    ¿äÃ»Çì´õ  	|HOST:192.168.15.31												|
+		    ìš”ì²­ë¼ì¸  	|POST request.do HTTP/1.1										|						
+		    ìš”ì²­í—¤ë”  	|HOST:192.168.15.31												|
 		    ...			|...															|
 		    			|--------------------------------------------------------------	|
-		    ¿äÃ»¹Ùµğ	|name=kim&phone=1234&address=kyunggi							|								
+		    ìš”ì²­ë°”ë””	|name=kim&phone=1234&address=kyunggi							|								
 		    			-----------------------------------------------------------------
 		 ***********************************************************************************/
-		//Å¬¶óÀÌ¾ğÆ®¿äÃ»URL ==>
+		//í´ë¼ì´ì–¸íŠ¸ìš”ì²­URL ==>
 		//http://localhost/servletSite/request.do?name=kim&phone=1234&address=seoul
 		String queryString = request.getQueryString();
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
 
-		System.out.println("************************"+remoteAddress+"´ÔÀÌ Àü¼ÛÇÑ Á¤º¸**********************");
+		System.out.println("************************"+remoteAddress+"ë‹˜ì´ ì „ì†¡í•œ ì •ë³´**********************");
 		System.out.println("queryString : " + queryString);
-		System.out.println("name ÆÄ¶ó¸ŞÅ¸ °ª: " + name);
-		System.out.println("phone ÆÄ¶ó¸ŞÅ¸ °ª: " + phone);
-		System.out.println("address ÆÄ¶ó¸ŞÅ¸ °ª: " + address);
+		System.out.println("name íŒŒë¼ë©”íƒ€ ê°’: " + name);
+		System.out.println("phone íŒŒë¼ë©”íƒ€ ê°’: " + phone);
+		System.out.println("address íŒŒë¼ë©”íƒ€ ê°’: " + address);
 		System.out.println("*******************************************************************************");
 		
-		out.println("<h1>HttpServletRequest°´Ã¼</h1><hr>");
+		out.println("<h1>HttpServletRequestê°ì²´</h1><hr>");
 		out.println("<ol>");
-		out.println("<li>¿äÃ»¸Ş¼Òµå:"+method+"</li>");
-		out.println("<li>¿äÃ»URL:"+requestURL+"</li>");
-		out.println("<li>¿äÃ»URI:"+requestURI+"</li>");
+		out.println("<li>ìš”ì²­ë©”ì†Œë“œ:"+method+"</li>");
+		out.println("<li>ìš”ì²­URL:"+requestURL+"</li>");
+		out.println("<li>ìš”ì²­URI:"+requestURI+"</li>");
 		out.println("<li>contextPath:"+contextPath+"</li>");
 		out.println("<li>remoteAddress:"+remoteAddress+"</li>");
-		out.println("<li>-----------------¿äÃ»½Ã Àü¼ÛµÈ ÆÄ¶ó¸ŞÅ¸--------------------</li>");		
+		out.println("<li>-----------------ìš”ì²­ì‹œ ì „ì†¡ëœ íŒŒë¼ë©”íƒ€--------------------</li>");		
 		out.println("<li>queryString : " + queryString +"</li>");
-		out.println("<li>name ÆÄ¶ó¸ŞÅ¸ °ª: " + name+"</li>");
-		out.println("<li>phone ÆÄ¶ó¸ŞÅ¸ °ª: " + phone+"</li>");
-		out.println("<li>address ÆÄ¶ó¸ŞÅ¸ °ª: " + address+"</li>");
+		out.println("<li>name íŒŒë¼ë©”íƒ€ ê°’: " + name+"</li>");
+		out.println("<li>phone íŒŒë¼ë©”íƒ€ ê°’: " + phone+"</li>");
+		out.println("<li>address íŒŒë¼ë©”íƒ€ ê°’: " + address+"</li>");
 		out.println("</ol>");
 		
 		

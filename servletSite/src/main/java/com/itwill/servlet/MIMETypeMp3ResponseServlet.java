@@ -20,12 +20,12 @@ public class MIMETypeMp3ResponseServlet extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/*
-		 * 1. ÀÀ´ä°´Ã¼MIMEÅ¸ÀÔ¼³Á¤
+		 * 1. ì‘ë‹µê°ì²´MIMEíƒ€ì…ì„¤ì •
 		 */
 		response.setContentType("audio/mpeg");
 		//response.setContentType("image/gif");
 		/*
-		 * 2. ºê¶ó¿ìÁ®¿Í ¿¬°áµÈ Ãâ·Â½ºÆ®¸²
+		 * 2. ë¸Œë¼ìš°ì ¸ì™€ ì—°ê²°ëœ ì¶œë ¥ìŠ¤íŠ¸ë¦¼
 		 */
 		OutputStream out = response.getOutputStream();
 		ServletContext context = this.getServletContext();

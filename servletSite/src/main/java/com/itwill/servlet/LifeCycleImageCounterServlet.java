@@ -29,13 +29,13 @@ public class LifeCycleImageCounterServlet extends HttpServlet {
 		out.println("<body bgcolor=#40e0d0 style=\"font-size: 9pt; line-height: 140%;\">");
 		out.println("	<center>");
 		count++;
-		out.println("		ÇöÀç±îÁöÀÇ ÆäÀÌÁöºä¼ö <font color=#0000FF>");
+		out.println("		í˜„ì¬ê¹Œì§€ì˜ í˜ì´ì§€ë·°ìˆ˜ <font color=#0000FF>");
 		String countStr = count+"";
 		for (int i = 0; i < countStr.length(); i++) {
 			char tempChar = countStr.charAt(i);
 			out.println("<img src='images/"+tempChar+".png'>");
 		}
-		out.println(" </font> ¹øÀÔ´Ï´Ù");
+		out.println(" </font> ë²ˆì…ë‹ˆë‹¤");
 		out.println("	</center>");
 		out.println("</body>");
 		out.println("</html>");

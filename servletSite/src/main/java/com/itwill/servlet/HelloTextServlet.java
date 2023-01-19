@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//#1. javax.servlet.http.HttpServlet Å¬·¡½º¸¦ »ó¼Ó ¹Ş¾Æ¾ßÇÑ´Ù.
+//#1. javax.servlet.http.HttpServlet í´ë˜ìŠ¤ë¥¼ ìƒì† ë°›ì•„ì•¼í•œë‹¤.
 public class HelloTextServlet extends HttpServlet {
-	//#2. HttpServlet service ¸Ş¼Òµå¸¦ ¿À¹ö¶óÀÌµù ÇØ¾ßÇÑ´Ù.(¿äÃ»½Ã ½ÇÇà)
+	//#2. HttpServlet service ë©”ì†Œë“œë¥¼ ì˜¤ë²„ë¼ì´ë”© í•´ì•¼í•œë‹¤.(ìš”ì²­ì‹œ ì‹¤í–‰)
 	@Override
 	protected void service(HttpServletRequest requset, HttpServletResponse response) throws ServletException, IOException {
-				//#2-1.  Å¬¶óÀÌ¾ğÆ®¿¡ Àü¼ÛÇÒ µ¥ÀÌÅ¸ÀÇ Å¸ÀÔ(Á¾·ù)¼³Á¤
+				//#2-1.  í´ë¼ì´ì–¸íŠ¸ì— ì „ì†¡í•  ë°ì´íƒ€ì˜ íƒ€ì…(ì¢…ë¥˜)ì„¤ì •
 				response.setContentType("text/plain;charset=UTF-8");
-				//#2-2.  Å¬¶óÀÌ¾ğÆ®¿¡µ¥ÀÌÅ¸¸¦ Àü¼ÛÇÏ±âÀ§ÇÑ Ãâ·Â½ºÆ®¸² »ı¼º
+				//#2-2.  í´ë¼ì´ì–¸íŠ¸ì—ë°ì´íƒ€ë¥¼ ì „ì†¡í•˜ê¸°ìœ„í•œ ì¶œë ¥ìŠ¤íŠ¸ë¦¼ ìƒì„±
 				PrintWriter out = response.getWriter();
-				//#2-3. Å¬¶óÀÌ¾ğÆ®·Î µ¥ÀÌÅ¸(text) Àü¼Û
+				//#2-3. í´ë¼ì´ì–¸íŠ¸ë¡œ ë°ì´íƒ€(text) ì „ì†¡
 				
 				int no = (int)(Math.random()*50);
 				

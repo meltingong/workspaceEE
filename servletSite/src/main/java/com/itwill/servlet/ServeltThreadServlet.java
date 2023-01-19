@@ -17,8 +17,8 @@ public class ServeltThreadServlet extends HttpServlet {
 		
 		String currentThreadName = Thread.currentThread().getName();
 		
-		System.out.println(request.getRemoteAddr()+"´ÔÀÇ ¿äÃ»¿¡ ÀÇÇØ " +request.getLocalAddr() +"[°­»ç¼­¹ö]¿¡¼­ ÇÒ´çµÈ ¾²·¹µå´Â" + currentThreadName + "ÀÔ´Ï´Ù");
-		System.out.println(request.getLocalAddr()+"[°­»ç¼­¹ö]¿¡¼­ " + request.getRemoteAddr() + "´ÔÀÇ ºê¶ó¿ìÁ®·Î ÀÀ´äÇÕ´Ï´Ù.");
+		System.out.println(request.getRemoteAddr()+"ë‹˜ì˜ ìš”ì²­ì— ì˜í•´ " +request.getLocalAddr() +"[ê°•ì‚¬ì„œë²„]ì—ì„œ í• ë‹¹ëœ ì“°ë ˆë“œëŠ”" + currentThreadName + "ì…ë‹ˆë‹¤");
+		System.out.println(request.getLocalAddr()+"[ê°•ì‚¬ì„œë²„]ì—ì„œ " + request.getRemoteAddr() + "ë‹˜ì˜ ë¸Œë¼ìš°ì ¸ë¡œ ì‘ë‹µí•©ë‹ˆë‹¤.");
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
@@ -26,15 +26,15 @@ public class ServeltThreadServlet extends HttpServlet {
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<meta charset=\"UTF-8\">");
-		out.println("<title>¼­ºí¸´¾²·¹µå</title>");
+		out.println("<title>ì„œë¸”ë¦¿ì“°ë ˆë“œ</title>");
 		out.println("<head>");
 		out.println("</head>");
 		out.println("<body>");
-		out.println("<h5>ServletThreadServlet[Dynamic Resource]½ÇÇà¾²·¹µå</h5>");
+		out.println("<h5>ServletThreadServlet[Dynamic Resource]ì‹¤í–‰ì“°ë ˆë“œ</h5>");
 		out.println("<hr>");
-		out.println("ÇöÀç½ÇÇà ¾²·¹µå ÀÌ¸§: " + currentThreadName + "<br>");
-		out.println(request.getRemoteAddr()+"´ÔÀÇ ¿äÃ»¿¡ ÀÇÇØ " +request.getLocalAddr() +"[°­»ç¼­¹ö]¿¡¼­ ÇÒ´çµÈ ¾²·¹µå´Â" + currentThreadName + "ÀÔ´Ï´Ù.<br>");
-		out.println(request.getLocalAddr()+"[°­»ç¼­¹ö]¿¡¼­ " + request.getRemoteAddr() + "´ÔÀÇ ºê¶ó¿ìÁ®·Î ÀÀ´äÇÕ´Ï´Ù.");
+		out.println("í˜„ì¬ì‹¤í–‰ ì“°ë ˆë“œ ì´ë¦„: " + currentThreadName + "<br>");
+		out.println(request.getRemoteAddr()+"ë‹˜ì˜ ìš”ì²­ì— ì˜í•´ " +request.getLocalAddr() +"[ê°•ì‚¬ì„œë²„]ì—ì„œ í• ë‹¹ëœ ì“°ë ˆë“œëŠ”" + currentThreadName + "ì…ë‹ˆë‹¤.<br>");
+		out.println(request.getLocalAddr()+"[ê°•ì‚¬ì„œë²„]ì—ì„œ " + request.getRemoteAddr() + "ë‹˜ì˜ ë¸Œë¼ìš°ì ¸ë¡œ ì‘ë‹µí•©ë‹ˆë‹¤.");
 		out.println("</body>");
 		out.println("</html>");
 	}

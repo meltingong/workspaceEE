@@ -28,7 +28,7 @@ public class HttpServletResponseServlet extends HttpServlet {
 		String cmd = request.getParameter("cmd");
 		if(cmd == null || cmd.equals("")) {
 			/***************case1*****************/
-			out.println("<h1>´Ù½Ã ¿äÃ»ÇÏ¼¼¿ä</h1><hr>");
+			out.println("<h1>ë‹¤ì‹œ ìš”ì²­í•˜ì„¸ìš”</h1><hr>");
 			out.println("<a href = './04.HttpServletResponse.html'>04.HttpServletResponse.html</a>");
 			/***************case2****************/
 			response.sendRedirect("04.HttpServletResponse.html");
@@ -36,27 +36,27 @@ public class HttpServletResponseServlet extends HttpServlet {
 		}
 		if(cmd.equals("1")) {
 			/*
-			 * <<Á¤»óÀÀ´ä>>
-			 * 	1.ÀÀ´ä¶óÀÎ »óÅÂÄÚµå 200
-			 *  2.ÀÀ´äÇì´õ
-			 *  3.ÀÀ´ä¹Ùµğµ¥ÀÌÅ¸(html)Àü¼Û
+			 * <<ì •ìƒì‘ë‹µ>>
+			 * 	1.ì‘ë‹µë¼ì¸ ìƒíƒœì½”ë“œ 200
+			 *  2.ì‘ë‹µí—¤ë”
+			 *  3.ì‘ë‹µë°”ë””ë°ì´íƒ€(html)ì „ì†¡
 			 */
-			out.println("<h3> Á¤»óÀÀ´ä </h3><hr>");
+			out.println("<h3> ì •ìƒì‘ë‹µ </h3><hr>");
 		}else if(cmd.equals("2")) {
 			/*
-			 * <<errorÀÀ´ä>>
-			 *  1.ÀÀ´ä¶óÀÎ 4xx,5xx
-			 *  2.ÀÀ´äÇì´õ
-			 *  3.ÀÀ´ä¹Ùµğµ¥ÀÌÅ¸¾øÀ½(º¸³¾¼ö¾øÀ½)
+			 * <<errorì‘ë‹µ>>
+			 *  1.ì‘ë‹µë¼ì¸ 4xx,5xx
+			 *  2.ì‘ë‹µí—¤ë”
+			 *  3.ì‘ë‹µë°”ë””ë°ì´íƒ€ì—†ìŒ(ë³´ë‚¼ìˆ˜ì—†ìŒ)
 			 */
 			response.sendError(403);
 			//response.sendError(500);
 		}else if(cmd.equals("3")) {
 			/*
-			 * <<redirect[¹æÇâÀçÁöÁ¤]>>
-			 *  1.ÀÀ´ä¶óÀÎ 302
-			 *  2.ÀÀ´äÇì´õ[Location:05-03.form1.html(redirection url) ÀÌÆ÷ÇÔ]
-			 *  3.ÀÀ´ä¹Ùµğµ¥ÀÌÅ¸ ¾øÀ½(º¸³¾¼ö¾øÀ½)
+			 * <<redirect[ë°©í–¥ì¬ì§€ì •]>>
+			 *  1.ì‘ë‹µë¼ì¸ 302
+			 *  2.ì‘ë‹µí—¤ë”[Location:05-03.form1.html(redirection url) ì´í¬í•¨]
+			 *  3.ì‘ë‹µë°”ë””ë°ì´íƒ€ ì—†ìŒ(ë³´ë‚¼ìˆ˜ì—†ìŒ)
 			 */
 			//response.sendRedirect("05-03.form1.html");
 			response.sendRedirect("lifecycleImage_counter.do");
