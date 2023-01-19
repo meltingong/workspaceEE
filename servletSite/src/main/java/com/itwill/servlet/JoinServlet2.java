@@ -24,7 +24,7 @@ public class JoinServlet2 extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		/*
-		 * 1.ÆÄ¶ó¸ŞÅ¸¹Ş±â
+		 * 1.íŒŒë¼ë©”íƒ€ë°›ê¸°
 		 */
 		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");
@@ -37,11 +37,11 @@ public class JoinServlet2 extends HttpServlet {
 		
 		
 		/*
-		 * 2.Service°´Ã¼ °¡ÀÔ¸Ş½îµåÈ£Ãâ
+		 * 2.Serviceê°ì²´ ê°€ì…ë©”ì˜ë“œí˜¸ì¶œ
 		 */
 
 		/*
-		 * 3.Å¬¶óÀÌ¾ğÆ®·Î ÀÀ´ä Ãâ·Â
+		 * 3.í´ë¼ì´ì–¸íŠ¸ë¡œ ì‘ë‹µ ì¶œë ¥
 		 */
 		out.println("<!DOCTYPE html>");
 		out.println("<html>");
@@ -60,19 +60,19 @@ public class JoinServlet2 extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		if(!repass.equals(pass)) {
-			out.println("<h3>" + id + "´Ô ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù</h3><hr>");
-			out.println("<a href = '05-03.form2.html'>´Ù½Ã È¸¿ø°¡ÀÔ</a>");
+			out.println("<h3>" + id + "ë‹˜ ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤</h3><hr>");
+			out.println("<a href = '05-03.form2.html'>ë‹¤ì‹œ íšŒì›ê°€ì…</a>");
 			return;
 		}
-		out.println("	<h3 align='center'>°¡ÀÔÁ¤º¸°á°ú</h3>");
+		out.println("	<h3 align='center'>ê°€ì…ì •ë³´ê²°ê³¼</h3>");
 		out.println("<table width='50%'>");
 		out.println("		<tr>");
-		out.println("			<th width='30%'>Ç×¸ñ</th>");
-		out.println("			<th width='50%'>ÀÔ·Â°ª</th>");
-		out.println("			<th width='20%' >ºñ°í</th>");
+		out.println("			<th width='30%'>í•­ëª©</th>");
+		out.println("			<th width='50%'>ì…ë ¥ê°’</th>");
+		out.println("			<th width='20%' >ë¹„ê³ </th>");
 		out.println("		</tr>");
 		out.println("		<tr>");
-		out.println("			<td>¾ÆÀÌµğ</td>");
+		out.println("			<td>ì•„ì´ë””</td>");
 		out.println("			<td>"+id+"</td>");
 		if(hobbies != null) {
 			out.println("			<td rowspan="+ hobbies.length+6 +"></td>");
@@ -81,35 +81,35 @@ public class JoinServlet2 extends HttpServlet {
 		}
 		out.println("		</tr>");
 		out.println("		<tr>");
-		out.println("			<td>ÆĞ¾²¿öµå</td>");
-		out.println("			<td>"+pass+"/td>");
+		out.println("			<td>íŒ¨ì“°ì›Œë“œ</td>");
+		out.println("			<td>"+pass+"</td>");
 		out.println("		</tr>");
 		out.println("		<tr>");
-		out.println("			<td>ÀÌ¸§</td>");
+		out.println("			<td>ì´ë¦„</td>");
 		out.println("			<td>"+name+"</td>");
 		out.println("		</tr>");
 		out.println("		<tr>");
-		out.println("			<td>ÁÖ¼Ò</td>");
+		out.println("			<td>ì£¼ì†Œ</td>");
 		out.println("			<td>"+addr+"</td>");
 		out.println("		</tr>");
 		out.println("		<tr>");
-		out.println("			<td>¼ºº°</td>");
+		out.println("			<td>ì„±ë³„</td>");
 		out.println("			<td>"+gender+"</td>");
 		out.println("		</tr>");
 		out.println("		<tr>");
-		out.println("			<td>Á÷¾÷</td>");
+		out.println("			<td>ì§ì—…</td>");
 		out.println("			<td>"+job+"</td>");
 		out.println("		</tr>");
 		out.println("		<tr>");	
 		if(hobbies!=null) {
-			out.println("			<td rowspan="+hobbies.length+">Ãë¹Ì</td>");
+			out.println("			<td rowspan="+hobbies.length+">ì·¨ë¯¸</td>");
 			for(String hobby : hobbies) {
 				out.println("<td>"+hobby+"</td>");
 				out.println("		</tr>");
 			}
 		}else {
-			out.println("			<td rowspan='1'>Ãë¹Ì</td>");
-			out.println("<td>Ãë¹Ì¾øÀ½</td>");
+			out.println("			<td rowspan='1'>ì·¨ë¯¸</td>");
+			out.println("<td>ì·¨ë¯¸ì—†ìŒ</td>");
 		}
 		out.println("	</table>");
 		out.println("</body>");

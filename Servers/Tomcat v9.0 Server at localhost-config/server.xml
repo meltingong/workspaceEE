@@ -153,7 +153,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 	
 	
-      <Context docBase="hmarket" path="/hmarket" reloadable="true" source="org.eclipse.jst.jee.server:hmarket"/><Context docBase="servletSite" path="/servletSite" reloadable="true" source="org.eclipse.jst.jee.server:servletSite"/><Context docBase="htmlSite" path="/htmlSite" reloadable="true" source="org.eclipse.jst.jee.server:htmlSite"/></Host>
+      <Context docBase="addressSite" path="/addressSite" reloadable="true" source="org.eclipse.jst.jee.server:addressSite"/><Context docBase="servletSite" path="/servletSite" reloadable="true" source="org.eclipse.jst.jee.server:servletSite"/></Host>
     </Engine>
   </Service>
 </Server>

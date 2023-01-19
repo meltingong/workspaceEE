@@ -25,10 +25,10 @@ public class PostLoginServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		/*
-		  1. ¿äÃ»½Ã Àü¼ÛµÇ´Â ÆÄ¶ó¸ŞÅ¸ ¹Ş±â
-		  	- ÆÄ¶ó¸ŞÅ¸ ÀÌ¸§Àº input elementÀÇ name ¼Ó¼º°ú ÀÏÄ¡
-		  		¾ÆÀÌµğ:<input type="text" name="id">
-				ÆĞ¿¡¾²:<input type="password" name="pass">
+		  1. ìš”ì²­ì‹œ ì „ì†¡ë˜ëŠ” íŒŒë¼ë©”íƒ€ ë°›ê¸°
+		  	- íŒŒë¼ë©”íƒ€ ì´ë¦„ì€ input elementì˜ name ì†ì„±ê³¼ ì¼ì¹˜
+		  		ì•„ì´ë””:<input type="text" name="id">
+				íŒ¨ì—ì“°:<input type="password" name="pass">
 		 */
 		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");
@@ -38,20 +38,20 @@ public class PostLoginServlet extends HttpServlet {
 			return;
 		}
 		/*
-		 * 2. ·Î±×ÀÎ ¾÷¹«½ÇÇà(service°´Ã¼»ç¿ë)
+		 * 2. ë¡œê·¸ì¸ ì—…ë¬´ì‹¤í–‰(serviceê°ì²´ì‚¬ìš©)
 		 */
 		boolean isMember1 = id.equals("xxxx") && pass.equals("1111");
 		boolean isMember2 = id.equals("yyyy") && pass.equals("2222");
 		
-		out.println("<h1>Post ·Î±×ÀÎ °á°ú</h1><hr>");
+		out.println("<h1>Post ë¡œê·¸ì¸ ê²°ê³¼</h1><hr>");
 		if(isMember1 || isMember2) {
-			// ·Î±×ÀÎ ¼º°ø
-			out.println("<h3>" + id + "´Ô ·Î±×ÀÎ ¼º°ø</h3><hr>");
-			out.println("<a href = 'index.html'>¸ŞÀÎÀ¸·Î</a>");
+			// ë¡œê·¸ì¸ ì„±ê³µ
+			out.println("<h3>" + id + "ë‹˜ ë¡œê·¸ì¸ ì„±ê³µ</h3><hr>");
+			out.println("<a href = 'index.html'>ë©”ì¸ìœ¼ë¡œ</a>");
 		}else {
-			// ·Î±×ÀÎ ½ÇÆĞ
-			out.println("<h3>" + id + "´Ô ·Î±×ÀÎ ½ÇÆĞ</h3><hr>");
-			out.println("<a href = '05-02.login_post.html'>´Ù½Ã ·Î±×ÀÎ</a>");
+			// ë¡œê·¸ì¸ ì‹¤íŒ¨
+			out.println("<h3>" + id + "ë‹˜ ë¡œê·¸ì¸ ì‹¤íŒ¨</h3><hr>");
+			out.println("<a href = '05-02.login_post.html'>ë‹¤ì‹œ ë¡œê·¸ì¸</a>");
 			
 		}
 		
