@@ -1,0 +1,4 @@
+A.eclipse dynamic web project생성
+B.JDBC드라이버 webapp/WEB-INF/lib에 위치(ojdbc6.jar)
+C.웹리소스(jsp,image,css,js)파일 src/main/java/webapp폴더에위치
+D.welcome file설정(src/main/java/webapp/WEB-INF/web.xml)

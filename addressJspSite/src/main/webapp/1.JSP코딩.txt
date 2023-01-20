@@ -1,0 +1,6 @@
+A.DB테이블생성
+B.Dto,Dao,Service클래스생성
+C.Dao class Test,Service class Test
+D.HTML파일을JSP파일변경
+E.JSP파일 directive 기술
+F.JSP파일에서 Service객체를 사용해서 구현
