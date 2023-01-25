@@ -30,5 +30,6 @@
 	 * 3.클라이언트로 결과전송
 	 */
 	out.println("<h1>POST로그인결과</h1><hr/>");
-	
+	out.println("<h3>"+id+" 님 로그인성공</h3>");
+	out.println("<a href='index.jsp'>메인</a>");
 %>    
