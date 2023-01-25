@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+변수선언
+   - let 키워드를 사용
+   - 타입을 가지지않는다.
+   - 객체멤버변수(attribute,property),멤버메쏘드(function)는 동적생성이가능
+   - var로변수선언시 자동으로 window객체의멤버변수로등록
+   
+*/
+	var no = 22;
+	let name1 = '김경호1';
+	let name2 = '김경호2';
+	let age = 33;
+	let weight = 56.69;
+	let married = true;
+	let address = null;
+	let gender;
+	no = 99;
+	// var 선언시 같은 변수 선언하더라도 error가 안남 >> var 쓰지말것
+/*
+ 상수
+ */
+ 	const id = 'guard';
+ 	const irum = '김수미';
+ 	const kor = 56;
+ 	const eng = 78;
+ 	const math = 96;
+ 	const tot = 56 + 78 + 96;
+ 	const avg = tot/3;
+
+
+</script>
+</head>
+<body>
+<h1>자바스크립트변수</h1><hr>
+
+<script type="text/javascript">
+	console.log(no);
+	console.log(name1);
+	console.log(name2);
+	console.log(age);
+	console.log(weight);
+	console.log(married);
+	console.log(address);
+	console.log(gender);
+	console.log(id);
+	console.log(irum);
+	console.log(avg);
+
+
+	/*
+	BOM
+	*/
+	window.alert('윈도우 alert 함수 호출');
+	const result = window.confirm('진짜로 삭제할ㄲㅣ니?');
+	console.log('result:' + result);
+	window.document.write("<ul>");
+	window.document.write("<li>no : " +no+"</li>");
+	window.document.write("<li>name1 : " +name1+ "</li>");
+	window.document.write("<li>id : " +id+ "</li>");
+	window.document.write("</ul>");
+	
+	
+</script>
+
+</body>
+</html>
