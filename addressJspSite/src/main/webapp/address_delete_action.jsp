@@ -1,6 +1,7 @@
 <%@page import="com.itwill.address.AddressService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <%
 
 	/*
@@ -12,5 +13,19 @@
 	* 3.AddressService.deleteByNo()메쏘드실행
 	* 4.클라이언트로 redirection 응답--> address_list.jsp 로 redirection
 	*/
+	try{
+		if(request.getMethod().equalsIgnoreCase("GET")){
+			response.sendRedirect("address_main.jsp");
+			return;
+		}else{
+			request.setCharacterEncoding("UTF-8");
+			String noStr = request.getParameter("no");
+			AddressService addressService = new AddressService();
+			addressService.delete(Integer.parseInt(noStr));
+			response.sendRedirect("address_list.jsp");
+		}
+	}catch (Exception e){
+		e.printStackTrace();
+	}
 	
 %>

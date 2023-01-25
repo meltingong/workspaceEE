@@ -13,44 +13,38 @@ GET방식요청인경우에는 address_main.jsp로 redirection
   4.반환받은 Address객체를 사용해서 클라이언트로 응답(수정폼 보여주기)
  */
  
- 
+	 if(request.getMethod().equalsIgnoreCase("GET")){
+			response.sendRedirect("address_main.jsp");
+			return;
+		}
+		request.setCharacterEncoding("UTF-8");
+		String no = request.getParameter("no");
+		AddressService addressService = new AddressService();
+		Address address = addressService.findByNo(Integer.parseInt(no));
+		
 %>    
 
-
-
-
-    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset='UTF-8'>
-<title>Insert title here</title>
+<title>주소록 수정 폼</title>
 </head>
 <body>
-
-
-<h1>[박경호 님 주소록상세보기]</h1><hr>
-<div>
-	<a href='address_main.jsp'>[메인]</a>
-	<a href='address_insert_form.jsp'>[주소록쓰기폼]</a>
-	<a href='address_list.jsp'>[주소록리스트]</a>
-	
-	<form action="address_update_form.jsp" method="post" style="display: inline;">
-		<input type="hidden" name="no" value="11">
-		<input type="submit" value="박경호님 주소록수정폼[POST]">	
-	</form> 
-	
-	<form action='address_delete_action.jsp' method='post' style='display:inline;'>
-		<input type='hidden' name='no' value='11'>
-		<input type='submit' value='박경호님삭제[POST]'>
+<h1>[<%=address.getName()%>님 주소록 수정 폼]</h1><hr>
+<hr>
+	<div>
+		<a href='address_main.jsp'>[메인]</a>
+		<a href='address_insert_form.jsp'>[주소록 쓰기 폼]</a>
+		<a href='address_list.jsp'>[주소록 리스트]</a>
+	</div>
+	<form method='post' action='address_update_action.jsp'>
+		번호-----<input type='hidden' name='no' value='<%=address.getNo()%>'><br>
+		이름-----<input type='text' name='name' value='<%=address.getName()%>'><br>
+		전화번호<input type='text' name='phone' value='<%=address.getPhone()%>'><br>
+		주소-----<input type='text' name='address' value='<%=address.getAddress()%>'><br> 
+		<input type='submit' value='주소록 수정'>
+		<input type='reset' value='주소록 수정 폼 초기화'>
 	</form>
-</div>
-<p>
-	번호:11<br>
-	이름:박경호<br>
-	전화:123-4568<br>
-	주소:경기도 구리시<br>
-</p>
 </body>
 </html>
-

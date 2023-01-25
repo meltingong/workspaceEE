@@ -36,7 +36,7 @@
 	<div>
 		<ul>
 		<%for(Address address : addressList){ %>
-			<li><a href ='address_detail.jsp?no="+<%address.getNo();%>+"'><%="["+address.getNo()+"]"+address.getName() %></a></li>
+			<li><a href ='address_detail.jsp?no=<%=address.getNo()%>'><%="["+address.getNo()+"]"+address.getName() %></a></li>
 		<% } %>
 		</ul>
 	</div>
