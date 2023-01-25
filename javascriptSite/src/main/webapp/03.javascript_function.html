@@ -19,6 +19,48 @@
 		document.write(name+'님'+msg+"[hello1()]<br>");
 		return;
 	}
+	/******function argument**********/
+	function hello2(msg){
+		/*
+		메소드 파라메타 선언시 let 키워드를 사용안함
+		*/
+		document.write(name+"님"+msg+"[hello2(msg)]<br>");
+	}
+	function hello3(name,msg){
+		document.write(name + "님" + msg + "[hello3(name,msg)]<br>");
+	}
+	function hello4(name,msg,count){
+		console.log(name);
+		console.log(msg);
+		console.log(count);
+		if(count === undefined){
+			count = 1;
+		}
+		for(let i=0; i<count; i++){
+		document.write(name + "님" + msg + "[hello3(name,msg)]<br>");
+		}
+	}
+	
+	function add(a,b){
+		return a+b;
+	}
+	
+	function sub(a,b){
+		return a-b;
+	}
+	
+	function div(a,b){
+		return a/b;
+	}
+	
+	function mul(a,b){
+		return a*b;
+	}
+	
+	function alert(msg){
+		document.write("<i>내가 만든 경고 함수(window alert(msg)를 대체함):"+msg+"</i><br>");
+	}
+	
 </script>
 
 </head>
@@ -29,6 +71,17 @@
 	//함수호출 -- 함수정의된후 호출하여아한다.
 	window.head_function();
 	hello1();
+	hello2('하이');
+	hello3('손목','아작남');
+	hello4('유재석','유퀴즈','3');
+	hello4('유재석','유퀴즈');
+	let result = add(8597,5874);
+	document.write('add result : ' +result + '<br>');
+	result = sub(8754,8654);
+	document.write('sub result : ' +result + '<br>');
+	document.write('mul result : ' + mul(567,45) + '<br>');
+	document.write('div result : ' + div(3451,32) + '<br>');
+	alert("이것은 경고");
 	//body_end_function();
 </script>
 

@@ -5,9 +5,18 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	
-	
-	
-	
+	let result = window.confirm('삭제하시겠습니까?');
+	if(result){
+		window.location.href = 'address_delete_action.jsp';
+	}else{
+		window.location.href = 'address_main.jsp';
+		//location.reload();
+		//location.replace('new_page.jsp');
+	}
+	/*
+	history.go();
+	history.back();
+	*/
 	
 </script>
 

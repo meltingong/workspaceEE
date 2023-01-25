@@ -4,14 +4,39 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	
+	function window_method_use(){
+		let ageStr = window.prompt('나이를 입력하세요',30);
+		let ageInt = parseInt(ageStr);	
+		let msg = '';
+		switch(ageInt){
+			case 20:
+			msg='청년';
+			break;
+			case 30:
+			msg='아저씨';
+			break;
+			case 40:
+			msg='아재';
+			break;
+			default:
+			msg = '20 30 40 중에 하나 선택';
+			break;
+		}
+		document.write('입력된값: ' + ageStr + "<br>");
+		document.write('입력된 값으로 판단해보니: ' + msg + "이시네요<br>");
+		
+		/*
+		window 새창 띄우기
+		*/
+		window.open('4.login_get_form.jsp','login','width=300,height=300,menubar=no');
+	}
 	
 </script>
 </head>
 <body>
 <h1>BOM[window]</h1><hr>
 <script type="text/javascript">
-	
+	window_method_use();
 </script>
 </body>
 </html>

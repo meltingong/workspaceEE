@@ -4,10 +4,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	
+	function body_load_function(){
+		/*
+		DOM Tree생성 후 렌더링 직전에 onload이벤트 발생
+		*/
+		console.log("body_load_function() 실행");
+		window.document.loginForm.id.focus();
+	}
 </script>
 </head>
-<body>
+<body onload="body_load_function();">
 	<h1>
 	자바스크립트이벤트</h1>
 	<hr>
@@ -19,7 +25,7 @@
 	 이벤트발생시에 대입한자바스트립트 코드가 실행된다.
 	</pre>
 	<h3>로그인</h3>	
-	<form  action="login_action.jsp" method="post" name="joinForm" style="border: 1px solid blue; width: 300px;padding: 30px">
+	<form  action="login_action.jsp" method="post" name="loginForm" style="border: 1px solid blue; width: 300px;padding: 30px">
 		아이디&nbsp;&nbsp; : <input type="text" name="id" placeholder="아이디" value="" onkeydown="input_text_keydown_function();"><br>
 		패쓰워드:            <input type="password" name="pass" placeholder="패쓰워드" onfocus="input_password_focus_function()"><br>
 		<!-- 
