@@ -4,11 +4,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
+	let name = 'script_이순신';
+	let msg = 'script_졸려죽겠다';
 	/*
 	 함수정의
 	   - 윈도객체에소속된 함수가된다.
 	 */
-	
+	function head_function(){
+		window.document.write("head_function()"+msg+"<br>");
+	}
+	function hello1(){
+		let name = "local 삼순신";
+		let msg = 'local 쉬는시간,,';
+	}
 </script>
 
 </head>
@@ -16,12 +24,15 @@
 <h1>자바스크립트함수</h1><hr>
 <div>함수기반언어이다</div>
 <script type="text/javascript">
-	//함수호출
-	
+	//함수호출 -- 함수정의된후 호출하여아한다.
+	window.head_function();
+	//body_end_function();
 </script>
 
 <script type="text/javascript">
-	
+	function body_end_function(){
+		document.write("body_end_function()<br>");
+	}
 </script>
 </body>
 </html>
