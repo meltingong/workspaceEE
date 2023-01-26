@@ -9,8 +9,74 @@
 		DOM Tree생성 후 렌더링 직전에 onload이벤트 발생
 		*/
 		console.log("body_load_function() 실행");
+		/*
+		DOM Tree에있는 form엘레멘트객체에 접근하는방법
+			1. window.document.form태그의name속성값
+			   ex> window.document.joinForm
+			2. window.document.forms배열객체[index]
+			   ex> window.document.forms[0]
+			3. document객체의 getElementById()메쏘드를 사용해서 form객체검색
+			   ex> document.getElementById("form태그id속성값");
+			     - HTML Tag
+				     <form id='joinForm'>
+				     </form>
+				     (엘레멘트의 아이디는 HTML파일안에서 유일해야됩니다.)
+			     - javascript
+			     	 var joinFormObject = document.getElementById('joinForm');
+			         (DOM Tree에서 id가 joinForm인 엘레멘트객체를반환) 
+			   
+		form객체안에있는 input엘레멘트객체접근방법
+		    1.form객체.input태그의이름
+		       ex> window.document.joinForm.id
+			
+		 */
+		console.log("form name" + window.document.loginForm);
+		console.log("form id" + window.document.getElementById('loginForm'));
+	
 		window.document.loginForm.id.focus();
+		document.loginForm.id.value = 'guard';
+		document.loginForm.pass.value = '1111';
+		document.loginForm.pass.select();
+		
+		
 	}
+	
+	function input_text_keydown_function(){
+		console.log("input_text_keydown_function");
+		let idStr = document.loginForm.id.value;
+		console.log("입력아이디 : " + idStr);
+	}
+	
+	function input_password_focus_function(){
+		let idElement = document.loginForm.id
+		let idStr = idElement.value;
+		if(idStr.startsWith('guard')){
+			console.log("사용가능");
+			idElement.style.border='1px solid green';
+		}else{
+			console.log("사용불가능");
+			idElement.style.border='1px solid red';
+		}
+	}
+	
+	function login_form_submit_validation_function(){
+		let f = document.loginForm;
+		let idStr = f.id.value;
+		let passStr = f.pass.value;
+		if(idStr===null || idStr === ''){
+			alert('아이디를 입력하세요');
+			f.id.focus();
+			return false;
+		}
+		if(document.loginForm.pass.value === null || document.loginForm.pass.value === ''){
+			alert('패스워드를 입력하세요');
+			document.loginForm.pass.focus();
+			return false;
+		}
+		return true;
+	}
+	
+	
 </script>
 </head>
 <body onload="body_load_function();">
@@ -25,9 +91,9 @@
 	 이벤트발생시에 대입한자바스트립트 코드가 실행된다.
 	</pre>
 	<h3>로그인</h3>	
-	<form  action="login_action.jsp" method="post" name="loginForm" style="border: 1px solid blue; width: 300px;padding: 30px">
-		아이디&nbsp;&nbsp; : <input type="text" name="id" placeholder="아이디" value="" onkeydown="input_text_keydown_function();"><br>
-		패쓰워드:            <input type="password" name="pass" placeholder="패쓰워드" onfocus="input_password_focus_function()"><br>
+	<form  id = "loginForm" onsubmit="return login_form_submit_validation_function();" action="login_action.jsp" method="post" name="loginForm" style="border: 1px solid blue; width: 300px;padding: 30px">
+		아이디&nbsp;&nbsp; : <input onkeydown="input_text_keydown_function();" type="text" name="id" placeholder="아이디" value="" onkeydown="input_text_keydown_function();"><br>
+		패쓰워드:            <input onfocus="input_password_focus_function();" type="password" name="pass" placeholder="패쓰워드" ><br>
 		<!-- 
 		<< submit버튼의 이벤트처리 >>
 			- submit(image)버튼클릭시에는 form객체에 onsubmit이벤트가발생한다.
