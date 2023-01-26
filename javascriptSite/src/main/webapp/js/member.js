@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script type="text/javascript">
-		
-		function join_form_validation_submit_button(){
+
+	function join_form_validation_submit_button(){
 			/*
 			DOM Tree에있는 form엘레멘트객체에 접근하는방법
 				1. window.document.form태그의name속성값
@@ -41,12 +35,12 @@
 				return false;
 			}
 			if(f.password.value==null || f.password.value==''){
-				alert('패쓰워드를 입력하세요');
+				alert('패스워드를 입력하세요');
 				f.password.focus();
 				return false;
 			}
 			if(f.repassword.value==null || f.repassword.value==''){
-				alert('패쓰워드확인을 입력하세요');
+				alert('패스워드확인을 입력하세요');
 				f.repassword.focus();
 				return false;
 			}
@@ -62,7 +56,7 @@
 			}
 			
 			if(f.password.value !== f.repassword.value){
-				alert("패쓰워등와 패쓰워드확인은 일치하여야합니다.");
+				alert("패스워드와 패스워드확인은 일치하여야합니다.");
 				f.repassword.select();
 				return false;
 			}
@@ -84,7 +78,7 @@
 				return ;
 			}
 			if(f.password.value==null || f.password.value==''){
-				alert('패쓰워드를 입력하세요');
+				alert('패스워드를 입력하세요');
 				f.password.focus();
 				return ;
 			}
@@ -104,8 +98,8 @@
 				return ;
 			}
 			
-			if(f.password.value !== f.repassword.value){
-				alert("패쓰워등와 패쓰워드확인은 일치하여야합니다.");
+			if(!isSame(f.password.value,f.repassword.value)){
+				alert("패스워드와 패스워드확인은 일치하여야합니다.");
 				f.repassword.select();
 				return ;
 			}
@@ -120,55 +114,3 @@
 			
 			
 		}	
-	
-		
-</script>
-</head>
-<body>
-	<h1>회원가입폼의 유효성체크[BOM]2</h1><hr>
-	<h3>document객체의 getElementById()메쏘드를 사용해서 form객체검색</h3>
-	<xmp>
-	1.HTML서버로부터수신
-	2.<!DOCTYPE html> HTML5 parsing작업(head-->body)
-	3.DOM Tree생성
-	4.렌더링
-	</xmp>
-	<h3 style="width:400px;text-align: center">회원가입</h3>
-	<form 	id="joinForm" 
-			name="joinForm" 
-			action="join_action.jsp" 
-			method="post" 
-			style="border: 1px solid blue;width:400px;padding: 30px"
-			onsubmit="return join_form_validation_submit_button();"
-			>
-			
-		아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<input id="id" type="text" name="id" value=""><br>
-		패쓰워드&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<input id="password" type="password" name="password"><br>
-		패쓰워드확인
-		<input  id="repassword" type="password" name="repassword"><br>
-		이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<input id="name" type="text" name="name"><br>
-		주소&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<input id="address" type="text" name="address"><br><br>
-		<input type="submit" value="가입[submit button]" >
-		<input type="image" src="bbs_write.gif" >
-	</form>
-	<br/>
-	<div>
-	<input onclick="join_form_valdation_button();"  type="button" value="가입[button]"  >
-	<pre>
-	자바스크립트코드 기술위치
-	1. &lt;script&gt;태그안에
-	2. onXX 으로시작하는 이벤트프로퍼티 안에기술(inline방식)
-	3. a 태그의  href 속성안에기술 javascript:라는접두어를 붙여준다.
-	</pre>
-	<a href="javascript:join_form_validation_button();">가입</a>
-	<a href="javascript:join_form_validation_button();"><img src='bbs_write.gif'></a>
-	</div>
-</body>
-</html>
-
-
-
