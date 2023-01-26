@@ -76,6 +76,23 @@
 		return true;
 	}
 	
+	function loginForm_button_validation_function(){
+		if(document.loginForm.id.value===null || document.loginForm.id.value === ''){
+			alert('아이디를 입력하세요');
+			document.loginForm.id.focus();
+			return false;
+		}
+		if(document.loginForm.pass.value === null || document.loginForm.pass.value === ''){
+			alert('패스워드를 입력하세요');
+			document.loginForm.pass.focus();
+			return false;
+		}
+		document.loginForm.method = 'POST';
+		document.loginForm.action = 'login_action.jsp';
+		document.loginForm.submit();
+		
+		return true;
+	}
 	
 </script>
 </head>
@@ -105,7 +122,7 @@
 	</form>
 	<br/>
 	<br/>
-	<input type="button" value="일반버튼" ><br>
+	<input type="button" value="일반버튼" onclick="loginForm_button_validation_function();" ><br>
 </body>
 </html>
 
