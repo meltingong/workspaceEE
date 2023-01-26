@@ -7,6 +7,41 @@
 <body>
 <h1>javascript core object[String]</h1>
 <script type="text/javascript">
+	let str1 = new String("AbcdEfgh");
+	let str2 = "0123456789";
+	let str3 = "guard@naver.com";
+	
+	console.log(typeof str1);
+	console.log(typeof str2);
+	
+	console.log(str1.charAt(0));
+	console.log(str1.charCodeAt(0));
+	console.log(str1.length);
+	console.log(str1.toUpperCase());
+	console.log(str1.toLowerCase());
+	console.log(str2.substring(5));
+	console.log(str2.substring(5,6));
+	console.log(str2.substring(5,7));
+	console.log(str2.substr(5));
+	console.log(str2.substr(5,1));
+	console.log(str2.substr(5,2));
+	console.log(str3.indexOf('@'));
+	console.log(str3.indexOf('.'));
+	console.log(str3.replace('@','골뱅이'));
+	console.log(str3.replace('.','점'));
+	/************Array*************/
+	let nameArray = new Array('KIM','LEE','PARK','CHOI','SIM');
+	let korArray = [90,99,88,95,100];
+	let engArray = [97,49,75,78,70];
+	let totArray = [];
+	
+	for(let i = 0; i < nameArray.length; i++){
+		totArray.push(korArray[i]+engArray[i]);
+		console.log(nameArray[i],korArray[i],engArray[i],totArray[i]);
+	}
+	
+	
+	
 </script>
 </body>
 </html>
