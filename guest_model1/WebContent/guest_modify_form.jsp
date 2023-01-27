@@ -70,13 +70,13 @@
 					</tr>
 				</table> <!-- modify Form  -->
 				<form name="f" method="post">
-					<input type="hidden" name="guest_no" value="25" />
+					<input type="hidden" name="guest_no" value="<%=guest.getGuest_no()%>" />
 					<table border="0" cellpadding="0" cellspacing="1" width="590"
 						bgcolor="BBBBBB">
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">번호</td>
 							<td align="left" width=490 bgcolor="ffffff"
-								style="padding-left: 10px"><%=guest.getGuest_no() %></td>
+								style="padding-left: 10px"><%=guest.getGuest_no()%></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
@@ -97,7 +97,7 @@
 							<td align="left" width=490 bgcolor="ffffff"
 								style="padding-left: 10px"><input type="text"
 								style="width: 240" name="guest_email"
-								value="<%=guest.getGuest_email()%> "></td>
+								value="<%=guest.getGuest_email()%>"></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
@@ -110,7 +110,7 @@
 							<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
 							<td align="left" width=490 bgcolor="ffffff"
 								style="padding-left: 10px"><textarea wrap="soft"
-									style="width: 240px" rows="10" name="guest_content"><%=guest.getGuest_content() %></textarea>
+									style="width: 240px" rows="10" name="guest_content"><%=guest.getGuest_content()%></textarea>
 
 							</td>
 						</tr>

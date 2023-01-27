@@ -10,14 +10,13 @@
 		 Guest객체생성
 		2.GuestService객체생성
 		3.GuestService객체 insert(Guest객체) 메쏘드호출
-		4.guest_view.jsp로 redirection
+		4.guest_list.jsp로 redirection
 	*/
 		if(request.getMethod().equalsIgnoreCase("GET")){
 			response.sendRedirect("guest_main.jsp");
 			return;
 		}
 		request.setCharacterEncoding("UTF-8");
-		String noStr = request.getParameter("guest_no");
 		String guest_name = request.getParameter("guest_name");
 		String guest_email = request.getParameter("guest_email");
 		String guest_homepage = request.getParameter("guest_homepage");
@@ -28,5 +27,4 @@
 		GuestService guestService = new GuestService();
 		guestService.insert(guest);
 		response.sendRedirect("guest_list.jsp");
-		//response.sendRedirect("guest_view.jsp?guest_no="+noStr);
 %>
