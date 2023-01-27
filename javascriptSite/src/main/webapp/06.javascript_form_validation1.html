@@ -68,7 +68,25 @@
 			2.영문알파벳대문자,소문자,숫자만 가능
 			3.아이디의 첫글자는 영문알파벳대문자,소문자만 가능합니다(숫자로 시작할수없다)
 			*/
+			if(f.id.value.length < 5 || f.id.value.length >10 ){
+				alert('아이디는 5~10자여야합니다');
+				return false;
+			}
 			
+			let idStr = new String(f.id.value);
+			if(idStr.charAt(0) >= 0 && idStr.charAt(0) <= 9){
+				alert('아이디의 첫글자는 알파벳대문자,소문자만 가능합니다.');
+				return false;
+			}
+			
+			for(let i = 0; i < idStr.length; i++){
+				if((idStr.charAt(i) >= 'A' && idStr.charAt(i) <= 'Z') ||(idStr.charAt(i) >= 'a' && idStr.charAt(i) <= 'z') || (idStr.charAt(i) >= 0 && idStr.charAt(i) <=9) ){
+					return true;
+				}else{
+					alert('아이디는 알파벳 대소문자, 숫자만 사용 가능합니다.');
+					return false;
+				}
+			}
 			
 			return true;
 		}
@@ -79,35 +97,35 @@
 			if(f.id.value ==null || f.id.value == ''){
 				alert('아이디를 입력하세요');
 				f.id.focus();
-				return ;
+				return false;
 			}
 			
 			if(f.password.value ==null || f.password.value == ''){
 				alert('패스워드를 입력하세요');
 				f.id.focus();
-				return ;
+				return false;
 			}
 			
 			if(f.repassword.value ==null || f.repassword.value == ''){
 				alert('패스워드 확인을 입력하세요');
 				f.id.focus();
-				return ;
+				return false;
 			}
 			if(f.name.value ==null || f.name.value == ''){
 				alert('이름을 입력하세요');
 				f.id.focus();
-				return ;
+				return false;
 			}
 			if(f.address.value ==null || f.address.value == ''){
 				alert('주소를 입력하세요');
 				f.id.focus();
-				return ;
+				return false;
 			}
 			
 			if(f.password.value !== f.repassword.value){
 				alert('패스워드와 패스워드확인이 일치하지 않습니다');
 				f.repassword.select();
-				return ;
+				return false;
 			}
 			
 			/*
@@ -116,11 +134,25 @@
 			3.아이디의 첫글자는 영문알파벳대문자,소문자만 가능합니다(숫자로 시작할수없다)
 			*/
 			
-			if(f.id.length < 5 || f.id.length >10 ){
+			if(f.id.value.length < 5 || f.id.value.length >10 ){
 				alert('아이디는 5~10자여야합니다');
-				return;
+				return false;
 			}
 			
+			let idStr = new String(f.id.value);
+			if(idStr.charAt(0) >= 0 && idStr.charAt(0) <= 9){
+				alert('아이디의 첫글자는 알파벳대문자,소문자만 가능합니다.');
+				return false;
+			}
+			
+			for(let i = 0; i < idStr.length; i++){
+				if((idStr.charAt(i) >= 'A' && idStr.charAt(i) <= 'Z') ||(idStr.charAt(i) >= 'a' && idStr.charAt(i) <= 'z') || (idStr.charAt(i) >= 0 && idStr.charAt(i) <=9) ){
+					return true;
+				}else{
+					alert('아이디는 알파벳 대소문자, 숫자만 사용 가능합니다.');
+					return false;
+				}
+			}
 			
 			f.method = 'POST';
 			f.action = 'join_action.jsp';
