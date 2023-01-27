@@ -1,5 +1,12 @@
+<%@page import="com.itwill.guest.Guest"%>
+<%@page import="java.util.List"%>
+<%@page import="com.itwill.guest.GuestService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	GuestService guestService = new GuestService();
+	List<Guest> guestList = guestService.findAll();
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -50,32 +57,16 @@
 										<td width=120 align=center bgcolor="E6ECDE">이름</td>
 										<td width=120 align=center bgcolor="E6ECDE">날짜</td>
 									</tr>
-
+									<%for(Guest guest : guestList ){ %>
 									<tr>
-										<td width=50 align=center bgcolor="ffffff" height="20">43</td>
+										<td width=50 align=center bgcolor="ffffff" height="20"><%= guest.getGuest_no() %></td>
 										<td width=300 bgcolor="ffffff" style="padding-left: 10"><a
-											href="guest_view.jsp?guest_no=43" class="user"> hj </a></td>
-										<td width=120 align=center bgcolor="ffffff">dfdf</td>
-										<td width=120 align=center bgcolor="ffffff">2015-03-19</td>
+											href="guest_view.jsp?guest_no=<%= guest.getGuest_no() %>"class="user"> <%= guest.getGuest_title() %> </a></td>
+										<td width=120 align=center bgcolor="ffffff"><%= guest.getGuest_name() %></td>
+										<td width=120 align=center bgcolor="ffffff"><%= guest.getGuest_date() %></td>
 									</tr>
-
-									<tr>
-										<td width=50 align=center bgcolor="ffffff" height="20">41</td>
-										<td width=300 bgcolor="ffffff" style="padding-left: 10"><a
-											href="guest_view.jsp?guest_no=41" class="user"> sdf </a></td>
-										<td width=120 align=center bgcolor="ffffff">df</td>
-										<td width=120 align=center bgcolor="ffffff">2015-03-19</td>
-									</tr>
-
-									<tr>
-										<td width=50 align=center bgcolor="ffffff" height="20">25</td>
-										<td width=300 bgcolor="ffffff" style="padding-left: 10"><a
-											href="guest_view.jsp?guest_no=25" class="user"> 수정 </a></td>
-										<td width=120 align=center bgcolor="ffffff">수정</td>
-										<td width=120 align=center bgcolor="ffffff">2015-03-18</td>
-									</tr>
-
-
+									<%} %>
+									
 								</table>
 							</form> <br> <!-- button -->
 							<table border="0" cellpadding="0" cellspacing="1" width="590">
