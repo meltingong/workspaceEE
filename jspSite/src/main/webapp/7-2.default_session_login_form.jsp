@@ -19,7 +19,8 @@ form tag
  - method:요청방법(GET or POST)
  -->
 <h3 align="center">◆◆◆ 회원 로그인[session] ◆◆◆</h3>
-<form  method="post" style="width: 300px;margin:0 auto 0 auto">
+<form  method="post" style="width: 300px;margin:0 auto 0 auto" 
+	   action="7-2.default_session_login_action.jsp">
 	아이디&nbsp;&nbsp;&nbsp; <input type="text" name="id"><br/>
 	패쓰워드 <input type="password" name="pass"><br/><br/>
 	<!-- 
@@ -40,4 +41,3 @@ form tag
 </form>
 </body>
 </html>
-

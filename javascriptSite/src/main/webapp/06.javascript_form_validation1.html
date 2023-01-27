@@ -74,10 +74,13 @@
 			}
 			
 			let idStr = new String(f.id.value);
-			if(idStr.charAt(0) >= 0 && idStr.charAt(0) <= 9){
-				alert('아이디의 첫글자는 알파벳대문자,소문자만 가능합니다.');
-				return false;
-			}
+			if((idStr.charAt(0) >= 'A' && idStr.charAt(0) <= 'Z') ||(idStr.charAt(0) >= 'a' && idStr.charAt(0) <= 'z')){
+					return true;
+				}else{
+					alert('아이디의 첫글자는 알파벳대문자,소문자만 가능합니다.');
+					return false;
+				}	
+			
 			
 			for(let i = 0; i < idStr.length; i++){
 				if((idStr.charAt(i) >= 'A' && idStr.charAt(i) <= 'Z') ||(idStr.charAt(i) >= 'a' && idStr.charAt(i) <= 'z') || (idStr.charAt(i) >= 0 && idStr.charAt(i) <=9) ){
