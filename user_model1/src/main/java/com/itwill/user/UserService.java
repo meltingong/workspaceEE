@@ -42,7 +42,7 @@ public class UserService {
 			result = 0;
 		}else {
 			//아이디 존재함
-			if(user.getPassword().equals(password)) {
+			if(user.isMatchPassword(password)) {
 				// 패스워드 일치
 				result = 2;
 			}else {
@@ -56,20 +56,20 @@ public class UserService {
 	 * 회원상세보기
 	 */
 	public User findUser(String userId)throws Exception{
-		return null;
+		return userDao.findUser(userId);
 	}
 	/*
 	 * 회원수정
 	 */
 	public int update(User user)throws Exception{
-		return 0;
+		return userDao.update(user);
 	}
 	
 	/*
 	 * 회원탈퇴
 	 */
 	public int remove(String userId)throws Exception{
-		return 0;
+		return userDao.delete(userId);
 	}
 	
 }

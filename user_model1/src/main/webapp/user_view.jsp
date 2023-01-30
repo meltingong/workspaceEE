@@ -2,14 +2,16 @@
 <%@page import="com.itwill.user.UserService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@include file = "user_login_check.jspf" %>
 <%
 	/*
 	1. UserService객체생성
 	2. 세션의 sUserId를 사용해서 UserService.findUser()메쏘드호출
 	3. 반환된 User객체출력
 	*/
-
+	
+	UserService userService = new UserService();
+	User loginUser = userService.findUser(sUserId);
 	
 
 %>
@@ -78,20 +80,20 @@
 										<td width=100 align=center bgcolor="E6ECDE" height="22">사용자
 											아이디</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10">
-											guard
+											<%=loginUser.getUserId() %>
 										</td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10">
-											김경호
+											<%=loginUser.getName() %>
 										</td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">이메일
 											주소</td>
 										<td width=490 bgcolor="ffffff" style="padding-left: 10">
-											guard@gmail.com
+											<%=loginUser.getEmail() %>
 										</td>
 									</tr>
 								</table>

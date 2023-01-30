@@ -16,7 +16,7 @@
 		response.sendRedirect("user_login_form.jsp");
 		return;
 	}
-	request.setCharacterEncoding("UTR-8");
+	request.setCharacterEncoding("UTF-8");
 	String userId = request.getParameter("userId");
 	String password = request.getParameter("password");
 	UserService userService = new UserService();
@@ -29,7 +29,22 @@
 	 * 1:패쓰워드 불일치
 	 * 2:로그인성공(세션)
 	 */
-	 
+	 if(result == 0){
+		 String msg1 = userId + "는 존재하지 않는 아이디 입니다.";
+		 out.println("<script>");
+		 out.println("alert('"+msg1+"');");
+		 out.println("location.href='user_login_form.jsp';");
+		 out.println("</script>");
+	 }else if(result == 1){
+		String msg2 = "아이디 또는 패스워드가 일치하지 않습니다.";
+		 out.println("<script>");
+		 out.println("alert('"+msg2+"');");
+		 out.println("location.href='user_login_form.jsp';");
+		 out.println("</script>");
+	 }else if(result == 2){
+		 session.setAttribute("sUserId", userId);
+		 response.sendRedirect("user_main.jsp");
+	 }
 	
 	
 	

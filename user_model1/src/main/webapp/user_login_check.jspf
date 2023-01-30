@@ -2,5 +2,9 @@
     pageEncoding="UTF-8"%>
 <%
 	//로그인체크
-
+	String sUserId = (String)session.getAttribute("sUserId");
+	if(sUserId == null){
+		response.sendRedirect("user_login_form.jsp");
+		return;
+	}
 %>
