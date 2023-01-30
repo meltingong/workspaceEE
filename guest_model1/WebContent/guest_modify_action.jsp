@@ -29,3 +29,4 @@ GET방식이면 guest_main.jsp redirection
 	guestService.update(updateGuest);
 	response.sendRedirect("guest_view.jsp?guest_no="+noStr);
 %>
+
