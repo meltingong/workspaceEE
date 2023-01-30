@@ -16,7 +16,7 @@
 		response.sendRedirect("user_login_form.jsp");
 		return;
 	}
-	request.setCharacterEncoding("UTF-8");
+	//request.setCharacterEncoding("UTF-8");
 	String userId = request.getParameter("userId");
 	String password = request.getParameter("password");
 	UserService userService = new UserService();

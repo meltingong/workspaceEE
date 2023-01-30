@@ -17,7 +17,7 @@
 		response.sendRedirect("user_main.jsp");
 		return;
 	}
-	request.setCharacterEncoding("UTF-8");
+	//request.setCharacterEncoding("UTF-8");
 	String password = request.getParameter("password");
 	String name = request.getParameter("name");
 	String email = request.getParameter("email");

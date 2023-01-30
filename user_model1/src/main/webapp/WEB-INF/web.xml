@@ -5,6 +5,20 @@
 	version="4.0">
 
 	<display-name>user_model1</display-name>
+	<filter>
+	<filter-name>Encoding Filter</filter-name>
+	<filter-class>com.itwill.filter.EncodingFilter</filter-class>
+	<init-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>
+</filter>
+
+<filter-mapping>
+	<filter-name>Encoding Filter</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>user_main.jsp</welcome-file>
 		<welcome-file>index.html</welcome-file>
