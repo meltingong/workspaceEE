@@ -36,8 +36,6 @@ public class BasicDataSourceExample {
 		BasicDataSource basicDataSource = new BasicDataSource();
 		Properties properties = new Properties();
 		properties.load(UserDao.class.getResourceAsStream("/jdbc.properties"));
-		
-		
 		basicDataSource.setDriverClassName(properties.getProperty("driverClassName"));
 		basicDataSource.setUrl(properties.getProperty("url"));
 		basicDataSource.setUsername(properties.getProperty("username"));

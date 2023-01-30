@@ -26,7 +26,15 @@ public class UserDao {
 		/*
 		 * jdbc.properties 파일을 Properties객체로생성
 		 */
+		BasicDataSource basicDataSource = new BasicDataSource();
+		Properties properties = new Properties();
+		properties.load(UserDao.class.getResourceAsStream("/jdbc.properties"));
+		basicDataSource.setDriverClassName(properties.getProperty("driverClassName"));
+		basicDataSource.setUrl(properties.getProperty("url"));
+		basicDataSource.setUsername(properties.getProperty("username"));
+		basicDataSource.setPassword(properties.getProperty("password"));
 		
+		dataSource = basicDataSource;
 	}
 
 	/*
