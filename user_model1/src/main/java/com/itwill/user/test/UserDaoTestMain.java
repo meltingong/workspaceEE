@@ -14,9 +14,9 @@ public class UserDaoTestMain {
 		System.out.println("3.findUser:"+userDao.findUser("guard4"));
 		System.out.println("4.remove:"+userDao.delete("guard4"));
 		System.out.println("5.findUserList:"+userDao.findUserList());
-		System.out.println("6.existedUser:"+userDao.countByUserId("guard1"));
-		System.out.println("6.existedUser:"+userDao.countByUserId("guard2"));
-		System.out.println("6.existedUser:"+userDao.countByUserId("guard4"));
+		System.out.println("6.countByUserId:"+userDao.countByUserId("guard1"));
+		System.out.println("6.countByUserId:"+userDao.countByUserId("guard2"));
+		System.out.println("6.countByUserId:"+userDao.countByUserId("guard4"));
 		
 		
 	}

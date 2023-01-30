@@ -5,7 +5,10 @@ package com.itwill.user;
  * - Dao를 이용해서 데이타베이스를 조작작업(CRUD)하는 클래스
  */
 public class UserService {
-	
+	private UserDao userDao;
+	public UserService() throws Exception {
+		userDao = new UserDao();
+	}
 	/*
 	 * 회원가입
 	 */
@@ -14,10 +17,15 @@ public class UserService {
 		 * -1:아이디중복
 		 *  1:회원가입성공
 		 */
-		
-		return 0;
-		
-		
+		if(userDao.countByUserId(user.getUserId()) == 1) {
+			//아이디 중복
+			return -1;
+		}else {
+			// 1. 아이디 중복X
+			// 2. 회원가입
+			int insertRowCount = userDao.insert(user);
+			return insertRowCount;
+		}
 	}
 	/*
 	 * 회원로그인
@@ -28,7 +36,9 @@ public class UserService {
 	public int login(String userId,String password) throws Exception{
 		int result=-1;
 		//1.아이디존재여부
-		
+		if(userDao.findUser(userId) == null) {
+			result = 0;
+		}
 		return result;
 	}
 	/*
