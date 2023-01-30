@@ -193,7 +193,6 @@ public class UserDao {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		int countByUserId = 0;
 		try {
 			con = dataSource.getConnection();
 			pstmt = con.prepareStatement(UserSQL.USER_SELECT_BY_ID_COUNT);
@@ -202,7 +201,7 @@ public class UserDao {
 			rs.next();
 			int count = rs.getInt("cnt");
 			if (count == 1) {
-				countByUserId = 1;
+				return count; 
 			}
 		} finally {
 			/*
@@ -215,7 +214,7 @@ public class UserDao {
 			if (con != null)
 				con.close();
 		}
-		return countByUserId;
+		return 0;
 	}
 
 }
