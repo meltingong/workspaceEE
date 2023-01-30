@@ -11,7 +11,6 @@
  	3.GuestService객체 findByNo(guest_no) 메쏘드호출
  	4.Guest 데이타를 form의 input element의  value  속성에 출력
 */
-
 	if(request.getMethod().equalsIgnoreCase("GET")){
 		response.sendRedirect("guest_main.jsp");
 		return;
@@ -20,7 +19,6 @@
 	String guest_no = request.getParameter("guest_no");
 	GuestService guestService = new GuestService();
 	Guest guest = guestService.findByNo(Integer.parseInt(guest_no));
-
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -70,13 +68,13 @@
 					</tr>
 				</table> <!-- modify Form  -->
 				<form name="f" method="post">
-					<input type="hidden" name="guest_no" value="25" />
+					<input type="hidden" name="guest_no" value="<%=guest.getGuest_no()%>" />
 					<table border="0" cellpadding="0" cellspacing="1" width="590"
 						bgcolor="BBBBBB">
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">번호</td>
 							<td align="left" width=490 bgcolor="ffffff"
-								style="padding-left: 10px"><%=guest.getGuest_no() %></td>
+								style="padding-left: 10px"><%=guest.getGuest_no()%></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
@@ -97,7 +95,7 @@
 							<td align="left" width=490 bgcolor="ffffff"
 								style="padding-left: 10px"><input type="text"
 								style="width: 240" name="guest_email"
-								value="<%=guest.getGuest_email()%> "></td>
+								value="<%=guest.getGuest_email()%>"></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
@@ -110,7 +108,7 @@
 							<td width=100 align=center bgcolor="E6ECDE" height="22">내용</td>
 							<td align="left" width=490 bgcolor="ffffff"
 								style="padding-left: 10px"><textarea wrap="soft"
-									style="width: 240px" rows="10" name="guest_content"><%=guest.getGuest_content() %></textarea>
+									style="width: 240px" rows="10" name="guest_content"><%=guest.getGuest_content()%></textarea>
 
 							</td>
 						</tr>
