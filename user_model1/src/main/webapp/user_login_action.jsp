@@ -20,7 +20,7 @@
 	String userId = request.getParameter("userId");
 	String password = request.getParameter("password");
 	UserService userService = new UserService();
-	userService.login(userId, password);
+	int result = userService.login(userId, password);
 	
 	/*
 	 * 회원로그인

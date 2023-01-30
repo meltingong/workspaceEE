@@ -36,8 +36,19 @@ public class UserService {
 	public int login(String userId,String password) throws Exception{
 		int result=-1;
 		//1.아이디존재여부
-		if(userDao.findUser(userId) == null) {
+		User user = userDao.findUser(userId);
+		if(user == null) {
+			//아이디 존재안함
 			result = 0;
+		}else {
+			//아이디 존재함
+			if(user.getPassword().equals(password)) {
+				// 패스워드 일치
+				result = 2;
+			}else {
+				// 패스워드 불일치
+				result = 1;
+			}
 		}
 		return result;
 	}

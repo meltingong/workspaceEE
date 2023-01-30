@@ -32,10 +32,10 @@
 		/********case1 script*********/
 		out.println("<script>");
 		out.println("alert('"+msg+"');");
-		out.println("location.href='';");
+		out.println("location.href='user_write_form.jsp';");
 		out.println("</script>");
 	}else if (result == 1){
 		/**********case2 회원가입 성공********/
-		
+		response.sendRedirect("user_login_form.jsp");
 	}
 %>
