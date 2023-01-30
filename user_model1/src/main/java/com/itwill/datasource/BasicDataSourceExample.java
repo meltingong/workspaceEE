@@ -20,17 +20,32 @@ package com.itwill.datasource;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Properties;
+
 import javax.sql.DataSource;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
+
+import com.itwill.user.UserDao;
 
 
 
 public class BasicDataSourceExample {
 	public static void main(String[] args) throws Exception {
 		
-		/******************** << javax.sql.DataSource >> **************************/
+		BasicDataSource basicDataSource = new BasicDataSource();
+		Properties properties = new Properties();
+		properties.load(UserDao.class.getResourceAsStream("/jdbc.properties"));
 		
+		
+		basicDataSource.setDriverClassName(properties.getProperty("driverClassName"));
+		basicDataSource.setUrl(properties.getProperty("url"));
+		basicDataSource.setUsername(properties.getProperty("username"));
+		basicDataSource.setPassword(properties.getProperty("password"));
+		/******************** << javax.sql.DataSource >> **************************/
+		DataSource dataSource = basicDataSource;
+		Connection con = dataSource.getConnection();
+		System.out.println(con);
 		/************************************************************************/
 		
 	}
