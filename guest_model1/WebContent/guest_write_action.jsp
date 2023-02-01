@@ -16,6 +16,7 @@
 			response.sendRedirect("guest_main.jsp");
 			return;
 		}
+try{
 		request.setCharacterEncoding("UTF-8");
 		String guest_name = request.getParameter("guest_name");
 		String guest_email = request.getParameter("guest_email");
@@ -27,4 +28,8 @@
 		GuestService guestService = new GuestService();
 		guestService.insert(guest);
 		response.sendRedirect("guest_list.jsp");
+}catch(Exception e){
+	e.printStackTrace();
+	response.sendRedirect("guest_error.jsp");
+}
 %>

@@ -12,12 +12,32 @@
 * 3.GuestService객체 findByNo() 메쏘드호출
 * 4.Guest  출력
 */
-
 	request.setCharacterEncoding("UTF-8");
-	String guest_no = request.getParameter("guest_no");
-	GuestService guestService = new GuestService();
-	Guest guest = guestService.findByNo(Integer.parseInt(guest_no));
 
+	String guest_no = request.getParameter("guest_no");
+	 if(guest_no==null || guest_no.equals("")){
+		 response.sendRedirect(request.getContextPath());
+		 return;
+	 }
+	 Guest guest = null;
+	try{
+		GuestService guestService = new GuestService();
+		guest = guestService.findByNo(Integer.parseInt(guest_no));
+		if(guest==null){
+	 		throw new NumberFormatException("guest가 null");
+	 	}
+	 }catch(NumberFormatException e){
+		 e.printStackTrace();
+		// response.sendRedirect("guest_list.jsp");
+	 	out.println("<script>");
+	 	out.println("alert('존재하지않는 게시물입니다.');");
+	 	out.println("location.href='guest_list.jsp';");
+	 	out.println("</script>");
+	 	return;
+	 }catch(Exception e){
+		 e.printStackTrace();
+		 response.sendRedirect("guest_error.jsp");
+	 }
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

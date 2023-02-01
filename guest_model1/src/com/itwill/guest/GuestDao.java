@@ -27,7 +27,7 @@ public class GuestDao {
 							rs.getString("guest_title"),
 							rs.getString("guest_content")));
 		}
-		
+		con.close();
 		return guestList;
 	}
 
@@ -46,7 +46,7 @@ public class GuestDao {
 							rs.getString("guest_title"),
 							rs.getString("guest_content"));
 		}
-		
+		con.close();
 		return guest;
 	}
 
