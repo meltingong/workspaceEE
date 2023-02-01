@@ -123,7 +123,10 @@
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="110">내용</td>
 										<td width=490 bgcolor="ffffff" align="left"
-											style="padding-left: 10px"><%=guest.getGuest_content()%></td>
+											style="padding-left: 10px"><%=guest.getGuest_content()
+																			.replace("<","&lt;")
+																			.replace(">","&gt;")
+																			.replace("\n","<br>")%></td>
 									</tr>
 								</table>
 							</form> <br />
