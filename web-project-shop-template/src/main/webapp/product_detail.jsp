@@ -1,11 +1,28 @@
-
+<%@page import="com.itwill.shop.product.Product"%>
+<%@page import="com.itwill.shop.product.ProductService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+String p_noStr = request.getParameter("p_no");
+if (p_noStr == null || p_noStr.equals("")) {
+	response.sendRedirect("product_list.jsp");
+	return;
+}
+boolean isLogin = false;
+if (session.getAttribute("sUserId") != null) {
+	isLogin = true;
+}
 
-
-
-
-
+ProductService productService = new ProductService();
+Product product = productService.productDetail(Integer.parseInt(p_noStr));
+if (product == null) {
+	out.println("<script>");
+	out.println("alert('매진된상품입니다.');");
+	out.println("location.href='product_list.jsp';");
+	out.println("</script>");
+	return;
+}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,7 +34,7 @@
 </style>
 <script type="text/javascript">
 	function add_cart_popup_window(){
-		if (true) {
+		if (<%=!isLogin%>) {
 			alert('로그인 하세요');
 			location.href = 'user_login_form.jsp';
 		} else {
@@ -35,7 +52,7 @@
 	}
 
 	function order_create_form() {
-		if (true) {
+		if (<%=!isLogin%>) {
 			alert('로그인 하세요');
 			location.href = 'user_login_form.jsp';
 		} else {
@@ -52,7 +69,7 @@
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
 	<form name="product_detail_form">
-		<input type="hidden" name="p_no" value="2">
+		<input type="hidden" name="p_no" value="<%=product.getP_no()%>">
 		<input type="hidden" name="p_qty" value="1"> <input
 			type="hidden" name="buyType" value="direct">
 	</form>
@@ -61,62 +78,14 @@
 		<!-- header start -->
 		<div id="header">
 			<!-- include_common_top.jsp start-->
-			
-
-
-
-
-		
-<div id="menu">
-	<ul>
-		<li id="logo"><a href="shop_main.jsp"></a></li>
-		
-			<li id="mypage" title="나의페이지" ><a href="user_login_form.jsp" ></a></li>
-			<li id="cart" title="장바구니"><span class="w3-badge-no-login w3-green-no-login w3-margin-right">0 </span><a href="user_login_form.jsp" title="장바구니"></a></li>
-			
-		
-	</ul>
-</div>
-<h1>
-	<a href=""></a>
-</h1>
-
+			<jsp:include page="include_common_top.jsp" />
 			<!-- include_common_top.jsp end-->
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
 		<div id="navigation">
 			<!-- include_common_left.jsp start-->
-			
-
-
-
-
-	
-<script type="text/javascript">
-	function login_message() {
-		alert('로그인하세요');
-		location.href = 'user_login_form.jsp';
-	}
-</script>
-<p>
-	<strong>메 뉴</strong>
-</p>
-<ul>
-	
-	     	<li><a href="user_login_form.jsp">로그인</a></li>
-			<li><a href="user_write_form.jsp">회원가입</a></li>
-			<li><a href="user_write_form_popup.jsp">회원가입[팝업]</a></li>
-			<li><a href=""></a></li>
-			<li><a href="javascript:login_message();">장바구니</a></li>
-	
-		<li><a href="product_list.jsp">상품리스트</a></li>
-		<li><a href=""></a></li>
-		<li><a href="board_list.jsp">게시판리스트</a></li>
-		<li><a href="board_write.jsp">게시판쓰기</a></li>
-		
-</ul>
-
+			<jsp:include page="include_common_left.jsp" />
 			<!-- include_common_left.jsp end-->
 		</div>
 		<!-- navigation end-->
@@ -171,18 +140,18 @@
 											</select> 마리<br><br> 
 												<input width=40px height=40px type=image src='image/cart.png' value="장바구니담기[장바구니보여주기]" title="장바구니담기[장바구니보여주기]" style="font-size: 6pt;"/> 
 												<a href="javascript:add_cart_popup_window(this.parentElement);" title="장바구니담기[계속쇼핑팝업]"><img src='image/cart25.png' style="margin-bottom: 5px "></a>
-												<input type="hidden" name=p_no value="2">
+												<input type="hidden" name=p_no value="<%=product.getP_no()%>">
 										</form>
 									</td>
 									<td width=40% height=200 align=center><img border=0
-										src='image/dalma.jpg' width=120 height=200></td>
+										src='image/<%=product.getP_image()%>' width=120 height=200></td>
 									<td width=30% height=200 class=t1>
 										<ol type="disc">
-											<li><b>견종 : 달마시안&nbsp;&nbsp;&nbsp;
+											<li><b>견종 : <%=product.getP_name()%>&nbsp;&nbsp;&nbsp;
 											</b></li>
-											<li><font color=#FF0000>가격 : 500000&nbsp;&nbsp;&nbsp;
+											<li><font color=#FF0000>가격 : <%=product.getP_price()%>&nbsp;&nbsp;&nbsp;
 											</font></li>
-											<li><font color=#0000FF>기타 상세 정보 등...</font></li>
+											<li><font color=#0000FF><%=product.getP_desc()%></font></li>
 										</ol>
 									</td>
 								</tr>
@@ -210,10 +179,7 @@
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			
-	<p align="center">Copyright (&copy;) By Java Class 5. All
-		rights reserved.</p>
-
+			<jsp:include page="include_common_bottom.jsp" />
 			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>

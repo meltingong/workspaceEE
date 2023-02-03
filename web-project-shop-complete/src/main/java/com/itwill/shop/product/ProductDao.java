@@ -28,7 +28,7 @@ public class ProductDao {
 		dataSource = basicDataSource;
 	}
 	/*
-	 * selelctByPK : 상품번호로 검색
+	 * selectByPK : 상품번호로 검색
 	 */
 	public Product findByPrimaryKey(int p_no) throws Exception{
 		Product product=null;
