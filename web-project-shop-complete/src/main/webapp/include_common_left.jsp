@@ -33,14 +33,15 @@
 	%>	
 		<li><a href="user_view.jsp"><%=sUser.getName()+"님"%></a></li>
 		<li><a href="user_logout_action.jsp">로그아웃</a></li>
-		<li><a href=""></a></li>
+		<li></li>
 		<li><a href="cart_view.jsp">장바구니[전체주문]<span class="w3-badge w3-badge-menu w3-green cart_item_count"><%=cart_item_count%></span></a></li>
 		<li><a href="cart_view_select.jsp">장바구니[선택주문]<span class="w3-badge w3-badge-menu w3-green cart_item_count"><%=cart_item_count%></span></a></li>
 		<li><a href="cart_view_select_update_qty.jsp">장바구니[수량변경]<span class="w3-badge w3-badge-menu w3-green cart_item_count"><%=cart_item_count%></span></a></li>
 		<li><a href="cart_view_select_update_qyt_all_check_delete_image.jsp">장바구니[최종완성]<span class="w3-badge w3-badge-menu w3-green cart_item_count"><%=cart_item_count%></span></a></li>
 		<li><a href=""></a></li>
 		<li><a href="order_list.jsp">주문목록</a></li>
-		<li><a href="order_orderitem_list.jsp">주문+주문아이템 목록</a></li>
+		<li><a href="order_list_orderitem1.jsp">주문+아이템 목록1</a></li>
+		<li><a href="order_list_orderitem2.jsp">주문+아이템 목록2</a></li>
 		
 	<%} %>
 		<li><a href="product_list.jsp">상품리스트</a></li>

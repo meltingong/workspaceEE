@@ -154,11 +154,60 @@ public class OrderDao {
 	 * 주문+주문아이템 전체(특정사용자)
 	 */
 	public List<Order> findOrderWithOrderItemByUserId(String sUserId) throws Exception {
-		List<Order> orderList = findOrderByUserId(sUserId);
-		for (int i = 0; i < orderList.size(); i++) {
-			Order order = orderList.get(i);
-			Order orderWithOrderItem = this.findByOrderNo(order.getO_no());
-			orderList.set(i, orderWithOrderItem);
+		
+		List<Order> orderList = new ArrayList<Order>();
+		Connection con = null;
+		PreparedStatement pstmt1 = null;
+		PreparedStatement pstmt2 = null;
+		ResultSet rs1 = null;
+		ResultSet rs2 = null;
+		try {
+			con = dataSource.getConnection();
+			/*
+			 * select * from orders where userid='guard1'
+			 */
+			pstmt1 = con.prepareStatement(OrderSQL.ORDER_SELECT_BY_USERID);
+			pstmt1.setString(1, sUserId);
+			rs1 = pstmt1.executeQuery();
+			while (rs1.next()) {
+				orderList.add(new Order(rs1.getInt("o_no"), rs1.getString("o_desc"), rs1.getDate("o_date"),
+						rs1.getInt("o_price"), rs1.getString("userid")));
+			}
+				
+			pstmt2 = con.prepareStatement(OrderSQL.ORDER_SELECT_WITH_ORDERITEM_BY_O_NO);
+			for (int i = 0; i < orderList.size(); i++) {
+				Order tempOrder = orderList.get(i);
+				/*
+				 * select * from orders o join order_item oi on o.o_no=oi.o_no join product p on
+				 * oi.p_no=p.p_no where o.userid=? and o.o_no = ?
+				 */
+				pstmt2.setInt(1, tempOrder.getO_no());
+				rs2 = pstmt2.executeQuery();
+				/*
+				 * O_NO O_DESC O_DATE O_PRICE USERID OI_NO OI_QTY O_NO P_NO P_NAME P_PRICE
+				 * P_IMAGE P_DESC ----------
+				 * -----------------------------------------------------------------------------
+				 * ---------------------------------- 1 비글외1마리 2023/01/06 1550000 guard1 1 1 1 1
+				 * 비글 550000 bigle.png 기타 상세 정보 등... 0 1 비글외1마리 2023/01/06 1550000 guard1 2 2 1
+				 * 2 달마시안 500000 dalma.jpg 기타 상세 정보 등... 0
+				 */
+				Order orderWithOrderItem=null;
+				if (rs2.next()) {
+					orderWithOrderItem = new Order(rs2.getInt("o_no"), rs2.getString("o_desc"), rs2.getDate("o_date"), rs2.getInt("o_price"),
+							rs2.getString("userid"));
+					do {
+						orderWithOrderItem.getOrderItemList()
+								.add(new OrderItem(rs2.getInt("oi_no"), rs2.getInt("oi_qty"), rs2.getInt("o_no"),
+										new Product(rs2.getInt("p_no"), rs2.getString("p_name"), rs2.getInt("p_price"),
+												rs2.getString("p_image"), rs2.getString("p_desc"), rs2.getInt("p_click_count"))));
+					} while (rs2.next());
+				}
+				orderList.set(i, orderWithOrderItem);
+			}
+		} finally {
+			if (con != null) {
+				con.close();
+			}
 		}
 		return orderList;
 	}

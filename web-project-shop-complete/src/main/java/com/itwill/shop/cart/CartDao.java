@@ -181,34 +181,38 @@ public class CartDao {
 		Connection con=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		
-		con=dataSource.getConnection();
-		/*
-		select c.*,p.* from cart c join product p on c.p_no=p.p_no where userid='guard1'
-		
-		CART_NO   CART_QTY  USERID    	P_NO 	P_NAME      P_PRICE    	P_IMAGE          P_DESC                                                                                                P_DESC                                                                                                                                                                                                   P_CLICK_COUNT
-		---------- ---------- --------------------------------------------------------------------------
-		   	8			1	guard1		5		포메라니안	800000		pomeranian.jpg	 기타 상세 정보 등...	
-			9			1	guard1		8		사모예드	800000		samoyed.jpg		 기타 상세 정보 등...	0
-			7			1	guard1		6		샤페이		700000		shaipei.jpg	  	 기타 상세 정보 등...	0
-		*/   
-		pstmt=con.prepareStatement(CartSQL.CART_SELECT_BY_USERID);
-		pstmt.setString(1, userId);
-		rs=pstmt.executeQuery();
-		while(rs.next()) {
-			cartList.add(new Cart( rs.getInt("cart_no"),
-							       rs.getInt("cart_qty"),
-							       rs.getString("userid"),
-							       new Product(rs.getInt("p_no"),
-							    		       rs.getString("p_name"),
-							    		       rs.getInt("p_price"),
-							    		       rs.getString("p_image"),
-							    		       rs.getString("p_desc"), 
-							    		       rs.getInt("p_click_count"))
-								 )
-					);
+		try {
+			con=dataSource.getConnection();
+			/*
+			select c.*,p.* from cart c join product p on c.p_no=p.p_no where userid='guard1'
+			
+			CART_NO   CART_QTY  USERID    	P_NO 	P_NAME      P_PRICE    	P_IMAGE          P_DESC                                                                                                P_DESC                                                                                                                                                                                                   P_CLICK_COUNT
+			---------- ---------- --------------------------------------------------------------------------
+			   	8			1	guard1		5		포메라니안	800000		pomeranian.jpg	 기타 상세 정보 등...	
+				9			1	guard1		8		사모예드	800000		samoyed.jpg		 기타 상세 정보 등...	0
+				7			1	guard1		6		샤페이		700000		shaipei.jpg	  	 기타 상세 정보 등...	0
+			*/   
+			pstmt=con.prepareStatement(CartSQL.CART_SELECT_BY_USERID);
+			pstmt.setString(1, userId);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				cartList.add(new Cart( rs.getInt("cart_no"),
+								       rs.getInt("cart_qty"),
+								       rs.getString("userid"),
+								       new Product(rs.getInt("p_no"),
+								    		       rs.getString("p_name"),
+								    		       rs.getInt("p_price"),
+								    		       rs.getString("p_image"),
+								    		       rs.getString("p_desc"), 
+								    		       rs.getInt("p_click_count"))
+									 )
+						);
+			}
+		}finally {
+			if(con!=null) {
+				con.close();
+			}
 		}
-		
 		
 		return cartList;
 	}
@@ -259,22 +263,28 @@ public class CartDao {
 		ResultSet rs=null;
 		
 		String selectQuery="select * from cart c join product p on c.p_no=p.p_no where cart_no=?";
-		con=dataSource.getConnection();
-		pstmt=con.prepareStatement(CartSQL.CART_SELECT_BY_CART_NO);
-		pstmt.setInt(1,cart_no);
-		rs=pstmt.executeQuery();
-		if(rs.next()) {
-			cart=new Cart(rs.getInt("cart_no"),
-						rs.getInt("cart_qty"),
-						 rs.getString("userId"),
-						 new Product(rs.getInt("p_no"),
-								rs.getString("p_name"),
-								rs.getInt("p_price"),
-								rs.getString("p_image"),
-								rs.getString("p_desc"),
-								rs.getInt("p_click_count"))
-					
-					 );
+		try {
+			con=dataSource.getConnection();
+			pstmt=con.prepareStatement(CartSQL.CART_SELECT_BY_CART_NO);
+			pstmt.setInt(1,cart_no);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				cart=new Cart(rs.getInt("cart_no"),
+							rs.getInt("cart_qty"),
+							 rs.getString("userId"),
+							 new Product(rs.getInt("p_no"),
+									rs.getString("p_name"),
+									rs.getInt("p_price"),
+									rs.getString("p_image"),
+									rs.getString("p_desc"),
+									rs.getInt("p_click_count"))
+						
+						 );
+			}
+		}finally {
+			if(con!=null) {
+				con.close();
+			}
 		}
 		return cart;
 	}
