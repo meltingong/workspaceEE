@@ -115,7 +115,7 @@ if (product == null) {
 									<td width=40% align=center class=t1><font size=2
 										color=#0000FF><b>상품 상세</b></font></td>
 									<td width=30% align=center class=t1><font size=2
-										color=#0000FF><b>옵션</b></font></td>
+										color=#0000FF><b>색상</b></font></td>
 								</tr>
 								<tr width=100%>
 									<td colspan=3 height=5><hr color=#556b2f></td>
@@ -132,7 +132,6 @@ if (product == null) {
 									<!--tr width=100%-->
 									<td width=30% height=200 align=center class=t1>
 										<form name="add_cart_form" method="post" action="cart_add_action.jsp">
-											색상 :
 											<!-- 
 											 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 											-->

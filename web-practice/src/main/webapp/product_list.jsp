@@ -106,7 +106,7 @@ function add_cart_popup_window(f){
 											<form style="display: inline;">
 												<input type="hidden" name="p_no" value="<%=product.getP_no()%>">
 											</form><br> <font
-											color=black>가격:<%=new DecimalFormat("#,##0").format(product.getP_price())%>원
+											color=black><%=new DecimalFormat("#,##0").format(product.getP_price())%>
 										</font></td>
 									<%if(i%product_column_size==3){%>
 									</tr>

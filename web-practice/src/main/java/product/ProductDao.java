@@ -31,7 +31,15 @@ public class ProductDao {
 		basicDataSource.setPassword(properties.getProperty("password"));
 		dataSource = basicDataSource;
 	}
+	/*
+	 * 상품 옵션 update
+	 */
 	
+	
+	
+	/*
+	 * 상품 번호로 검색
+	 */
 	public Product findByPrimaryKey(int p_no) throws Exception {
 		Product product = null;
 		Connection con = dataSource.getConnection();
@@ -49,7 +57,9 @@ public class ProductDao {
 		}
 		return product;
 	}
-	
+	/*
+	 * 상품 전체 리스트
+	 */
 	public List<Product> findAll() throws Exception{
 		List<Product> productList = new ArrayList<Product>();
 		
