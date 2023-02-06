@@ -70,10 +70,6 @@ public class ProductDao {
 	}
 	
 	/*
-	 * 상품 카테고리 선택 시 카테고리에 해당하는 아이템 모두 보여주기
-	 */
-	
-	/*
 	 * 전체 리스트에서 카테고리 검색 시 해당 카테고리 아이템 전부 보여주기
 	 */
 	public List<Product> searchCategory(String keyword) throws Exception{
