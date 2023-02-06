@@ -45,9 +45,7 @@ public class ProductDao {
 							rs.getInt("p_price"),
 							rs.getString("p_desc"),
 							rs.getString("p_image"),
-							rs.getString("p_option"),
-							rs.getInt("p_click_count"),
-							new Category(rs.getInt("ca_no"),null));
+							rs.getString("p_option"));
 		}
 		return product;
 	}
@@ -65,9 +63,7 @@ public class ProductDao {
 									rs.getInt("p_price"),
 									rs.getString("p_desc"),
 									rs.getString("p_image"),
-									rs.getString("p_option"),
-									rs.getInt("p_click_count"),
-										new Category(rs.getInt("ca_no"),null));
+									rs.getString("p_option"));
 			productList.add(product);
 		}
 		return productList;
@@ -93,9 +89,7 @@ public class ProductDao {
 									rs.getInt("p_price"),
 									rs.getString("p_desc"),
 									rs.getString("p_image"),
-									rs.getString("p_option"),
-									rs.getInt("p_click_count"),
-										new Category(rs.getInt("ca_no"),null));
+									rs.getString("p_option"));
 			searchProductList.add(product);
 		}
 		return searchProductList;
@@ -117,9 +111,7 @@ public class ProductDao {
 									rs.getInt("p_price"),
 									rs.getString("p_desc"),
 									rs.getString("p_image"),
-									rs.getString("p_option"),
-									rs.getInt("p_click_count"),
-										new Category(rs.getInt("ca_no"),null));
+									rs.getString("p_option"));
 			searchProductList.add(product);
 		}
 		return searchProductList;
@@ -138,9 +130,7 @@ public class ProductDao {
 							rs.getInt("p_price"),
 							rs.getString("p_desc"),
 							rs.getString("p_image"),
-							rs.getString("p_option"),
-							rs.getInt("p_click_count"),
-								new Category(rs.getInt("ca_no"),null));
+							rs.getString("p_option"));
 			categorySortList.add(product);
 		}
 		return categorySortList;
@@ -159,9 +149,7 @@ public class ProductDao {
 							rs.getInt("p_price"),
 							rs.getString("p_desc"),
 							rs.getString("p_image"),
-							rs.getString("p_option"),
-							rs.getInt("p_click_count"),
-								new Category(rs.getInt("ca_no"),null));
+							rs.getString("p_option"));
 			categorySortList.add(product);
 		}
 		return categorySortList;

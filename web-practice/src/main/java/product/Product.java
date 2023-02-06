@@ -7,7 +7,6 @@ public class Product {
 	private String p_desc;		// 상품 설명
 	private String p_image;		// 상품 이미지
 	private String p_option;	// 상품 옵션 로즈골드 , 골드 , 화이트골드
-	private int p_click_count;	// 상품 클릭 카운트
 	private Category category;  //상품 카테고리
 	
 	
@@ -16,16 +15,13 @@ public class Product {
 	}
 
 
-	public Product(int p_no, String p_name, int p_price, String p_desc, String p_image, String p_option,
-			int p_click_count, Category category) {
+	public Product(int p_no, String p_name, int p_price, String p_desc, String p_image, String p_option) {
 		this.p_no = p_no;
 		this.p_name = p_name;
 		this.p_price = p_price;
 		this.p_desc = p_desc;
 		this.p_image = p_image;
 		this.p_option = p_option;
-		this.p_click_count = p_click_count;
-		this.category = category;
 	}
 
 	public int getP_no() {
@@ -76,14 +72,6 @@ public class Product {
 		this.p_option = p_option;
 	}
 
-	public int getP_click_count() {
-		return p_click_count;
-	}
-
-	public void setP_click_count(int p_click_count) {
-		this.p_click_count = p_click_count;
-	}
-
 	public Category getCategory() {
 		return category;
 	}
@@ -92,11 +80,11 @@ public class Product {
 		this.category = category;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Product [p_no=" + p_no + ", p_name=" + p_name + ", p_price=" + p_price + ", p_desc=" + p_desc
-				+ ", p_image=" + p_image + ", p_option=" + p_option + ", p_click_count=" + p_click_count + ", category="
-				+ category + "]\n";
+				+ ", p_image=" + p_image + ", p_option=" + p_option + ", category=" + category + "]";
 	}
 
 	
