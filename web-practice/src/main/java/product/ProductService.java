@@ -32,4 +32,19 @@ public class ProductService {
 		return productDao.searchProductName(keyword);
 	}
 	
+	/*
+	 * 상품 카테고리 내에서 가격 내림차순 정렬
+	 */
+	public List<Product> categorySortDesc(int ca_no) throws Exception{
+		return productDao.categorySortDesc(ca_no);
+	}
+	
+	/*
+	 * 상품 카테고리 내에서 가격 오름차순 정렬
+	 */
+	public List<Product> categorySortAsc(int ca_no) throws Exception{
+		return productDao.categorySortAsc(ca_no);
+	}
+	
+	
 }
