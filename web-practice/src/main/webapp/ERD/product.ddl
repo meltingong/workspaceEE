@@ -14,13 +14,14 @@ CREATE TABLE product(
 		p_desc                        		VARCHAR2(300)		 NOT NULL,
 		p_image                       		VARCHAR2(100)		 NOT NULL,
 		p_option                      		VARCHAR2(20)		 NOT NULL,
-		p_click_count                 		NUMBER(10)		 NULL ,
 		ca_no                         		NUMBER(10)		 NULL 
 );
 
 DROP SEQUENCE product_p_no_SEQ;
 
 CREATE SEQUENCE product_p_no_SEQ NOMAXVALUE NOCACHE NOORDER NOCYCLE;
+
+
 
 ALTER TABLE category ADD CONSTRAINT IDX_category_PK PRIMARY KEY (ca_no);
 
