@@ -34,7 +34,16 @@ public class ProductDao {
 	/*
 	 * 상품 옵션 update
 	 */
-	
+	public int update(int p_no, String p_option) throws SQLException {
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ProductSQL.PRODUCT_OPTION_UPDATE);
+		pstmt.setString(1, p_option);
+		pstmt.setInt(2, p_no);	
+		int rowCount = pstmt.executeUpdate();
+		pstmt.close();
+		con.close();
+		return rowCount;
+	}
 	
 	
 	/*

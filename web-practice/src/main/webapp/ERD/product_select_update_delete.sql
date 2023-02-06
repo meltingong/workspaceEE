@@ -15,3 +15,6 @@ select * from product p join category c on p.ca_no = c.ca_no and p.ca_no = 1;
 select * from product p join category c on p.ca_no = c.ca_no and c.ca_name = '반지';
 --상품명 키워드로 검색
 select * from product where p_name like '%링'; 
+
+--옵션만 업데이트
+update product set p_option='골드' where p_no = 1;

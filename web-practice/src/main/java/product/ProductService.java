@@ -1,11 +1,19 @@
 package product;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class ProductService {
 	private ProductDao productDao;
 	public ProductService() throws Exception {
 		productDao = new ProductDao();
+	}
+	
+	/*
+	 * 고객 옵션 선택시 db에 고객이 선택한 옵션으로 상품 옵션 변경
+	 */
+	public int updateOption(int p_no,String p_option) throws Exception {
+		return productDao.update(p_no, p_option);
 	}
 	/*
 	 * 전체 상품 보기
