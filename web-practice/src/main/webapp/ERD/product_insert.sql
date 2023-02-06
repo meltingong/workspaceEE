@@ -28,5 +28,5 @@ insert into product values(product_p_no_SEQ.nextval,'엘사 퍼레티',1190000,'
 insert into product values(product_p_no_SEQ.nextval,'스마일 이어링',3330000,'Tiffany T 컬렉션은 입체적인 각도와 깔끔한 선이 만들어내는 명료한 스타일로 시선을 사로잡습니다.','earing1.png','로즈골드',4);
 insert into product values(product_p_no_SEQ.nextval,'링크 이어링',2560000,'Tiffany HardWear의 우아하면서도 강렬한 라인은 뉴욕 여성들의 강인한 정신을 떠오르게 합니다.','earing2.png','화이트골드',4);
 insert into product values(product_p_no_SEQ.nextval,'엘사 퍼레티 드롭형 이어링',5250000,'네 개의 라운드 브릴리언트 다이아몬드가 세팅된 18K 골드 피어스드 이어링.','earing3.png','골드',4);
-insert into product values(product_p_no_SEQ.nextval,'티파니 락',1440000,'','earing4.png','로즈골드',4);
-insert into product values(product_p_no_SEQ.nextval,'티파니 락',1440000,'','earing5.png','로즈골드',4);
+insert into product values(product_p_no_SEQ.nextval,'올리브 리프 클라이머 이어링',5800000,'평화와 풍요를 상징하는 올리브 나무에서 영감을 받아 탄생했습니다.','earing4.png','화이트골드',4);
+insert into product values(product_p_no_SEQ.nextval,'스템 이어링',1770000,'여성스럽고 섬세한 티파니 플뢰르 드 리스 컬렉션은 세련되고 고상한 디자인으로 자신감을 드러냅니다. ','earing5.png','화이트골드',4);
