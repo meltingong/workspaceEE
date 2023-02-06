@@ -153,7 +153,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 	
 	
-      <Context docBase="jspSite" path="/jspSite" reloadable="true" source="org.eclipse.jst.jee.server:jspSite"/><Context docBase="web-project-shop-template" path="/web-project-shop-template" reloadable="true" source="org.eclipse.jst.jee.server:web-project-shop-template"/><Context docBase="web-project-shop-complete" path="/web-project-shop-complete" reloadable="true" source="org.eclipse.jst.jee.server:web-project-shop-complete"/></Host>
+      <Context docBase="jspSite" path="/jspSite" reloadable="true" source="org.eclipse.jst.jee.server:jspSite"/><Context docBase="web-project-shop-template" path="/web-project-shop-template" reloadable="true" source="org.eclipse.jst.jee.server:web-project-shop-template"/><Context docBase="web-project-shop-complete" path="/web-project-shop-complete" reloadable="true" source="org.eclipse.jst.jee.server:web-project-shop-complete"/><Context docBase="web-project-team1-bookbread" path="/" reloadable="true" source="org.eclipse.jst.jee.server:web-project-team1-bookbread"/></Host>
     </Engine>
   </Service>
 </Server>

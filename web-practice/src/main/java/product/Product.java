@@ -8,6 +8,8 @@ public class Product {
 	private String p_image;		// 상품 이미지
 	private String p_option;	// 상품 옵션 로즈골드 , 골드 , 화이트골드
 	private int p_click_count;	// 상품 클릭 카운트
+	private Category category;  //상품 카테고리
+	
 	
 	public Product() {
 	
