@@ -19,6 +19,12 @@ public class ProductDaoTest {
 		
 		System.out.println("상품 이름으로 검색");
 		System.out.println(productDao.searchProductName("링"));
+		
+		System.out.println("카테고리 선택 후 가격 내림차순으로 정렬");
+		System.out.println(productDao.categorySortDesc(1));
+
+		System.out.println("카테고리 선택 후 가격 오름차순으로 정렬");
+		System.out.println(productDao.categorySortAsc(1));
 	}
 
 }
