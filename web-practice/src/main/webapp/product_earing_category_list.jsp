@@ -75,8 +75,7 @@ function add_cart_popup_window(f){
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>쇼핑몰 -
-											상품리스트</b></td>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>귀걸이 리스트</b></td>
 								</tr>
 							</table>
 
@@ -106,7 +105,7 @@ function add_cart_popup_window(f){
 											<form style="display: inline;">
 												<input type="hidden" name="p_no" value="<%=product.getP_no()%>">
 											</form><br> <font
-											color=black>가격:<%=new DecimalFormat("#,##0").format(product.getP_price())%>원
+											color=black><%=new DecimalFormat("#,##0").format(product.getP_price())%>
 										</font></td>
 									<%if(i%product_column_size==3){%>
 									</tr>
