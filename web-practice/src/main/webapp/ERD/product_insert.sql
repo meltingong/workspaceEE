@@ -12,14 +12,14 @@ insert into product values(product_p_no_SEQ.nextval,'하모니 웨딩 링',56000
 insert into product values(product_p_no_SEQ.nextval,'밴드링',4000000,'라운드 브릴리언트 다이아몬드가 세팅된 플래티늄 밴드 링. 너비 4 mm','ring4.jpeg','골드',1);
 --목걸이
 insert into product values(product_p_no_SEQ.nextval,'스마일 펜던트',1500000,'단순하고 우아한 곡선을 자랑하는 펜던트는 모던하면서도 시대를 초월한 아름다움을 자랑합니다.','necklaces1.png','로즈골드',2);
-insert into product values(product_p_no_SEQ.nextval,'피파니 노트 펜던트',3410000,'매듭으로 연결된 티파니 노트 시그니처 모티프는 사람과 사람을 맺어주는 신비한 힘을 상징합니다.','necklaces2.png','골드',0,2);
+insert into product values(product_p_no_SEQ.nextval,'피파니 노트 펜던트',3410000,'매듭으로 연결된 티파니 노트 시그니처 모티프는 사람과 사람을 맺어주는 신비한 힘을 상징합니다.','necklaces2.png','골드',2);
 insert into product values(product_p_no_SEQ.nextval,'피파니 빅토리아 브랜치 펜던트',8000000,'밤하늘을 수놓은 별처럼 눈부신 빛을 선사하는 티파니 빅토리아™는 티파니 다이아몬드의 매혹적인 광채를 그대로 담아냅니다.','necklaces3.png','화이트골드',2);
 insert into product values(product_p_no_SEQ.nextval,'오픈 하트 펜던트',930000,'심플하면서도 아름다운 디자인의 엘사 퍼레티™ 오픈 하트는 사랑의 정신을 기념합니다. ','necklaces4.png','골드',2);
 insert into product values(product_p_no_SEQ.nextval,'서클 펜던트',425000,'티파니의 창립 연도가 자랑스럽게 새겨진 1837™ 컬렉션은 매끄러운 곡선과 윤곽이 두드러지는 라인입니다.','necklaces5.png','로즈골드',2);
 
 --팔찌
 insert into product values(product_p_no_SEQ.nextval,'티파니 락',1440000,'No rules. All welcome. 연대와 포용의 힘에서 영감을 받아 탄생한 티파니 락은 서로에 대한 유대감을 볼드하고 시각적으로 표현합니다.','bracelet1.png','화이트골드',3);
-insert into product values(product_p_no_SEQ.nextval,'인터라킹 서클 체인 브레이슬릿',580000,'5.75-6.75" 길이로 조절 가능.','화이트골드',0,3);
+insert into product values(product_p_no_SEQ.nextval,'인터라킹 서클 체인 브레이슬릿',580000,'5.75-6.75" 길이로 조절 가능.','화이트골드',3);
 insert into product values(product_p_no_SEQ.nextval,'터코이즈 와이어 브레이슬릿',4370000,'주얼리 디자인에 최초로 사용되었던 스톤 중 하나이자 100년이 넘는 시간 동안 티파니 디자이너들이 가장 사랑한 스톤인 터코이즈가 돋보이는 모던한 브레이슬릿입니다.','bracelet3.png','골드',3);
 insert into product values(product_p_no_SEQ.nextval,'네로우 커프',1360000,'969년 첫선을 보인 티파니의 아이코닉한 키 링에서 영감을 받아 탄생한 리턴 투 티파니™ 컬렉션은 클래식을 재현한 디자인입니다.','bracelet4.png','화이트골드',3);
 insert into product values(product_p_no_SEQ.nextval,'엘사 퍼레티',1190000,'스털링 실버에 2개의 라운드 브릴리언트 다이아몬드가 세팅된 브레이슬릿','bracelet5.png','로즈골드',3);
