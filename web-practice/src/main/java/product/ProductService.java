@@ -20,12 +20,14 @@ public class ProductService {
 		return productDao.findByPrimaryKey(p_no);
 	}
 	/*
-	 * 상품 검색
+	 * 상품 카테고리 이름으로 검색
 	 */
 	public List<Product> searchCategory(String keyword) throws Exception{
 		return productDao.searchCategory(keyword);
 	}
-	
+	/*
+	 * 상품 이름으로 검색
+	 */
 	public List<Product> searchProductName(String keyword) throws Exception{
 		return productDao.searchProductName(keyword);
 	}

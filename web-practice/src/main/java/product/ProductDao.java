@@ -47,8 +47,7 @@ public class ProductDao {
 							rs.getString("p_image"),
 							rs.getString("p_option"),
 							rs.getInt("p_click_count"),
-							rs.getInt("ca_no")
-					);
+							new Category(rs.getInt("ca_no"),null));
 		}
 		return product;
 	}
@@ -68,7 +67,7 @@ public class ProductDao {
 									rs.getString("p_image"),
 									rs.getString("p_option"),
 									rs.getInt("p_click_count"),
-									rs.getInt("ca_no"));
+										new Category(rs.getInt("ca_no"),null));
 			productList.add(product);
 		}
 		return productList;
@@ -96,7 +95,7 @@ public class ProductDao {
 									rs.getString("p_image"),
 									rs.getString("p_option"),
 									rs.getInt("p_click_count"),
-									rs.getInt("ca_no"));
+										new Category(rs.getInt("ca_no"),null));
 			searchProductList.add(product);
 		}
 		return searchProductList;
@@ -120,7 +119,7 @@ public class ProductDao {
 									rs.getString("p_image"),
 									rs.getString("p_option"),
 									rs.getInt("p_click_count"),
-									rs.getInt("ca_no"));
+										new Category(rs.getInt("ca_no"),null));
 			searchProductList.add(product);
 		}
 		return searchProductList;
@@ -141,7 +140,7 @@ public class ProductDao {
 							rs.getString("p_image"),
 							rs.getString("p_option"),
 							rs.getInt("p_click_count"),
-							rs.getInt("ca_no"));
+								new Category(rs.getInt("ca_no"),null));
 			categorySortList.add(product);
 		}
 		return categorySortList;
@@ -162,7 +161,7 @@ public class ProductDao {
 							rs.getString("p_image"),
 							rs.getString("p_option"),
 							rs.getInt("p_click_count"),
-							rs.getInt("ca_no"));
+								new Category(rs.getInt("ca_no"),null));
 			categorySortList.add(product);
 		}
 		return categorySortList;
