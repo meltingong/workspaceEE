@@ -128,7 +128,7 @@ if (product == null) {
 											<!-- 
 											 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 											-->
-											color<br>
+											<br><br><br><b><em>color</em></b><br><br>
 											<select name="p_option">
 												<option value="select"> 선택
 												<option value="whitegold">화이트골드
