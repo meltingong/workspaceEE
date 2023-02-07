@@ -220,10 +220,9 @@ function createDiv(height, width) {
 
 function newColour() {
   var c=new Array();
-  c[0]=255;
-  c[1]=Math.floor(Math.random()*256);
-  c[2]=Math.floor(Math.random()*(256-c[1]/2));
-  c.sort(function(){return (0.5 - Math.random());});
+  c[0]=129;
+  c[1]=216;
+  c[2]=208;
   return ("rgb("+c[0]+", "+c[1]+", "+c[2]+")");
 }
 // ]]>
