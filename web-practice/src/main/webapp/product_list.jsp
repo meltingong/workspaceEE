@@ -65,7 +65,7 @@ if (session.getAttribute("sUserId") != null) {
 
 							<div id="f">
 								<table width="100%" align="center" border="0" cellpadding="10"
-									cellspacing="1" bgcolor="BBBBBB">
+									cellspacing="20" >
 									<%
 									int product_size=productList.size();
 									int product_column_size=4;
