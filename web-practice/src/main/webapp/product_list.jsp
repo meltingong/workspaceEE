@@ -19,27 +19,11 @@ if (session.getAttribute("sUserId") != null) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>쇼핑몰</title>
+<title>상품 리스트</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
 <script type="text/javascript">
-function add_cart_popup_window(f){
-	if (<%=!isLogin%>) {
-		alert('로그인 하세요');
-		location.href = 'user_login_form.jsp';
-	} else {
-		var left = Math.ceil(( window.screen.width)/5);
-		var top = Math.ceil(( window.screen.height)/3); 
-		console.log(left);
-		console.log(top);
-		let cartWin = window.open("about:blank","cartForm","width=260,height=130,top="+top+",left="+left+",location=no, directories=no, status=no, menubar=no, scrollbars=no,copyhistory=no");
-		f.action = 'cart_add_action_popup_window.jsp';
-		f.target = 'cartForm';
-		f.method = 'POST';
-		f.submit();
-	}
-}
 
 </script> 
 <style type="text/css" media="screen">
@@ -75,8 +59,7 @@ function add_cart_popup_window(f){
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>쇼핑몰 -
-											상품리스트</b></td>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>All</b></td>
 								</tr>
 							</table>
 
@@ -105,8 +88,7 @@ function add_cart_popup_window(f){
 											<br /> <b><%=product.getP_name()%></b>
 											<form style="display: inline;">
 												<input type="hidden" name="p_no" value="<%=product.getP_no()%>">
-											</form><br> <font
-											color=black><%=new DecimalFormat("#,##0").format(product.getP_price())%>
+											</form><br> <font color=black><%=new DecimalFormat("#,##0").format(product.getP_price())%>
 										</font></td>
 									<%if(i%product_column_size==3){%>
 									</tr>
