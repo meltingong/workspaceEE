@@ -7,15 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form name="product_sort_action" method="post" action="product_sort_action.jsp">
+	<form name="product_sort_action" method="post" action="product_sort_action.jsp" >
 				<!-- 
 				 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 				-->
-				
-				<br><br><br><b><em>정렬</em></b><br><br>
+				<br><b>정렬</b>&nbsp;
 				<select name="sort_option">
 					<option value="select"> 가격 오름차순
 					<option value="whitegold">가격 내림차순
 				</select> <br><br> 
+				</form>
 </body>
 </html>
