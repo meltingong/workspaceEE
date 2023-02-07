@@ -8,7 +8,7 @@
 	
 <%
 ProductService productService = new ProductService();
-List<Product> productList = productService.searchCategory("팔찌");
+List<Product> productList = productService.searchCaNo(3);
 %>
 <%
 boolean isLogin = false;
