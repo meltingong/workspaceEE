@@ -48,6 +48,21 @@ public class ProductService {
 	}
 	
 	/*
+	 * 전체에서 가격 내림차순 정렬
+	 */
+	
+	public List<Product> priceSortDesc() throws Exception{
+		return productDao.priceSortDesc();
+	}
+	
+	/*
+	 * 전체에서 가격 오름차순 정렬
+	 */
+	public List<Product> priceSortAsc() throws Exception{
+		return productDao.priceSortAsc();
+	}
+	
+	/*
 	 * 상품 카테고리 내에서 가격 내림차순 정렬
 	 */
 	public List<Product> categorySortDesc(int ca_no) throws Exception{
