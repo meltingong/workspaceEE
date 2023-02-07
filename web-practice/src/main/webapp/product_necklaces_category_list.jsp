@@ -100,7 +100,7 @@ function add_cart_popup_window(f){
 									<tr>
 									<%} %>
 										<td align="center" width="25%"  bgcolor="ffffff"><a
-											href="product_detail.jsp?p_no=<%=product.getP_no()%>"><img width="88px" height="65px"
+											href="product_detail.jsp?p_no=<%=product.getP_no()%>"><img width="200px" height="200px"
 												src="image/<%=product.getP_image()%>" border="0"></a><br />
 												
 											<br /> <b><%=product.getP_name()%></b>

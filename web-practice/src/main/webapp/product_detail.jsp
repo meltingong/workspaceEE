@@ -122,7 +122,7 @@ if (product == null) {
 									<td colspan=3 height=5><hr color=#556b2f></td>
 								</tr>
 									<td width=50% height=400 align=center><img border=0
-										src='image/<%=product.getP_image()%>' width=120 height=200></td>
+										src='image/<%=product.getP_image()%>' width=300 height=300></td>
 									<td width=30% height=200 class=t1 align=center>
 											<b><%=product.getP_name()%>&nbsp;&nbsp;&nbsp;<br>
 											</b>
