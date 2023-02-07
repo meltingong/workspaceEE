@@ -13,7 +13,7 @@ USER_ADDRESS           VARCHAR2(100)
 
 public class User {
 	
-	private String userid;
+	private String userId;
 	private String password;
 	private String name;
 	private String email;
@@ -23,23 +23,23 @@ public class User {
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public User(String userid, String password, String name, String email, String phone, String address) {
+
+	public User(String userId, String password, String name, String email, String phone, String address) {
 		super();
-		this.userid = userid;
+		this.userId = userId;
 		this.password = password;
 		this.name = name;
 		this.email = email;
 		this.phone = phone;
 		this.address = address;
 	}
-	
-	public String getUserid() {
-		return userid;
+
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public String getPassword() {
@@ -82,10 +82,7 @@ public class User {
 		this.address = address;
 	}
 	
-	/*
-	 * 패쓰워드 일치여부 검사
-	 */
-	public boolean isMathPassword(String password) {
+	public boolean isMatchPassword(String password) {
 		boolean isMatch = false;
 		if(this.password.equals(password)) {
 			isMatch = true;
@@ -95,8 +92,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userid=" + userid + ", password=" + password + ", name=" + name + ", email=" + email + ", phone="
+		return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + ", phone="
 				+ phone + ", address=" + address + "]";
 	}
-		
+	
+	
 }

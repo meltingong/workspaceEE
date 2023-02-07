@@ -22,8 +22,8 @@ public class CartService {
 	 * 카트리스트에서 수량변경
 	 */
 	
-	public int updateCart(Cart cart)throws Exception {
-		return cartDao.updateByCartNo(cart);
+	public int updateCart(int cart_no,int cart_qty)throws Exception {
+		return cartDao.updateByCartNo(cart_no,cart_qty);
 	}
 	/*
 	 * 카트보기

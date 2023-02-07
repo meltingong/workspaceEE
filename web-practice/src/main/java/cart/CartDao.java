@@ -105,28 +105,25 @@ public class CartDao {
 	/*
 	 * 카트리스트에서 수량조절
 	 */
-	public int updateByCartNo(Cart cart) throws Exception {
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		int updateRowcount =0;
-		
+	public int updateByCartNo(int cart_no,int cart_qty) throws Exception{
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		int rowCount=0;
 		try {
-			con = dataSource.getConnection();
-			pstmt =con.prepareStatement(CartSQL.CART_UPDATE_BY_CART_NO);
-			pstmt.setInt(1, cart.getCart_qty());
-			pstmt.setInt(2, cart.getCart_no());
-			updateRowcount= pstmt.executeUpdate();
-			
+			con=dataSource.getConnection();
+			pstmt=con.prepareStatement(CartSQL.CART_UPDATE_BY_CART_NO);
+			pstmt.setInt(1, cart_qty);
+			pstmt.setInt(2, cart_no);
+			rowCount = pstmt.executeUpdate();
 		}finally {
 			if(con!=null) {
 				con.close();
-				
 			}
 		}
-		return updateRowcount;
-		
-		
+		return rowCount;
 	}
+		
+		
 	/*
 	 * 카트리스트 불러오기
 	 */
