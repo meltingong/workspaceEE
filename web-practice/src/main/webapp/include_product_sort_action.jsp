@@ -6,9 +6,9 @@
 	String sort_option = request.getParameter("sort_option");
 	
 	if(sort_option.equals("sort_asc")){
-		System.out.println(productService.priceSortAsc());
+		productService.priceSortAsc();
 	}else if(sort_option.equals("sort_desc")){
-		System.out.println(productService.priceSortDesc());
+		productService.priceSortDesc();
 	}else{
 		
 	}
