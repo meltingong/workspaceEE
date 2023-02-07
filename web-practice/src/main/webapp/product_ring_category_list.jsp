@@ -19,7 +19,7 @@ if (session.getAttribute("sUserId") != null) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>쇼핑몰</title>
+<title>Tiffany&coding</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
@@ -44,6 +44,9 @@ function add_cart_popup_window(f){
 </script> 
 <style type="text/css" media="screen">
 </style>
+<!-- mouse effect start -->
+	<jsp:include page="include_mouseffect.jsp"/>
+	<!-- mouse effect end -->
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>

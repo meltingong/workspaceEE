@@ -19,7 +19,7 @@ if (session.getAttribute("sUserId") != null) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>상품 리스트</title>
+<title>Tiffany&coding</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
@@ -89,12 +89,13 @@ if (session.getAttribute("sUserId") != null) {
 										<td align="center" width="25%"  bgcolor="ffffff"><a
 											href="product_detail.jsp?p_no=<%=product.getP_no()%>"><img width="88px" height="65px"
 												src="image/<%=product.getP_image()%>" border="0"></a><br />
-												
+											
 											<br /> <b><%=product.getP_name()%></b>
 											<form style="display: inline;">
 												<input type="hidden" name="p_no" value="<%=product.getP_no()%>">
 											</form><br> <font color=black><%=new DecimalFormat("#,##0").format(product.getP_price())%>
 										</font></td>
+										
 									<%if(i%product_column_size==3){%>
 									</tr>
 									<%} %>	
