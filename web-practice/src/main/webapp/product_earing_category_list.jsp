@@ -80,7 +80,17 @@ function add_cart_popup_window(f){
 									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>earing</b></td>
 								</tr>
 							</table>
-							<jsp:include page="include_product_sort_form.jsp"/>
+							<form name="product_sort_form" method="post" action="product_sort_action.jsp" >
+							<!-- 
+							 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
+							-->
+							<br><b>정렬</b>&nbsp;
+							<select name="sort_option">
+								<option value="select">선택
+								<option value="sort_asc">가격 오름차순
+								<option value="sort_desc">가격 내림차순
+							</select> <br><br> 
+							</form>
 							<div id="f">
 								<table width="100%" align="center" border="0" cellpadding="10"
 									cellspacing="20" >
