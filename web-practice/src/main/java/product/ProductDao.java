@@ -89,6 +89,27 @@ public class ProductDao {
 	}
 	
 	/*
+	 * 카테고리 번호로 아이템 리스트 뽑기
+	 */
+	public List<Product> searchCaNo(int ca_no) throws Exception{
+		List<Product> searchProductList = new ArrayList<Product>();
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ProductSQL.PRODUCT_SEARCH_CATEGORY_NO);
+		pstmt.setInt(1, ca_no);
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			Product product = new Product(
+									rs.getInt("p_no"),
+									rs.getString("p_name"),
+									rs.getInt("p_price"),
+									rs.getString("p_desc"),
+									rs.getString("p_image"),
+									rs.getString("p_option"));
+			searchProductList.add(product);
+		}
+		return searchProductList;
+	}
+	/*
 	 * 전체 리스트에서 카테고리 검색 시 해당 카테고리 아이템 전부 보여주기
 	 */
 	public List<Product> searchCategory(String keyword) throws Exception{

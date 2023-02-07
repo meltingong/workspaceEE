@@ -27,6 +27,13 @@ public class ProductService {
 	public Product productDetail(int p_no) throws Exception {
 		return productDao.findByPrimaryKey(p_no);
 	}
+	
+	/*
+	 * 상품 카테고리 번호로 검색
+	 */
+	public List<Product> searchCaNo(int ca_no) throws Exception{
+		return productDao.searchCaNo(ca_no);
+	}
 	/*
 	 * 상품 카테고리 이름으로 검색
 	 */
