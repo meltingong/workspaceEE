@@ -3,12 +3,15 @@
     pageEncoding="UTF-8"%>
 <%
 	ProductService productService = new ProductService();
-	String select = request.getParameter("select");
-	String sort_asc = request.getParameter("sort_asc");
-	String sort_desc = request.getParameter("sort_desc");
+	String sort_option = request.getParameter("sort_option");
 	
-	if(select.equals("가격 오름차순")){
+	if(sort_option.equals("sort_asc")){
 		productService.categorySortAsc(1);
+	}else if(sort_option.equals("sort_desc")){
+		productService.categorySortDesc(1);
+	}else{
+		
 	}
-
+	
+	
 %>

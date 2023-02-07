@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form name="product_sort_action" method="post" action="product_sort_action.jsp" >
+	<form name="include_product_sort_form" method="post" action="include_product_sort_action.jsp" >
 				<!-- 
 				 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 				-->

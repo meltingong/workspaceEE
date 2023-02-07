@@ -153,10 +153,47 @@ public class ProductDao {
 		return searchProductList;
 	}
 	
-	public List<Product> categorySortDesc(int ca_no) throws Exception{
+	public List<Product> priceSortDesc() throws Exception{
 		List<Product> categorySortList = new ArrayList<Product>();
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(ProductSQL.PRODUCT_PRICE_DESC);
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			Product product = new Product(
+							rs.getInt("p_no"),
+							rs.getString("p_name"),
+							rs.getInt("p_price"),
+							rs.getString("p_desc"),
+							rs.getString("p_image"),
+							rs.getString("p_option"));
+			categorySortList.add(product);
+		}
+		return categorySortList;
+	}
+	
+	public List<Product> priceSortAsc() throws Exception{
+		List<Product> categorySortList = new ArrayList<Product>();
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ProductSQL.PRODUCT_PRICE_ASC);
+		ResultSet rs = pstmt.executeQuery();
+		while(rs.next()) {
+			Product product = new Product(
+							rs.getInt("p_no"),
+							rs.getString("p_name"),
+							rs.getInt("p_price"),
+							rs.getString("p_desc"),
+							rs.getString("p_image"),
+							rs.getString("p_option"));
+			categorySortList.add(product);
+		}
+		return categorySortList;
+	}
+	
+	
+	public List<Product> categorySortDesc(int ca_no) throws Exception{
+		List<Product> categorySortList = new ArrayList<Product>();
+		Connection con = dataSource.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(ProductSQL.PRODUCT_CATEGORY_PRICE_DESC);
 		pstmt.setInt(1, ca_no);
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
@@ -175,7 +212,7 @@ public class ProductDao {
 	public List<Product> categorySortAsc(int ca_no) throws Exception{
 		List<Product> categorySortList = new ArrayList<Product>();
 		Connection con = dataSource.getConnection();
-		PreparedStatement pstmt = con.prepareStatement(ProductSQL.PRODUCT_PRICE_ASC);
+		PreparedStatement pstmt = con.prepareStatement(ProductSQL.PRODUCT_CATEGORY_PRICE_ASC);
 		pstmt.setInt(1, ca_no);
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {

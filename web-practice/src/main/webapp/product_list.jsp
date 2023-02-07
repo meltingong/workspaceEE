@@ -64,7 +64,7 @@ if (session.getAttribute("sUserId") != null) {
 									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>All</b></td>
 								</tr>
 							</table>
-							<jsp:include page="include_product_sort_from.jsp"/>
+							<jsp:include page="include_product_sort_form.jsp"/>
 							<div id="f">
 								<table width="100%" align="center" border="0" cellpadding="10"
 									cellspacing="15" >
