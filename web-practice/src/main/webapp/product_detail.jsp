@@ -110,16 +110,8 @@ if (product == null) {
 							-->
 							<table style="margin-left: 10px" border=0 width=80% height=376
 								align=center>
-								<tr valign=bottom>
-									<td width=30% align=center class=t1><font size=2
-										color=#0000FF><b>상품</b></font></td>
-									<td width=40% align=center class=t1><font size=2
-										color=#0000FF><b>상품 상세</b></font></td>
-									<td width=30% align=center class=t1><font size=2
-										color=#0000FF><b>색상</b></font></td>
-								</tr>
 								<tr width=100%>
-									<td colspan=3 height=5><hr color=#556b2f></td>
+									<td colspan=3 height=5></td>
 								</tr>
 									<td width=50% height=400 align=center><img border=0
 										src='image/<%=product.getP_image()%>' width=300 height=300></td>
@@ -136,6 +128,7 @@ if (product == null) {
 											<!-- 
 											 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 											-->
+											color<br>
 											<select name="p_option">
 												<option value="select"> 선택
 												<option value="whitegold">화이트골드
@@ -149,7 +142,7 @@ if (product == null) {
 									</td>
 								<!--/tr-->
 								<tr>
-									<td colSpan=3 height=21><hr color=#556b2f></td>
+									<td colSpan=3 height=21><hr color=#81D8D0></td>
 								</tr>
 							</table> <!-- 
 							</form>
