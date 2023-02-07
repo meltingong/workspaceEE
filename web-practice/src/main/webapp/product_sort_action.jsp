@@ -8,7 +8,7 @@
 	String sort_desc = request.getParameter("sort_desc");
 	
 	if(select.equals("가격 오름차순")){
-		productService.categorySortAsc(ca_no);
+		productService.categorySortAsc(1);
 	}
 
 %>
