@@ -90,7 +90,7 @@ if (session.getAttribute("sUserId") != null) {
 											<br /> <b><%=product.getP_name()%></b>
 											<form style="display: inline;">
 												<input type="hidden" name="p_no" value="<%=product.getP_no()%>">
-											</form><br> <font color=black><%=new DecimalFormat("#,##0").format(product.getP_price())%>
+											</form><br> <font color=black>₩<%=new DecimalFormat("#,##0").format(product.getP_price())%>
 										</font></td>
 										
 									<%if(i%product_column_size==3){%>

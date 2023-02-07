@@ -116,9 +116,9 @@ if (product == null) {
 									<td width=50% height=400 align=center><img border=0
 										src='image/<%=product.getP_image()%>' width=300 height=300></td>
 									<td width=30% height=200 class=t1 align=center>
-											<b><%=product.getP_name()%>&nbsp;&nbsp;&nbsp;<br>
+											<b><em><font size ="3"><%=product.getP_name()%>&nbsp;&nbsp;&nbsp;</font></em><br><br>
 											</b>
-											<font color=black><%=new DecimalFormat("#,##0").format(product.getP_price())%>&nbsp;&nbsp;&nbsp;<br><br>
+											<font color=black>₩<%=new DecimalFormat("#,##0").format(product.getP_price())%>&nbsp;&nbsp;&nbsp;<br><br>
 											</font>
 											<font color=black><%=product.getP_desc()%></font>
 									</td>
@@ -151,9 +151,10 @@ if (product == null) {
 
 							<table border="0" cellpadding="0" cellspacing="1">
 								<tr>
-									<td align=center><input type="button" value="주문하기[주문폼]"
-										onClick="order_create_form();"> &nbsp; <input
-										type="button" value="상품리스트" onClick="productList();"></td>
+									<td align=center>
+									<input
+										type="button" value="상품목록" onClick="productList();">&nbsp;
+										<input type="button" value="바로주문" onClick="order_create_form();"> </td>
 								</tr>
 							</table></td>
 					</tr>
