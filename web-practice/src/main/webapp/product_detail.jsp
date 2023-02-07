@@ -113,7 +113,7 @@ if (product == null) {
 								<tr width=100%>
 									<td colspan=3 height=5></td>
 								</tr>
-									<td width=50% height=400 align=center><img border=0
+									<td width=40% height=400 align=center><img border=0
 										src='image/<%=product.getP_image()%>' width=300 height=300></td>
 									<td width=30% height=200 class=t1 align=center>
 											<b><em><font size ="3"><%=product.getP_name()%>&nbsp;&nbsp;&nbsp;</font></em><br><br>
@@ -135,8 +135,7 @@ if (product == null) {
 												<option value="gold">골드
 												<option value="rosegold">로즈골드
 											</select> <br><br> 
-												<input width=40px height=40px type=image src='image/cart.png' value="장바구니담기[장바구니보여주기]" title="장바구니담기[장바구니보여주기]" style="font-size: 6pt;"/>
-												<a href="javascript:add_cart_popup_window(this.parentElement);" title="장바구니담기[계속쇼핑팝업]"><img src='image/cart25.png' style="margin-bottom: 5px "></a>
+												<a href="javascript:add_cart_popup_window(this.parentElement);"><input width=40px height=40px type=image src='image/cart.png' value="장바구니담기[팝업]" title="장바구니담기[팝업]" style="font-size: 6pt;"/></a>
 												<input type="hidden" name=p_no value="<%=product.getP_no()%>">
 										</form>
 									</td>
