@@ -128,6 +128,7 @@ if (product == null) {
 											<!-- 
 											 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 											-->
+											
 											<br><br><br><b><em>color</em></b><br><br>
 											<select name="p_option">
 												<option value="select"> 선택
@@ -135,6 +136,16 @@ if (product == null) {
 												<option value="gold">골드
 												<option value="rosegold">로즈골드
 											</select> <br><br> 
+											
+											<select name="cart_qty">
+												<option value="1">1
+												<option value="2">2
+												<option value="3">3
+												<option value="4">4
+												<option value="5">5
+											</select>
+											<b><em>qty</em></b><br><br>
+											<br>
 												<a href="javascript:add_cart_popup_window(this.parentElement);"><input width=40px height=40px type=image src='image/cart.png' value="장바구니담기[팝업]" title="장바구니담기[팝업]" style="font-size: 6pt;"/></a>
 												<input type="hidden" name=p_no value="<%=product.getP_no()%>">
 										</form>

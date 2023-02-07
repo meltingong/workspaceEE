@@ -1,3 +1,4 @@
+<%@page import="product.Product"%>
 <%@page import="cart.Cart"%>
 <%@page import="cart.CartService"%>
 <%@page import="java.util.List"%>
@@ -9,6 +10,7 @@
 <%
       CartService cartService=new CartService();
       List<Cart> cartList = cartService.getCartItemByUserId(sUserId);
+      Product product = new Product();
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -34,6 +36,9 @@
 	}
 	
 </script>
+<!-- mouse effect start -->
+	<jsp:include page="include_mouseffect.jsp"/>
+	<!-- mouse effect end -->
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -79,17 +84,19 @@
 							<div id='f'>
 							<table  align=center  width=80% border="0" cellpadding="0" cellspacing="1"  bgcolor="BBBBBB">
 									<tr>
-										<td width=60 height=25  align="center" bgcolor="E6ECDE" class=t1><font
+										<td width=60 height=25  align="center" bgcolor="#81D8D0" class=t1><font
 											 >선택</font></td>
-										<td width=40 height=25 align="center" bgcolor="E6ECDE" class=t1><font
+										<td width=40 height=25 align="center" bgcolor="#81D8D0" class=t1><font
 											 >이미지</font></td>
-										<td width=210 height=25 align="center" bgcolor="E6ECDE" class=t1><font
-											 >강아지 이름</font></td>
-										<td width=112 height=25 align="center" bgcolor="E6ECDE" class=t1><font
+										<td width=210 height=25 align="center" bgcolor="#81D8D0" class=t1><font
+											 >상품명</font></td>
+										<td width=112 height=25 align="center" bgcolor="#81D8D0" class=t1><font
 											 >수 량</font></td>
-										<td width=146 height=25 align="center" bgcolor="E6ECDE" class=t1><font
+										 <td width=112 height=25 align="center" bgcolor="#81D8D0" class=t1><font
+											 >옵 션</font></td>
+										<td width=146 height=25 align="center" bgcolor="#81D8D0" class=t1><font
 											 >가 격</font></td>
-										<td width=50 height=25 align="center" bgcolor="E6ECDE" class=t1><font
+										<td width=50 height=25 align="center" bgcolor="#81D8D0" class=t1><font
 											 >비 고</font></td>
 									</tr>
 									
@@ -100,12 +107,13 @@
 									tot_price+=cart.getProduct().getP_price()*cart.getCart_qty();
 									%>
 									<tr>
-										<td width=60 height=26 align=center bgcolor="ffffff" class=t1></td>
-										<td width=40 height=26 align=center bgcolor="ffffff" class=t1><img src='image/<%=cart.getProduct().getP_image()%>' width="34" height="28"/></td>
-										<td width=210 height=26 align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=cart.getProduct().getP_no()%>'><%=cart.getProduct().getP_name() %></a></td>
-										<td width=112 height=26 align=center bgcolor="ffffff" class=t1><%=cart.getCart_qty()%></td>
-										<td width=146 height=26 align=center bgcolor="ffffff" class=t1><%=new DecimalFormat("#,##0").format(cart.getProduct().getP_price()*cart.getCart_qty()) %></td>
-										<td width=50 height=26 align=center bgcolor="ffffff" class=t1>
+										<td width=60 height=75 align=center bgcolor="ffffff" class=t1></td>
+										<td width=100 height=75 align=center bgcolor="ffffff" class=t1><img src='image/<%=cart.getProduct().getP_image()%>' width="100" height="75"/></td>
+										<td width=210 height=75 align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=cart.getProduct().getP_no()%>'><%=cart.getProduct().getP_name() %></a></td>
+										<td width=112 height=75 align=center bgcolor="ffffff" class=t1><%=cart.getCart_qty()%></td>
+										<td width=112 height=75 align=center bgcolor="ffffff" class=t1><%=product.getP_option()%></td>
+										<td width=146 height=75 align=center bgcolor="ffffff" class=t1><%=new DecimalFormat("#,##0").format(cart.getProduct().getP_price()*cart.getCart_qty()) %></td>
+										<td width=50 height=75 align=center bgcolor="ffffff" class=t1>
 											<form action="cart_delete_item_action.jsp" method="post">
 												<input type="hidden" name="cart_no" value="<%=cart.getCart_no()%>">
 												<input type="submit" value="삭제">
@@ -115,10 +123,10 @@
 									<%}%>
 									<!-- cart item end -->
 									<tr>
-										<td width=640 colspan=6 height=26 class=t1 bgcolor="ffffff">
+										<td width=640 colspan=7 height=26 class=t1 bgcolor="ffffff">
 											<p align=right>
 												<br/>
-												<span id="tot_order_price" style="color: red">총주문금액 : <%=new DecimalFormat("#,##0").format(tot_price)%>원</span>
+												<span id="tot_order_price" style="color: red">총주문금액 : ₩<%=new DecimalFormat("#,##0").format(tot_price)%>원</span>
 											</p>
 										</td>
 									</tr>
