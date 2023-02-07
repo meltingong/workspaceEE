@@ -3,6 +3,10 @@ package User;
 import java.util.ArrayList;
 import java.util.List;
 
+import User.exception.PasswordMismatchException;
+import User.exception.UserNotFoundException;
+
+
 
 public class UserService {
 	private UserDao userDao;
@@ -65,21 +69,18 @@ public class UserService {
 	/*
 	 * 로그인
 	 */
-	public int login(String userId, String password) throws Exception {
-		int result= -1;
+	public User login(String userId, String password) throws Exception {
+		// 1.아이디존재여부
 		User user = userDao.findUser(userId);
-		if(user==null) {
-			result = 0; //아이디존재X
-		}else {
-			//아이디존재함
-			if(user.isMatchPassword(password)) {
-				result = 2; //패쓰워드 일치
-			}else {
-				result = 1; //패쓰워드 일치X
-			}
+		if (user == null) {
+			throw new UserNotFoundException(userId + " 는 존재하지않는 아이디 입니다.");
+		}
+		// 2.패쓰워드일치여부
+		if (!user.isMatchPassword(password)) {
+			throw new PasswordMismatchException("패쓰워드가 일치하지않습니다.");
 		}
 		
-		return result;
+		return user;
 	}
 	
 	/*
