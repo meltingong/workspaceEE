@@ -67,7 +67,7 @@ if (session.getAttribute("sUserId") != null) {
 
 							<div id="f">
 								<table width="100%" align="center" border="0" cellpadding="10"
-									cellspacing="20" >
+									cellspacing="15" >
 									<%
 									int product_size=productList.size();
 									int product_column_size=4;
@@ -84,7 +84,7 @@ if (session.getAttribute("sUserId") != null) {
 									<tr>
 									<%} %>
 										<td align="center" width="25%"  bgcolor="ffffff"><a
-											href="product_detail.jsp?p_no=<%=product.getP_no()%>"><img width="88px" height="65px"
+											href="product_detail.jsp?p_no=<%=product.getP_no()%>"><img width="200px" height="200px"
 												src="image/<%=product.getP_image()%>" border="0"></a><br />
 											
 											<br /> <b><%=product.getP_name()%></b>

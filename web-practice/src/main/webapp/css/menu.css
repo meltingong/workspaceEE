@@ -1,0 +1,85 @@
+@import url("cart.css");
+div#header {
+	all: unset; 
+	background-color: #FFFFFF;
+	display: block;
+	height: 160px;
+	width:100%;
+}
+/*background: #fff url('../image/board_header.png');*/
+div#header h1 {
+	height: 80px;
+	line-height: 80px;
+	margin: 0px 0 0 0;
+	padding-left: 10px;
+	background-color: #FFFFFF;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%
+}
+div#header #menu {
+	margin-top:10px; 
+	height: 50px;
+}
+
+
+#mainlogo ul{
+	list-style:none;
+}
+
+#menu ul {
+	list-style-type: none;
+	margin: 0 30px 0 0 ;
+	padding: 0;
+	background-color: #fff;
+	list-style:none;
+}
+
+#menu ul:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+#menu li#logo {
+	align-self: center;
+}
+
+#menu li#toboard {
+	padding: 0 0 0 50px;
+	float: left;
+}
+
+#menu li#toboard a{
+	padding: 10px 0 0 20px;
+	float: left;
+}
+#menu li{
+	float: right;
+}
+
+#menu li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 10px 16px 20px 16px;
+	text-decoration: none;
+}
+#menu .active {
+	background-color: #4CAF50;
+}
+
+#menu li#cart {
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#menu li#cart:hover{
+	opacity: 1;
+}
+ #menu li#mypage {
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+#menu li#mypage:hover{
+	opacity: 1;
+}
