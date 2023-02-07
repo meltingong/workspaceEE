@@ -13,8 +13,9 @@
 				-->
 				<br><b>정렬</b>&nbsp;
 				<select name="sort_option">
-					<option value="select"> 가격 오름차순
-					<option value="whitegold">가격 내림차순
+					<option value="select">선택
+					<option value="sort_asc">가격 오름차순
+					<option value="sort_desc">가격 내림차순
 				</select> <br><br> 
 				</form>
 </body>
