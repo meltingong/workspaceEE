@@ -1,5 +1,6 @@
 package test;
 
+import product.Category;
 import product.Product;
 import product.ProductDao;
 
@@ -7,7 +8,8 @@ public class ProductDaoTest {
 
 	public static void main(String[] args) throws Exception {
 		ProductDao productDao = new ProductDao();
-		
+		Category category = new Category();
+		/*
 		System.out.println("상품 번호를 인자로 받아서 옵션 변경");
 		System.out.println(productDao.update(1,"화이트골드"));
 		
@@ -28,6 +30,8 @@ public class ProductDaoTest {
 
 		System.out.println("카테고리 선택 후 가격 오름차순으로 정렬");
 		System.out.println(productDao.categorySortAsc(1));
+		*/
+	
 		
 	}
 
