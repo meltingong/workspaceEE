@@ -8,7 +8,13 @@
 	
 <%
 ProductService productService = new ProductService();
-List<Product> productList = productService.productList();
+String type_noStr = request.getParameter("type_no");
+List<Product> productList = new ArrayList<Product>();
+if(type_noStr == null){
+	productList =  productService.productList();
+}else{
+	productList = productService.searchCaNo(Integer.parseInt(type_noStr));
+}
 %>
 <%
 boolean isLogin = false;
