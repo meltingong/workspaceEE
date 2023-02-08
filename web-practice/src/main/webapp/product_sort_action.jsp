@@ -5,6 +5,7 @@
     pageEncoding="UTF-8"%>
 <%
 	ProductService productService = new ProductService();
+	String type_no = request.getParameter("type_no");
 	String sort_option = request.getParameter("sort_option");
 	
 	if(sort_option.equals("sort_asc")){
@@ -13,7 +14,7 @@
 	}else if(sort_option.equals("sort_desc")){
 		productService.priceSortDesc();
 		List<Product> productList = productService.priceSortAsc();
-		response.sendRedirect("product_list.jsp");
+		response.sendRedirect("product_list.jsp?type_no="+type_no);
 	}
 	
 %>
