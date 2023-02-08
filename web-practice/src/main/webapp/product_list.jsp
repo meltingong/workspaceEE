@@ -9,6 +9,7 @@
 <%
 ProductService productService = new ProductService();
 String type_noStr = request.getParameter("type_no");
+String sort_option = request.getParameter("sort_option");
 List<Product> productList = new ArrayList<Product>();
 if(type_noStr == null){
 	productList =  productService.productList();
@@ -30,7 +31,6 @@ if (session.getAttribute("sUserId") != null) {
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
 <script type="text/javascript">
-
 </script> 
 <style type="text/css" media="screen">
 </style>
