@@ -64,6 +64,8 @@ public class ProductDao {
 							rs.getString("p_image"),
 							rs.getString("p_option"));
 		}
+		pstmt.close();
+		con.close();
 		return product;
 	}
 	/*
@@ -85,6 +87,8 @@ public class ProductDao {
 									rs.getString("p_option"));
 			productList.add(product);
 		}
+		pstmt.close();
+		con.close();
 		return productList;
 	}
 	
@@ -107,6 +111,8 @@ public class ProductDao {
 									rs.getString("p_option"));
 			searchProductList.add(product);
 		}
+		pstmt.close();
+		con.close();
 		return searchProductList;
 	}
 	/*
@@ -128,6 +134,8 @@ public class ProductDao {
 									rs.getString("p_option"));
 			searchProductList.add(product);
 		}
+		pstmt.close();
+		con.close();
 		return searchProductList;
 	}
 	
@@ -150,6 +158,8 @@ public class ProductDao {
 									rs.getString("p_option"));
 			searchProductList.add(product);
 		}
+		pstmt.close();
+		con.close();
 		return searchProductList;
 	}
 	
@@ -168,6 +178,8 @@ public class ProductDao {
 							rs.getString("p_option"));
 			categorySortList.add(product);
 		}
+		pstmt.close();
+		con.close();
 		return categorySortList;
 	}
 	
@@ -186,6 +198,8 @@ public class ProductDao {
 							rs.getString("p_option"));
 			categorySortList.add(product);
 		}
+		pstmt.close();
+		con.close();
 		return categorySortList;
 	}
 	
@@ -206,6 +220,8 @@ public class ProductDao {
 							rs.getString("p_option"));
 			categorySortList.add(product);
 		}
+		pstmt.close();
+		con.close();
 		return categorySortList;
 	}
 	
@@ -225,6 +241,8 @@ public class ProductDao {
 							rs.getString("p_option"));
 			categorySortList.add(product);
 		}
+		pstmt.close();
+		con.close();
 		return categorySortList;
 	}
 	

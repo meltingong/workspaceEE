@@ -65,7 +65,7 @@ if (session.getAttribute("sUserId") != null) {
 							<table style="padding-left: 10px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>All</b></td>
+									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>product</b></td>
 								</tr>
 							</table>
 							<form name="product_sort_form" method="post" action="product_sort_action.jsp" >
