@@ -68,7 +68,7 @@ if (session.getAttribute("sUserId") != null) {
 									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>product</b></td>
 								</tr>
 							</table>
-							<form name="product_sort_form" method="post" action="product_sort_action.jsp" >
+							<form action="product_sort_action.jsp" method="post" >
 							<!-- 
 							 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 							-->
