@@ -25,6 +25,7 @@ div#header #menu {
 
 #mainlogo ul{
 	list-style:none;
+	text-align: center;
 }
 
 #menu ul {
@@ -46,8 +47,12 @@ div#header #menu {
 }
 
 #menu li#toboard {
-	padding: 0 0 0 50px;
+	padding: 0 0 0 20px;
 	float: left;
+}
+
+#menu li#mainsearch {
+	float: right;
 }
 
 #menu li#toboard a{
@@ -58,7 +63,14 @@ div#header #menu {
 	float: right;
 }
 
-#menu li a {
+#menu li#mypage {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 10px 16px 20px 16px;
+	text-decoration: none;
+}
+#menu li#cart {
 	display: block;
 	color: white;
 	text-align: center;
@@ -83,3 +95,17 @@ div#header #menu {
 #menu li#mypage:hover{
 	opacity: 1;
 }
+/*
+input#mainsearchbtn{
+	background-image: url(../image/mainsearchbtn.png); 
+	background-color: #FFFFFF;
+    background-repeat: no-repeat;  
+    border: none;           
+    cursor: pointer;      
+    width: 36px;
+    height: 36px;
+    padding: 0,0,0,0;
+}
+*/
+
+

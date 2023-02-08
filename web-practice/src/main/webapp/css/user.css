@@ -4,6 +4,11 @@ table {
 	height: 100%;
 	
 }
+div#content{
+	display: flex;
+}
+
+
 form {
 	margin:10px;
 	margin-right: 0px;
