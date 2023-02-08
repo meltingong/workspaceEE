@@ -24,9 +24,7 @@ if (session.getAttribute("sUserId") != null) {
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
 <script type="text/javascript">
-	function mouseOver{
-		
-	}
+
 </script> 
 <style type="text/css" media="screen">
 </style>

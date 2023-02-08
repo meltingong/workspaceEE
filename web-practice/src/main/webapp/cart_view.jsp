@@ -10,7 +10,7 @@
 <%
       CartService cartService=new CartService();
       List<Cart> cartList = cartService.getCartItemByUserId(sUserId);
-      Product product = new Product();
+      
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -111,7 +111,7 @@
 										<td width=100 height=75 align=center bgcolor="ffffff" class=t1><img src='image/<%=cart.getProduct().getP_image()%>' width="100" height="75"/></td>
 										<td width=210 height=75 align=center bgcolor="ffffff" class=t1><a href='product_detail.jsp?p_no=<%=cart.getProduct().getP_no()%>'><%=cart.getProduct().getP_name() %></a></td>
 										<td width=112 height=75 align=center bgcolor="ffffff" class=t1><%=cart.getCart_qty()%></td>
-										<td width=112 height=75 align=center bgcolor="ffffff" class=t1><%=product.getP_option()%></td>
+										<td width=112 height=75 align=center bgcolor="ffffff" class=t1><%=cart.getProduct().getP_option()%></td>
 										<td width=146 height=75 align=center bgcolor="ffffff" class=t1><%=new DecimalFormat("#,##0").format(cart.getProduct().getP_price()*cart.getCart_qty()) %></td>
 										<td width=50 height=75 align=center bgcolor="ffffff" class=t1>
 											<form action="cart_delete_item_action.jsp" method="post">
