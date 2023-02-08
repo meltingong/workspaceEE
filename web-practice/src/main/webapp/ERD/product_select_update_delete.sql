@@ -18,3 +18,7 @@ select * from product where p_name like '%링';
 
 --옵션만 업데이트
 update product set p_option='골드' where p_no = 1;
+
+--cart에서 user,product option 접근
+
+select count(*) as p_count from cart c join userinfo u on c.userid=u.userid join product p on c.p_no = p.p_no where u.userid = 'test1' and c.p_no='3' and p.p_option = 'whitegold';

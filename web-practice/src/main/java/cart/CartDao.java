@@ -56,6 +56,29 @@ public class CartDao {
 		return count;
 	}
 	
+	public int countByProductNoOption(String useId,int p_no,String p_option) throws Exception {
+		int count = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+		con=dataSource.getConnection();
+		pstmt = con.prepareStatement(CartSQL.CART_COUNT_BY_USERID_PRODUCT_NO_AND_OPTION);
+		pstmt.setString(1, useId);		
+		pstmt.setInt(2, p_no);
+		pstmt.setString(3, p_option);
+		rs=pstmt.executeQuery();
+		if(rs.next()) {
+			count=rs.getInt(1);
+		}
+		
+		}finally {
+			if(con!=null) {
+				con.close();
+			}
+		}
+		return count;
+	}
 	
 	/*
 	 *상품에서 카트추가시 카트에 없는 상품 추가
