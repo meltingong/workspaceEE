@@ -7,16 +7,16 @@
 	pageEncoding="UTF-8"%>
 	
 <%
-ProductService productService = new ProductService();
-String type_noStr = request.getParameter("type_no");
-String sort_option = request.getParameter("sort_option");
-List<Product> productList = new ArrayList<Product>();
-if(type_noStr == null){
-	productList =  productService.productList();
-}else{
-	productList = productService.searchCaNo(Integer.parseInt(type_noStr));
-}
-%>
+	ProductService productService = new ProductService();
+		String type_noStr = request.getParameter("type_no");
+		String sort_option = request.getParameter("sort_option");
+		List<Product> productList = new ArrayList<Product>();
+		if(type_noStr == null){
+			productList =  productService.productList();
+		}else{
+			productList = productService.searchCaNo(Integer.parseInt(type_noStr));
+		}
+	%>
 <%
 boolean isLogin = false;
 if (session.getAttribute("sUserId") != null) {
@@ -31,6 +31,11 @@ if (session.getAttribute("sUserId") != null) {
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
 <script type="text/javascript">
+	function product_sort(){
+		document.cart_view_form.method='POST';
+		document.cart_view_form.action='product_sort_action.jsp';
+		document.cart_view_form.submit();
+	}
 </script> 
 <style type="text/css" media="screen">
 </style>
@@ -68,7 +73,7 @@ if (session.getAttribute("sUserId") != null) {
 									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>product</b></td>
 								</tr>
 							</table>
-							<form action="product_sort_action.jsp" method="post" >
+							<form action="product_sort_action.jsp" method="post" onclick="product_sort();">
 							<!-- 
 							 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 							-->
@@ -84,12 +89,12 @@ if (session.getAttribute("sUserId") != null) {
 									cellspacing="15" >
 									<%
 									int product_size=productList.size();
-									int product_column_size=4;
-									int product_line_count = 1;
-									
-									
-									for (int i=0;i<productList.size();i++) {
-											Product product=productList.get(i);
+																							int product_column_size=4;
+																							int product_line_count = 1;
+																							
+																							
+																							for (int i=0;i<productList.size();i++) {
+																									Product product=productList.get(i);
 									%>
 									<!--상품시작 -->
 									<%

@@ -62,7 +62,8 @@ public class ProductDao {
 							rs.getInt("p_price"),
 							rs.getString("p_desc"),
 							rs.getString("p_image"),
-							rs.getString("p_option"));
+							rs.getString("p_option"),
+							rs.getInt("ca_no"));
 		}
 		pstmt.close();
 		con.close();
@@ -84,7 +85,8 @@ public class ProductDao {
 									rs.getInt("p_price"),
 									rs.getString("p_desc"),
 									rs.getString("p_image"),
-									rs.getString("p_option"));
+									rs.getString("p_option"),
+									rs.getInt("ca_no"));
 			productList.add(product);
 		}
 		pstmt.close();
@@ -108,7 +110,8 @@ public class ProductDao {
 									rs.getInt("p_price"),
 									rs.getString("p_desc"),
 									rs.getString("p_image"),
-									rs.getString("p_option"));
+									rs.getString("p_option"),
+									rs.getInt("ca_no"));
 			searchProductList.add(product);
 		}
 		pstmt.close();
@@ -131,7 +134,8 @@ public class ProductDao {
 									rs.getInt("p_price"),
 									rs.getString("p_desc"),
 									rs.getString("p_image"),
-									rs.getString("p_option"));
+									rs.getString("p_option"),
+									rs.getInt("ca_no"));
 			searchProductList.add(product);
 		}
 		pstmt.close();
@@ -155,7 +159,8 @@ public class ProductDao {
 									rs.getInt("p_price"),
 									rs.getString("p_desc"),
 									rs.getString("p_image"),
-									rs.getString("p_option"));
+									rs.getString("p_option"),
+									rs.getInt("ca_no"));
 			searchProductList.add(product);
 		}
 		pstmt.close();
@@ -175,7 +180,8 @@ public class ProductDao {
 							rs.getInt("p_price"),
 							rs.getString("p_desc"),
 							rs.getString("p_image"),
-							rs.getString("p_option"));
+							rs.getString("p_option"),
+							rs.getInt("ca_no"));
 			categorySortList.add(product);
 		}
 		pstmt.close();
@@ -195,7 +201,8 @@ public class ProductDao {
 							rs.getInt("p_price"),
 							rs.getString("p_desc"),
 							rs.getString("p_image"),
-							rs.getString("p_option"));
+							rs.getString("p_option"),
+							rs.getInt("ca_no"));
 			categorySortList.add(product);
 		}
 		pstmt.close();
@@ -217,7 +224,8 @@ public class ProductDao {
 							rs.getInt("p_price"),
 							rs.getString("p_desc"),
 							rs.getString("p_image"),
-							rs.getString("p_option"));
+							rs.getString("p_option"),
+							rs.getInt("ca_no"));
 			categorySortList.add(product);
 		}
 		pstmt.close();
@@ -238,7 +246,8 @@ public class ProductDao {
 							rs.getInt("p_price"),
 							rs.getString("p_desc"),
 							rs.getString("p_image"),
-							rs.getString("p_option"));
+							rs.getString("p_option"),
+							rs.getInt("ca_no"));
 			categorySortList.add(product);
 		}
 		pstmt.close();

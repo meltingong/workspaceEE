@@ -13,8 +13,7 @@ int cart_item_count=0;
 -->
 <script type="text/javascript">
 function mainsearch(){
-	alert("상품 검색");
-	mainsearchform.action = "shop_main.jsp";
+	mainsearchform.action = "product_search_action.jsp";
 	mainsearchform.method='POST';
 	mainsearchform.submit();
 }
@@ -24,9 +23,12 @@ function mainsearch(){
 	<ul>
 		<li id="toboard" title="게시판" ><a href="board_list.jsp" ><img src="image/shopmain_board.png" ></a></li>
 		<li id="mainsearch" title="검색">
+		<!-- cart_view_...image 카트삭제 이미지로 버튼 만든거 참고 -->
+		<!-- <input id='mainsearchbtn' type="button" onClick="mainSearch()"> -->
 		<form id="mainsearchform" method="post">
 			<input type='text' style="border: solid 1px grey; width:200px; height:30px; padding: 0" name='mainsearchkeyword' >
-			<input id='mainsearchbtn' type="button" onClick="mainSearch()">
+			<input type="hidden" name='searchbtn' value='' >
+				<a href='javascript:mainsearch();'><img src='image/mainsearchbtn.png'></a>
 		</form>
 		</li>
 		<li id="mypage" title="나의페이지" ><a href="user_login_form.jsp" ><img src="image/shopmain_user.png" ></a></li>

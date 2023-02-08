@@ -169,7 +169,8 @@ public class CartDao {
 						            		      rs.getInt("p_price"),
 						            		      rs.getString("p_desc"),
 						            		      rs.getString("p_image"),
-						            		      rs.getString("p_option")
+						            		      rs.getString("p_option"),
+						            		      rs.getInt("ca_no")
 						            		      )));
 			}
 			
@@ -244,7 +245,8 @@ public Cart findByCartNo(int cart_no)throws Exception {
 		            		      rs.getInt("p_price"),
 		            		      rs.getString("p_desc"),
 		            		      rs.getString("p_image"),
-		            		      rs.getString("p_option")
+		            		      rs.getString("p_option"),
+		            		      rs.getInt("ca_no")
 		            		      )
 					
 					 );

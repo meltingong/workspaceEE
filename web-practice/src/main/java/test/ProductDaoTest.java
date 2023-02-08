@@ -1,8 +1,12 @@
 package test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import product.Category;
 import product.Product;
 import product.ProductDao;
+import product.ProductService;
 
 public class ProductDaoTest {
 
@@ -31,8 +35,17 @@ public class ProductDaoTest {
 		System.out.println("카테고리 선택 후 가격 오름차순으로 정렬");
 		System.out.println(productDao.categorySortAsc(1));
 		*/
-	
-		
+		String keyword = "반지";
+		ProductService productService = new ProductService();
+		List<Product> productList = new ArrayList<Product>();
+		if(keyword.equals("반지")||keyword.equals("목걸이")||keyword.equals("귀걸이")||keyword.equals("팔찌")){
+			productList = productService.searchCategory(keyword);
+		}else{
+			productList = productService.searchProductName(keyword);
+		}
+		for (Product product : productList) {
+			System.out.println(product);
+		}
 	}
 
 }
