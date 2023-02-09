@@ -7,12 +7,32 @@
 	pageEncoding="UTF-8"%>
 	
 <%
+		
 		ProductService productService = new ProductService();
 		String type_noStr = request.getParameter("type_no");
 		String sort_option = request.getParameter("sort_option");
 		List<Product> productList = new ArrayList<Product>();
 		
-		if(sort_option.equals("sort_asc")){
+		if(type_noStr != null){
+			 if(sort_option.equals("sort_asc")){
+				productList = productService.categorySortAsc(Integer.parseInt(type_noStr));
+			}else if(sort_option.equals("sort_desc")){  
+				productList = productService.categorySortDesc(Integer.parseInt(type_noStr));
+			}else{
+				productList = productService.searchCaNo(Integer.parseInt(type_noStr));
+			}
+		}else if(type_noStr == null){
+			 if(sort_option.equals("sort_asc")){
+				productList = productService.priceSortAsc();
+			}else if(sort_option.equals("sort_desc")){  
+				productList = productService.priceSortDesc();
+			}else{
+				productList = productService.productList();
+			}
+		}
+		
+		
+		/* if(sort_option.equals("sort_asc")){
 			 if(type_noStr != null){
 				productList = productService.categorySortAsc(Integer.parseInt(type_noStr));
 			}else if(type_noStr == null){  
@@ -30,7 +50,7 @@
 			}else {
 				productList = productService.productList();
 			}
-		}
+		} */
 		
 		
 	%>
@@ -91,6 +111,7 @@ if (session.getAttribute("sUserId") != null) {
 								</tr>
 							</table>
 							<form name = "product_sort_action_form" action="product_sort_action.jsp" method="get">
+							<input type="hidden" name="type_no" value="<%=type_noStr%>">
 							<!-- 
 							 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 							-->
