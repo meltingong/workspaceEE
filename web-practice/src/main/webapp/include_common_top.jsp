@@ -14,7 +14,7 @@ int cart_item_count=0;
 <script type="text/javascript">
 function mainsearch(){
 	mainsearchform.action = "product_search_action.jsp";
-	mainsearchform.method='POST';
+	mainsearchform.method='GET';
 	mainsearchform.submit();
 }
 </script>
