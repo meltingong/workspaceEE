@@ -6,26 +6,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-<%		
+<%
 		ProductService productService = new ProductService();
 		String type_noStr = request.getParameter("type_no");
 		String sort_option = request.getParameter("sort_option");
-		String keyword = request.getParameter("mainsearchkeyword");
+		String select = request.getParameter("select");
 		List<Product> productList = new ArrayList<Product>();
-	
-		if(type_noStr == null){
-			if(keyword != null){
-				productList = productService.searchProductName(keyword);
-			}else{
-				productList =  productService.productList();
-			}
-		}else{
-			if(keyword != null){
-				productList = productService.searchProductName(keyword);
-			}else{ 
-				productList = productService.searchCaNo(Integer.parseInt(type_noStr));
-			}
-		} 
+		
+		if(sort_option.equals("sort_asc")){
+			/* if(type_noStr != null){
+				productList = productService.categorySortAsc(Integer.parseInt(type_noStr));
+			}else if(type_noStr == null){  */
+				productList = productService.priceSortAsc();
+			//}
+		}else if(sort_option.equals("sort_desc")){
+			/* if(type_noStr != null){
+				productList = productService.categorySortDesc(Integer.parseInt(type_noStr));
+			}else if(type_noStr == null){  */
+				productList = productService.priceSortDesc();
+			//}
+		}
+		
 		
 	%>
 <%
@@ -129,7 +130,7 @@ if (session.getAttribute("sUserId") != null) {
 									<%} %>	
 									
 								   <!--상품 끝 -->
-								   <%}%>
+								   <%}%>	
 								</table>
 							</div> <br /></td>
 					</tr>
