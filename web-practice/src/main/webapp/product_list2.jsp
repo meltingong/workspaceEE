@@ -10,21 +10,26 @@
 		ProductService productService = new ProductService();
 		String type_noStr = request.getParameter("type_no");
 		String sort_option = request.getParameter("sort_option");
-		String select = request.getParameter("select");
 		List<Product> productList = new ArrayList<Product>();
 		
 		if(sort_option.equals("sort_asc")){
-			/* if(type_noStr != null){
+			 if(type_noStr != null){
 				productList = productService.categorySortAsc(Integer.parseInt(type_noStr));
-			}else if(type_noStr == null){  */
+			}else if(type_noStr == null){  
 				productList = productService.priceSortAsc();
-			//}
+			}
 		}else if(sort_option.equals("sort_desc")){
-			/* if(type_noStr != null){
+			 if(type_noStr != null){
 				productList = productService.categorySortDesc(Integer.parseInt(type_noStr));
-			}else if(type_noStr == null){  */
+			}else if(type_noStr == null){  
 				productList = productService.priceSortDesc();
-			//}
+			}
+		}else if(sort_option.equals("select")){
+			if(type_noStr != null){
+				productList = productService.searchCaNo(Integer.parseInt(type_noStr));
+			}else {
+				productList = productService.productList();
+			}
 		}
 		
 		
@@ -85,7 +90,7 @@ if (session.getAttribute("sUserId") != null) {
 									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>product</b></td>
 								</tr>
 							</table>
-							<form name = "product_sort_action_form" action="product_sort_action.jsp" method="post">
+							<form name = "product_sort_action_form" action="product_sort_action.jsp" method="get">
 							<!-- 
 							 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 							-->
