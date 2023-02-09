@@ -150,7 +150,7 @@ public class ProductDao {
 		List<Product> searchProductList = new ArrayList<Product>();
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt = con.prepareStatement(ProductSQL.PRODUCT_SEARCH_P_NAME);
-		pstmt.setString(1, "%"+keyword);
+		pstmt.setString(1, "%"+keyword+"%");
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {
 			Product product = new Product(

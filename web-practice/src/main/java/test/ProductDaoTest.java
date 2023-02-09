@@ -35,6 +35,7 @@ public class ProductDaoTest {
 		System.out.println("카테고리 선택 후 가격 오름차순으로 정렬");
 		System.out.println(productDao.categorySortAsc(1));
 		*/
+		/*
 		String keyword = "반지";
 		ProductService productService = new ProductService();
 		List<Product> productList = new ArrayList<Product>();
@@ -44,6 +45,11 @@ public class ProductDaoTest {
 			productList = productService.searchProductName(keyword);
 		}
 		for (Product product : productList) {
+			System.out.println(product);
+		}
+		*/
+		List<Product> productList = productDao.searchProductName("락");
+		for(Product product : productList) {
 			System.out.println(product);
 		}
 	}

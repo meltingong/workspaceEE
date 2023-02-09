@@ -7,15 +7,26 @@
 	pageEncoding="UTF-8"%>
 	
 <%
-	ProductService productService = new ProductService();
+		ProductService productService = new ProductService();
 		String type_noStr = request.getParameter("type_no");
 		String sort_option = request.getParameter("sort_option");
+		String keyword = request.getParameter("mainsearchkeyword");
+		
 		List<Product> productList = new ArrayList<Product>();
 		if(type_noStr == null){
-			productList =  productService.productList();
+			if(keyword != null){
+				productList = productService.searchProductName(keyword);
+			}else{ 
+				productList =  productService.productList();
+			}
 		}else{
-			productList = productService.searchCaNo(Integer.parseInt(type_noStr));
+			if(keyword != null){
+				productList = productService.searchProductName(keyword);
+			}else{ 
+				productList = productService.searchCaNo(Integer.parseInt(type_noStr));
+			}
 		}
+		
 	%>
 <%
 boolean isLogin = false;
@@ -73,12 +84,12 @@ if (session.getAttribute("sUserId") != null) {
 									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>product</b></td>
 								</tr>
 							</table>
-							<form action="product_sort_action.jsp" method="post" onclick="product_sort();">
+							<form action="product_sort_action.jsp" method="post">
 							<!-- 
 							 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 							-->
 							<br><b>정렬</b>&nbsp;
-							<select name="sort_option">
+							<select name="sort_option" onchange="product_sort();">
 								<option value="select">선택
 								<option value="sort_asc">가격 오름차순
 								<option value="sort_desc">가격 내림차순
@@ -89,12 +100,12 @@ if (session.getAttribute("sUserId") != null) {
 									cellspacing="15" >
 									<%
 									int product_size=productList.size();
-																							int product_column_size=4;
-																							int product_line_count = 1;
-																							
-																							
-																							for (int i=0;i<productList.size();i++) {
-																									Product product=productList.get(i);
+									int product_column_size=4;
+									int product_line_count = 1;
+									
+									
+									for (int i=0;i<productList.size();i++) {
+											Product product=productList.get(i);
 									%>
 									<!--상품시작 -->
 									<%
