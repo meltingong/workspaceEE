@@ -1,6 +1,5 @@
-<%@page import="product.Product"%>
-<%@page import="cart.Cart"%>
-<%@page import="cart.CartService"%>
+<%@page import="com.itwill.shop.cart.Cart"%>
+<%@page import="com.itwill.shop.cart.CartService"%>
 <%@page import="java.util.List"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
