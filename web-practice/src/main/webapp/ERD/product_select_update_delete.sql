@@ -22,3 +22,6 @@ update product set p_option='골드' where p_no = 1;
 --cart에서 user,product option 접근
 
 select count(*) as p_count from cart c join userinfo u on c.userid=u.userid join product p on c.p_no = p.p_no where u.userid = 'test1' and c.p_no='3' and p.p_option = 'whitegold';
+
+-- 검색 결과에서 정렬
+select * from (select rownum rn,e.* from (select * from product order by p_price desc) e) where p_name like '%웨딩%';
