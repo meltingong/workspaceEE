@@ -15,7 +15,7 @@
 		List<Product> productList = new ArrayList<Product>();
 
 		
- 		if(type_noStr != null){
+ 		if(!type_noStr.equals("null")){
 			if(keyword.equals("null")){
 				if(sort_option.equals("sort_asc")){
 					productList = productService.categorySortAsc(Integer.parseInt(type_noStr));
@@ -25,7 +25,7 @@
 					productList = productService.searchCaNo(Integer.parseInt(type_noStr));
 				}
 			}
-		}else if(type_noStr == null){
+		}else if(type_noStr.equals("null")){
 			if(!keyword.equals("null")){
 				if(sort_option.equals("sort_asc")){
 					productList = productService.searchSortAsc(keyword);
