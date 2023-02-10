@@ -4,7 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-//String p_option = request.getParameter("p_option");
+//String p_option = null;
 String p_noStr = request.getParameter("p_no");
 if (p_noStr == null || p_noStr.equals("")) {
 	response.sendRedirect("product_list.jsp");
@@ -41,7 +41,6 @@ if (product == null) {
 		if (<%=!isLogin%>) {
 			alert('로그인 하세요');
 			location.href = 'user_login_form.jsp';
-			
 		} else {
 			if(add_cart_form.p_option.value === 'select'){
 				alert('옵션을 선택하세요');
@@ -77,6 +76,25 @@ if (product == null) {
 	function productList() {
 		location.href = 'product_list.jsp';
 	}
+	
+/* 	function order_direct_option_update(){
+		//alert(add_cart_form.p_option.value); 
+		//window.localStorage.setItem(p_option, p_option_value);
+		/* if(add_cart_form.p_option.value === 'whitegold'){
+			add_cart_form.p_option.selected = true;
+			
+		}else if(add_cart_form.p_option.value === 'gold'){
+			add_cart_form.p_option.selected = true;
+			
+		}else if(add_cart_form.p_option.value === 'rosegold'){
+			add_cart_form.p_option.selected = true;
+			
+		}
+		 document.product_detail_form.method = 'POST';
+		document.product_detail_form.action = 'order_direct_option_update.jsp';
+		document.product_detail_form.submit();  
+	} */
+	
 </script>
 <!-- mouse effect start -->
 	<jsp:include page="include_mouseffect.jsp"/>
@@ -142,11 +160,12 @@ if (product == null) {
 											-->
 											
 											<br><br><br><b><em>color</em></b><br><br>
-											<select name="p_option">
-												<option value="select"> 선택
-												<option value="whitegold">화이트골드
+											<select name="p_option" ><!-- onchange="order_direct_option_update()" -->
+												<option value="select" > 선택
+												<option value="whitegold"> 화이트골드
 												<option value="gold">골드
 												<option value="rosegold">로즈골드
+											
 											</select> <br><br> 
 											
 											<select name="cart_qty">

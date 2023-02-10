@@ -17,7 +17,7 @@
 		response.sendRedirect("order_list.jsp");
 		return;
 	} 
-	
+	//String p_option = request.getParameter("p_option");
 	String buyType = request.getParameter("buyType");
 	String p_noStr = request.getParameter("p_no");
 	String p_qtyStr = request.getParameter("p_qty");
@@ -37,6 +37,7 @@
 	List<Cart> cartItemList = new ArrayList<Cart>();
 	User user = userService.findUser(sUserId);
 	
+	
 	if(buyType.equals("cart")){
 		cartItemList = cartService.getCartItemByUserId(sUserId);
 	} else if(buyType.equals("cart_select")){
@@ -45,6 +46,7 @@
 		}
 	} else if(buyType.equals("direct")){
 		product = productService.productDetail(Integer.parseInt(p_noStr));
+		//productService.updateOption(Integer.parseInt(p_noStr), p_option);
 		cartItemList.add(new Cart(0,Integer.parseInt(p_qtyStr),sUserId,product));
 	}
 %>	
