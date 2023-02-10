@@ -43,7 +43,7 @@ if (session.getAttribute("sUserId") != null) {
 <link rel=stylesheet href="css/shop.css" type="text/css">
 <script type="text/javascript">
 	function product_sort(){
-		document.cart_view_form.method='POST';
+		document.cart_view_form.method='GET';
 		document.cart_view_form.action='product_sort_action.jsp';
 		document.cart_view_form.submit();
 	} 

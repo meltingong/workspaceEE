@@ -65,7 +65,7 @@ function logincheck(){
 		<%} %>
 		
 		<!-- 검색 아이콘 -->
-		<li><img src='image/mainsearchbtn.png' style="cursor: pointer;margin-left: 10px;margin-top: 10px; margin-right: 40px" onclick="mainsearch();"></li>
+		<li><img src='image/mainsearchbtn.png' style="cursor: pointer;margin-left: 10px;margin-top: 10px; margin-right: 40px" onclick="mainsearch();" /></li>
 		<li id="mainsearch" title="검색">
 			<form id="mainsearchform" method="post">
 				<input type='text' style="border: solid 1px grey; width: 200px; height: 30px; padding-left: 10px; border-radius: 10px" name='mainsearchkeyword'> 

@@ -14,8 +14,38 @@
 		String sort_option = request.getParameter("sort_option");
 		List<Product> productList = new ArrayList<Product>();
 
+		
+ 		if(type_noStr != null){
+			if(keyword == null){
+				if(sort_option.equals("sort_asc")){
+					productList = productService.categorySortAsc(Integer.parseInt(type_noStr));
+				}else if(sort_option.equals("sort_desc")){
+					productList = productService.categorySortDesc(Integer.parseInt(type_noStr));
+				}else{
+					productList = productService.searchCaNo(Integer.parseInt(type_noStr));
+				}
+			}
+		}else{
+			if(keyword != null){
+				if(sort_option.equals("sort_asc")){
+					productList = productService.searchSortAsc(keyword);
+				}else if(sort_option.equals("sort_desc")){
+					productList = productService.searchSortDesc(keyword);
+				}else{
+					productList = productService.searchProductName(keyword);
+				}		
+			}else{
+				if(sort_option.equals("sort_asc")){
+					productList = productService.priceSortAsc();
+				}else if(sort_option.equals("sort_desc")){
+					productList = productService.priceSortDesc();
+				}else{
+					productList = productService.productList();
+				}		
+			}
+		} 
 
-	 	if(keyword != null){
+	 	/*  if(keyword != null){
 			if(sort_option.equals("sort_asc")){
 				productList = productService.searchSortAsc(keyword);
 			}else if(sort_option.equals("sort_desc")){
@@ -41,7 +71,7 @@
 					productList = productService.productList();
 				}
 			}
-		} 
+		}   */
  
 		
 	%>
@@ -60,7 +90,7 @@ if (session.getAttribute("sUserId") != null) {
 <link rel=stylesheet href="css/shop.css" type="text/css">
 <script type="text/javascript">
 	function product_sort(){
-		document.cart_view_form.method='POST';
+		document.cart_view_form.method='GET';
 		document.cart_view_form.action='product_sort_action.jsp';
 		document.cart_view_form.submit();
 	} 
