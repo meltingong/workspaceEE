@@ -68,7 +68,7 @@ function logincheck(){
 		<li><img src='image/mainsearchbtn.png' style="cursor: pointer;margin-left: 10px;margin-top: 10px; margin-right: 40px" onclick="mainsearch();" /></li>
 		<li id="mainsearch" title="검색">
 			<form id="mainsearchform" method="post">
-				<input type='text' style="border: solid 1px grey; width: 200px; height: 30px; padding-left: 10px; border-radius: 10px" name='mainsearchkeyword'> 
+				<input type='text' style="border: solid 1px grey; width: 200px; height: 30px; padding-left: 10px; border-radius: 10px" name='mainsearchkeyword' onKeypress="javascript:if(event.keyCode==13) {mainsearch();}"/> 
 				<input type="hidden" name='searchbtn' value=''>
 			</form>
 
