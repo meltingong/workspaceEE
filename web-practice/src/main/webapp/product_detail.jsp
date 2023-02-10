@@ -136,6 +136,7 @@ if (product == null) {
 									<!--tr width=100%-->
 									<td width=30% height=200 align=center class=t1>
 										<form name="add_cart_form" method="post" action="cart_add_action.jsp">
+										
 											<!-- 
 											 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 											-->

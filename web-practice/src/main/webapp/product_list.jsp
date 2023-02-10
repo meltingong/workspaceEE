@@ -14,7 +14,7 @@
 		List<Product> productList = new ArrayList<Product>();
 	
 		if(type_noStr == null){
-			if(keyword != null){
+			if(keyword!=null){
 				productList = productService.searchProductName(keyword);
 			}else{
 				productList =  productService.productList();
