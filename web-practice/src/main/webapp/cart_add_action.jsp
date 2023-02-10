@@ -1,14 +1,13 @@
-<%@page import="product.ProductService"%>
-<%@page import="cart.Cart"%>
-<%@page import="cart.CartService"%>
+<%@page import="com.itwill.shop.product.ProductService"%>
+<%@page import="com.itwill.shop.cart.CartService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="login_check.jspf"%>       
 <%
-       if(request.getMethod().equalsIgnoreCase("GET")){
+        if(request.getMethod().equalsIgnoreCase("GET")){
        		response.sendRedirect("product_list.jsp");
        		return;
-       	}
+       	}  
        	/*
        	1.파라메타받기(cart_qty,p_no)
        	2.장바구니에 제품을담고 cart_view.jsp로redirection

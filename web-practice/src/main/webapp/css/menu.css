@@ -50,6 +50,14 @@ div#header #menu {
 	padding: 0 0 0 20px;
 	float: left;
 }
+#menu li#login {
+	padding: 0 0 0 50px;
+	float: left;
+}
+#menu li#logout {
+	padding: 0 0 0 50px;
+	float: left;
+}
 
 #menu li#mainsearch {
 	float: right;
@@ -64,6 +72,13 @@ div#header #menu {
 }
 
 #menu li#mypage {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 10px 16px 20px 16px;
+	text-decoration: none;
+}
+#menu li#mypagebflogin {
 	display: block;
 	color: white;
 	text-align: center;

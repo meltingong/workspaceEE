@@ -6,7 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
 <title>Tiffany&Coding</title>
-<link rel="stylesheet" href="css/styles.css" type="text/css">
+<link rel=stylesheet href="css/styles.css" type="text/css">
+<link rel=stylesheet href="css/user.css" type="text/css">
 <link rel=stylesheet href="css/board.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
 <style type="text/css"></style>
@@ -47,11 +48,26 @@
 			<div id="category_container">
 				<div id="category_content">
 					<ul id="category_wrapper">
-						<li id="ca_all" title="전체" style="margin-right: 17px"><a href="product_list.jsp"><img src="image/shop_category_all.png" width='100%' height='100%'></a></li>
-						<li id="ca_ring" title="반지" style="margin-right: 17px"><a href="product_list.jsp?type_no=1"><img src="image/shop_category_ring.png" width='100%' height='100%'></a></li>
-						<li id="ca_necklaces" title="목걸이" style="margin-right: 17px"><a href="product_list.jsp?type_no=2"><img src="image/shop_category_necklaces.png" width='100%' height='100%'></a></li>
-						<li id="ca_earings" title="귀걸이" style="margin-right: 17px"><a href="product_list.jsp?type_no=4"><img src="image/shop_category_earings.png" width='100%' height='100%'></a></li>
-						<li id="ca_braclet" title="팔찌" ><a href="product_list.jsp?type_no=3"><img src="image/shop_category_braclet.png" width='100%' height='100%'></a></li>
+						<li id="ca_all" title="전체" style="margin-right: 30px; margin-left:30px"" >
+							<a href="product_list.jsp"><img src="image/shop_category_all.png" class="ca_image" width='100%' height='100%'></a>
+						<div class="categorytext">ALL</div>
+						</li>
+						<li id="ca_ring" title="반지" style="margin-right: 30px">
+							<a href="product_list.jsp?type_no=1"><img src="image/shop_category_ring.png" class="ca_image" width='100%' height='100%'></a>
+						<div class="categorytext">RING</div>
+						</li>
+						<li id="ca_necklaces" title="목걸이" style="margin-right: 30px">
+							<a href="product_list.jsp?type_no=2"><img src="image/shop_category_necklaces.png" class="ca_image" width='100%' height='100%'></a>
+						<div class="categorytext">NECKLACES</div>
+						</li>
+						<li id="ca_earings" title="귀걸이" style="margin-right: 30px">
+							<a href="product_list.jsp?type_no=4"><img src="image/shop_category_earings.png" class="ca_image" width='100%' height='100%'></a>
+						<div class="categorytext">EARINGS</div>
+						</li>
+						<li id="ca_braclet" title="팔찌" >
+							<a href="product_list.jsp?type_no=3"><img src="image/shop_category_braclet.png" class="ca_image" width='100%' height='100%'></a>
+						<div class="categorytext">BRACLET</div>
+						</li>
 					</ul>
 				</div>
 			</div>

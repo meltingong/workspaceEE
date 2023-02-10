@@ -1,9 +1,10 @@
+<%@page import="com.itwill.shop.product.Product"%>
+<%@page import="com.itwill.shop.product.ProductService"%>
 <%@page import="java.text.DecimalFormat"%>
-<%@page import="product.Product"%>
-<%@page import="product.ProductService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
+//String p_option = request.getParameter("p_option");
 String p_noStr = request.getParameter("p_no");
 if (p_noStr == null || p_noStr.equals("")) {
 	response.sendRedirect("product_list.jsp");
@@ -30,6 +31,8 @@ if (product == null) {
 <title>Tiffany&coding</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
+<link rel=stylesheet href="css/user.css" type="text/css">
+<link rel=stylesheet href="css/board.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
 <style type="text/css" media="screen">
 </style>
@@ -38,17 +41,21 @@ if (product == null) {
 		if (<%=!isLogin%>) {
 			alert('로그인 하세요');
 			location.href = 'user_login_form.jsp';
-		} else {
 			
-			var left = Math.ceil(( window.screen.width)/5);
-			var top = Math.ceil(( window.screen.height)/3); 
-			console.log(left);
-			console.log(top);
-			var cartWin = window.open("about:blank","cartForm","width=260,height=130,top="+top+",left="+0+",location=no, directories=no, status=no, menubar=no, scrollbars=no,copyhistory=no");
-			document.add_cart_form.action = 'cart_add_action_popup_window.jsp';
-			document.add_cart_form.target = 'cartForm';
-			document.add_cart_form.method = 'POST';
-			document.add_cart_form.submit();
+		} else {
+			if(add_cart_form.p_option.value === 'select'){
+				alert('옵션을 선택하세요');
+			}else{
+				var left = Math.ceil(( window.screen.width)/2.5);
+				var top = Math.ceil(( window.screen.height)/3); 
+				console.log(left);
+				console.log(top);
+				var cartWin = window.open("about:blank","cartForm","width=260,height=130,top="+top+",left="+left+",location=no, directories=no, status=no, menubar=no, scrollbars=no,copyhistory=no");
+				document.add_cart_form.action = 'cart_add_action_popup_window.jsp';
+				document.add_cart_form.target = 'cartForm';
+				document.add_cart_form.method = 'POST';
+				document.add_cart_form.submit();
+			}
 		}
 	}
 
@@ -56,10 +63,15 @@ if (product == null) {
 		if (<%=!isLogin%>) {
 			alert('로그인 하세요');
 			location.href = 'user_login_form.jsp';
+			
 		} else {
-			document.product_detail_form.method = 'POST';
-			document.product_detail_form.action = 'order_create_form.jsp';
-			document.product_detail_form.submit();
+			if(add_cart_form.p_option.value === 'select'){
+				alert('옵션을 선택하세요');
+			}else{
+				document.product_detail_form.method = 'POST';
+				document.product_detail_form.action = 'order_create_form.jsp';
+				document.product_detail_form.submit();
+			}
 		}
 	}
 	function productList() {
@@ -100,10 +112,9 @@ if (product == null) {
 				<table border=0 cellpadding=0 cellspacing=0>
 					<tr>
 						<td><br />
-							<table style="padding-left: 10px" border=0 cellpadding=0
-								cellspacing=0>
+							<table style="padding-left: 10px; font-size: 40px; height: 100px" border=0 cellpadding=0 cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>detail</b></td>
+									<td bgcolor="FFFFFF" height="22">&nbsp;&nbsp;<b>DETAIL</b></td>
 								</tr>
 							</table> <!-- 
 							<form name="f" method="post">
@@ -146,8 +157,10 @@ if (product == null) {
 											</select>
 											<b><em>qty</em></b><br><br>
 											<br>
-												<a href="javascript:add_cart_popup_window(this.parentElement);"><input width=40px height=40px type=image src='image/cart.png' value="장바구니담기[팝업]" title="장바구니담기[팝업]" style="font-size: 6pt;"/></a>
+												<a href="javascript:add_cart_popup_window(this.parentElement);"><img width=80px height=80px  src='image/cart.png'  title="장바구니담기" style="font-size: 6pt;"/></a>
 												<input type="hidden" name=p_no value="<%=product.getP_no()%>">
+												<!--  a href="javascript:add_cart_popup_window(this.parentElement);"><input width=80px height=80px type=image src='image/cart.png' value="장바구니 담기" title="장바구니담기[팝업]" style="font-size: 6pt;"/></a>
+												<input type="hidden" name=p_no value="<%=product.getP_no()%>">-->
 										</form>
 									</td>
 								<!--/tr-->
@@ -159,11 +172,11 @@ if (product == null) {
 							-->
 
 
-							<table border="0" cellpadding="0" cellspacing="1">
+							<table border="0" cellpadding="0" cellspacing="1" style="height: 100px">
 								<tr>
 									<td align=center>
 									<input
-										type="button" value="상품목록" onClick="productList();">&nbsp;
+										type="button" value="상품목록" onClick="productList();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										<input type="button" value="바로주문" onClick="order_create_form();"> </td>
 								</tr>
 							</table></td>

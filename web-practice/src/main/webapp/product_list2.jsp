@@ -1,5 +1,5 @@
-<%@page import="product.Product"%>
-<%@page import="product.ProductService"%>
+<%@page import="com.itwill.shop.product.Product"%>
+<%@page import="com.itwill.shop.product.ProductService"%>
 <%@page import="java.util.List"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
@@ -9,49 +9,39 @@
 <%
 		
 		ProductService productService = new ProductService();
+		String keyword = request.getParameter("mainsearchkeyword");
 		String type_noStr = request.getParameter("type_no");
 		String sort_option = request.getParameter("sort_option");
 		List<Product> productList = new ArrayList<Product>();
-		
-		if(type_noStr != null){
-			 if(sort_option.equals("sort_asc")){
-				productList = productService.categorySortAsc(Integer.parseInt(type_noStr));
-			}else if(sort_option.equals("sort_desc")){  
-				productList = productService.categorySortDesc(Integer.parseInt(type_noStr));
+
+		if(keyword != null){
+			if(sort_option.equals("sort_asc")){
+				productList = productService.searchSortAsc(keyword);
+			}else if(sort_option.equals("sort_desc")){
+				productList = productService.searchSortDesc(keyword);
 			}else{
-				productList = productService.searchCaNo(Integer.parseInt(type_noStr));
+				productList = productService.searchProductName(keyword);
 			}
-		}else if(type_noStr == null){
-			 if(sort_option.equals("sort_asc")){
-				productList = productService.priceSortAsc();
-			}else if(sort_option.equals("sort_desc")){  
-				productList = productService.priceSortDesc();
-			}else{
-				productList = productService.productList();
+		}else{
+			if(type_noStr != null){
+				 if(sort_option.equals("sort_asc")){
+					productList = productService.categorySortAsc(Integer.parseInt(type_noStr));
+				}else if(sort_option.equals("sort_desc")){  
+					productList = productService.categorySortDesc(Integer.parseInt(type_noStr));
+				}else{
+					productList = productService.searchCaNo(Integer.parseInt(type_noStr));
+				}
+			}else if(type_noStr == null){
+				 if(sort_option.equals("sort_asc")){
+					productList = productService.priceSortAsc();
+				}else if(sort_option.equals("sort_desc")){  
+					productList = productService.priceSortDesc();
+				}else{
+					productList = productService.productList();
+				}
 			}
 		}
-		
-		
-		/* if(sort_option.equals("sort_asc")){
-			 if(type_noStr != null){
-				productList = productService.categorySortAsc(Integer.parseInt(type_noStr));
-			}else if(type_noStr == null){  
-				productList = productService.priceSortAsc();
-			}
-		}else if(sort_option.equals("sort_desc")){
-			 if(type_noStr != null){
-				productList = productService.categorySortDesc(Integer.parseInt(type_noStr));
-			}else if(type_noStr == null){  
-				productList = productService.priceSortDesc();
-			}
-		}else if(sort_option.equals("select")){
-			if(type_noStr != null){
-				productList = productService.searchCaNo(Integer.parseInt(type_noStr));
-			}else {
-				productList = productService.productList();
-			}
-		} */
-		
+ 
 		
 	%>
 <%
@@ -112,6 +102,7 @@ if (session.getAttribute("sUserId") != null) {
 							</table>
 							<form name = "product_sort_action_form" action="product_sort_action.jsp" method="get">
 							<input type="hidden" name="type_no" value="<%=type_noStr%>">
+							<input type="hidden" name="mainsearchkeyword" value="<%=keyword%>">
 							<!-- 
 							 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 							-->

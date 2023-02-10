@@ -1,5 +1,5 @@
-<%@page import="cart.Cart"%>
-<%@page import="cart.CartService"%>
+<%@page import="com.itwill.shop.cart.Cart"%>
+<%@page import="com.itwill.shop.cart.CartService"%>
 <%@page import="java.util.List"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
@@ -16,7 +16,10 @@ List<Cart> cartList = cartService.getCartItemByUserId(sUserId);
 <title>Tiffany&coding</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel=stylesheet href="css/styles.css" type="text/css">
+<link rel=stylesheet href="css/user.css" type="text/css">
+<link rel=stylesheet href="css/board.css" type="text/css">
 <link rel=stylesheet href="css/shop.css" type="text/css">
+<link rel=stylesheet href="css/cart.css" type="text/css">
  
 <style type="text/css" media="screen">
 
@@ -127,7 +130,9 @@ List<Cart> cartList = cartService.getCartItemByUserId(sUserId);
 		}
 	}
 </script>
-<jsp:include page="include_mouseffect.jsp"/>
+	<!-- mouse effect start -->
+	<jsp:include page="include_mouseffect.jsp"/>
+	<!-- mouse effect end -->
 </head>
 <body onload="cart_item_select_count();" bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -156,13 +161,13 @@ List<Cart> cartList = cartService.getCartItemByUserId(sUserId);
 
 			<!-- include_content.jsp start-->
 			<div id="content">
-				<table border=0 cellpadding=0 cellspacing=0>
+				<table border=0 cellpadding=0 cellspacing=0 style="padding-left: 100px; padding-right: 100px">
 					<tr>
 						<td><br />
-							<table style="padding-left: 10px" border=0 cellpadding=0
+							<table style="height:100px ;padding-left: 10px; font-size: 40px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td height="22">&nbsp;&nbsp;<b>cart</b></td>
+									<td height="22">&nbsp;&nbsp;<b>CART</b></td>
 								</tr>
 							</table> <!--form--> <!-- 
 							<form name="f" method="post">
@@ -170,21 +175,21 @@ List<Cart> cartList = cartService.getCartItemByUserId(sUserId);
 							<div id='f'>
 								<table align=center width=80% border="0" cellpadding="0"
 									cellspacing="1" bgcolor="BBBBBB">
-									<tr>
-										<td width=60 height=25 align="center" bgcolor="#81D8D0"
-											class=t1><input type="checkbox" id="all_select_checkbox" checked="checked" onchange="cart_item_all_select(event);cart_item_select_count();"></td>
-										<td width=40 height=25 align="center" bgcolor="#81D8D0"
-											class=t1><font>이미지</font></td>
-										<td width=210 height=25 align="center" bgcolor="#81D8D0"
-											class=t1><font>상품명</font></td>
-										<td width=112 height=25 align="center" bgcolor="#81D8D0"
-											class=t1><font>수 량</font></td>
-										 <td width=112 height=25 align="center" bgcolor="#81D8D0" class=t1><font
-												 >옵 션</font></td>
-										<td width=146 height=25 align="center" bgcolor="#81D8D0"
-											class=t1><font>가 격</font></td>
-										<td width=50 height=25 align="center" bgcolor="#81D8D0"
-											class=t1><font>비 고</font></td>
+									<tr height="30">
+										<td width=60 height=25 align="center" bgcolor="#000000" class=t1 style="color: white;">
+										<input type="checkbox" id="all_select_checkbox" checked="checked" onchange="cart_item_all_select(event);cart_item_select_count();"></td>
+										<td width=40 height=25 align="center" bgcolor="#000000"class=t1 style="color: white;">
+										<font>이미지</font></td>
+										<td width=210 height=25 align="center" bgcolor="#000000" class=t1 style="color: white;">
+										<font>상품명</font></td>
+										<td width=112 height=25 align="center" bgcolor="#000000" class=t1 style="color: white;">
+										<font>수 량</font></td>
+										 <td width=112 height=25 align="center" bgcolor="#000000" class=t1 style="color: white;">
+										 <font>옵 션</font></td>
+										<td width=146 height=25 align="center" bgcolor="#000000" class=t1 style="color: white;">
+										<font>가 격</font></td>
+										<td width=50 height=25 align="center" bgcolor="#000000" class=t1 style="color: white;">
+										<font>비 고</font></td>
 									</tr>
 									<!-- cart item start -->
 									<%
@@ -232,8 +237,8 @@ List<Cart> cartList = cartService.getCartItemByUserId(sUserId);
 												<input type="hidden" name="cart_no"
 													value="<%=cart.getCart_no()%>"> <a
 													href="javascript:cart_delete_item_action('cart_delete_item_form_<%=cart.getCart_no()%>');">
-													<svg xmlns="http://www.w3.org/2000/svg" width="14"
-														height="14" viewBox="0 0 28 28" class="icon--close">
+													<svg xmlns="http://www.w3.org/2000/svg" width="30"
+														height="30" viewBox="0 0 28 28" class="icon--close">
 													<g fill="none" fill-rule="evenodd"> <path
 														d="M0 0H28V28H0z"></path> <g fill="#9B9BA0"
 														transform="translate(6 6)" class="icon--close__group">
@@ -255,7 +260,7 @@ List<Cart> cartList = cartService.getCartItemByUserId(sUserId);
 										<td width=640 colspan=7 height=26 class=t1 bgcolor="ffffff">
 											<p align=right>
 												<br /> 
-												<font color='red'>총주문금액 : <span id="tot_order_price">₩<%=new DecimalFormat("#,##0").format(tot_price)%></span> 원</font>
+												<font color='red'>총 주문 금액 : <span id="tot_order_price">₩<%=new DecimalFormat("#,##0").format(tot_price)%></span> 원</font>
 											</p>
 										</td>
 									</tr>
@@ -265,16 +270,15 @@ List<Cart> cartList = cartService.getCartItemByUserId(sUserId);
 							</form> 
 							 --> <br />
 
-							<table style="padding-left: 10px" border="0" cellpadding="0"
-								cellspacing="1" width="590">
+							<table style="padding-left: 10px; height: 200px;" border="0" cellpadding="0" cellspacing="1" width="590">
 								<tr>
-									<td align=center>&nbsp;&nbsp; <a href="product_list.jsp"
-										class=m1>계속 구경하기</a>&nbsp;&nbsp; <%
+									<td align=center> <a href="product_list.jsp"
+										class=m1>계속 구경하기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%
 										 if (cartList.size() >= 1) {
 										 %> <a href="javascript:cart_view_form_select_submit();" class=m1>
-										 	총 <span style="font-weight: bold;" id="cart_item_select_count"></span>개 주문하기[주문폼]
-										 	</a>&nbsp;&nbsp;
-											<a href="javascript:cart_delete();" class=m1>장바구니 비우기</a>&nbsp;&nbsp;
+										 	총 <span style="font-weight: bold;" id="cart_item_select_count"></span>개 주문하기
+										 	</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="javascript:cart_delete();" class=m1>장바구니 비우기</a>
 											<%
 											}
 											%>

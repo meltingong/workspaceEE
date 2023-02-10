@@ -5,30 +5,26 @@ table {
 }
 form,div#f {
 	margin:10px;
-	margin-right: 0px;
 	text-align: center;
 }
+
+
 /*방문 전 링크상태*/
 a:link {
-	
 	color: #333333;
-	font-size: 12px;
 	text-decoration: none;
 }
 /*방문 후 링크상태*/
 a:visited {
 	color: #333333;
-	font-size: 12px;
 	text-decoration: none;
 }
 A:active {
 	color: #333333;
-	font-size: 12px;
 	text-decoration: none;
 }
 A:hover {
-	color: #BEA12C;
-	font-size: 12px;
+	font-weight: bold;
 	/*
 	text-decoration: underline;
 	*/
@@ -36,55 +32,45 @@ A:hover {
 
 a.user:link {
 	color: #333333;
-	font-size: 12px;
 	text-decoration: underline;
 }
 a.user:visited {
 	color: #333333;
-	font-size: 12px;
 	text-decoration: underline;
 }
 a.user:active {
 	color: #333333;
-	font-size: 12px;
 	text-decoration: underline;
 }
 input,textarea,select{
-	font-size: 8pt;
 	color: #333333;
+	font-family: 'NEXON Lv1 Gothic OTF';
 }
 
 td {
-	font-size: 12px;
 	color: #333333;
-	line-height: 18px;
+	line-height: 30px;
 }
 .title {
-	font-size: 12pt;
 	color: #000000;
 	line-height: 22px;
 }
 
 /* Form css */
 .text {
-	font-size: 8pt;
 	color: #333333;
 }
 .textarea {
-	font-size: 8pt;
 	color: #333333;
 }
 .password {
-	font-size: 8pt;
 	color: #333333;
 }
 .file {
 
-	font-size: 8pt;
 	color: #333333;
 }
 .select {
-	font-size: 8pt;
 	color: #333333;
 }
 .gnb_sc .chkout_gnb_wrap .cart_count {

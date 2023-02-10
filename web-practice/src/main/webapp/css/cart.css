@@ -1,3 +1,10 @@
+
+td {
+    color: #333333;
+    line-height: 50px;
+}
+
+
 .w3-green, .w3-hover-green:hover {
     color: #fff!important;
     background-color: #4CAF50!important;

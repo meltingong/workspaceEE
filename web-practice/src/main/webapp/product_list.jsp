@@ -1,5 +1,5 @@
-<%@page import="product.Product"%>
-<%@page import="product.ProductService"%>
+<%@page import="com.itwill.shop.product.Product"%>
+<%@page import="com.itwill.shop.product.ProductService"%>
 <%@page import="java.util.List"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
@@ -47,6 +47,7 @@ if (session.getAttribute("sUserId") != null) {
 		document.cart_view_form.action='product_sort_action.jsp';
 		document.cart_view_form.submit();
 	} 
+	
 </script> 
 <style type="text/css" media="screen">
 </style>
@@ -78,18 +79,19 @@ if (session.getAttribute("sUserId") != null) {
 				<table border=0 cellpadding=0 cellspacing=0>
 					<tr>
 						<td><br />
-							<table style="padding-left: 10px" border=0 cellpadding=0
+							<table style="padding-left: 10px; font-size: 40px; height: 100px" border=0 cellpadding=0
 								cellspacing=0>
 								<tr>
-									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>product</b></td>
+									<td bgcolor="FFFFFF" height="22"><b>PRODUCT</b></td>
 								</tr>
 							</table>
 							<form name = "product_sort_action_form" action="product_sort_action.jsp" method="get">
 							<input type="hidden" name="type_no" value="<%=type_noStr%>">
+							<input type="hidden" name="mainsearchkeyword" value="<%=keyword%>">
 							<!-- 
 							 <input type=text name="cart_qty" value=1 size=4 class=TXTFLD>  
 							-->
-							<br><b>정렬</b>&nbsp;
+							<br>&nbsp;&nbsp;<b>정렬</b>&nbsp;&nbsp;&nbsp;&nbsp;
 							<select name="sort_option" onchange="product_sort_action_form.submit();">
 								<option value="select">선택
 								<option value="sort_asc">가격 오름차순

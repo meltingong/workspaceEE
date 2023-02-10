@@ -1,12 +1,19 @@
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 html, body {
 	margin: 0;
-	padding: 0
+	padding: 0;
+	font-family: 'NEXON Lv1 Gothic OTF';
 }
 
 body {
-	font:sans-serif;
 	text-align: center;
-	font-size: 13px;
+	font-size: 18px;
 }
 
 p {
@@ -45,7 +52,8 @@ div#header h1 {
 
 div#mainlogo{
 	text-align: center;
-	margin:0;
+    margin: 50px auto 0 auto;
+    width: 80%;
 }
 
 /***************** menu start****************/
@@ -63,7 +71,7 @@ div#navigation {
 }
 
 div#navigation {
-	margin-top: 10px;
+	margin-top: 60px;
 	margin-bottom: 10px;
 }
 
@@ -95,6 +103,12 @@ table#boardmaintop{
 	font-size: 13px;
 }
 
+div#mainbanner_bottom_container{
+	padding-top: 100px;
+}
+/*
+category
+*/
 div#category_body{
 	width: 100%;
 	height:400px;
@@ -111,6 +125,8 @@ div#category_content{
 	display: flex;
 }
 #category_content ul{
+	font-family: 'Anton', sans-serif;
+	font-weight: 700;
 	list-style:none;
 	display: flex;
 	padding: 0px;
@@ -121,13 +137,58 @@ div#category_content{
 }
 
 div#category_body{
-	padding-top: 50px;
+	padding-top: 20px;
 }
 
-div#mainbanner_bottom_container{
-	padding-top: 200px;
+li#ca_all {
+	font-size: 60px;
+	position: relative;
+	text-align: center;
+	color: white;
 }
 
+li#ca_ring {
+	font-size: 60px;
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+li#ca_necklaces {
+	font-size: 35px;
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+li#ca_earings {
+	font-size: 40px;
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+li#ca_braclet {
+	font-size: 40px;
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+.categorytext {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.ca_image {
+    filter: brightness(1);
+}
+ 
+.ca_image:hover {
+    filter: brightness(0.5);
+}
 /*
 div#extra{background:#CCC8B3;}
 */
@@ -147,7 +208,6 @@ div#footer p {
 	padding-top:30px;
 	padding-bottom:20px;
 	font-size: 15px;
-	font: serif;
 }
 
 div#container {
@@ -165,7 +225,7 @@ div#wrapper {
 }
 
 div#content {
-	margin: 50px 0px 0 0px
+	margin: 0
 }
 
 table#boardlist{
@@ -175,33 +235,3 @@ table#boardlist{
 /*
 board
 */
-div#boardlist_info{
-	text-align: left;
-	font-size: 30px;
-	font-weight: bold;
-	padding: 20px 0 0 150px;
-}
-div#boardlist_info span{
-	font-size: 12px;
-	padding: 0 0 0 30px;
-}
-div#boardlist_info ul{
-	list-style:none;
-	padding: 0px;
-	width: 100%;
-}
-
-#boardlist_info li#boardlist_top{
-	float: left;
-}
-
-#boardlist_info li#boardwrite a{
-	float: right;
-	padding: 0 50px 0 0;
-}
-table#boardlist_paging{
-	padding: 30px 0 30px 0;
-}
-table#boardlist tr#boardlist_tr{
-	color: white;
-}

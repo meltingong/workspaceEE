@@ -15,13 +15,3 @@ select * from product p join category c on p.ca_no = c.ca_no and p.ca_no = 1;
 select * from product p join category c on p.ca_no = c.ca_no and c.ca_name = '반지';
 --상품명 키워드로 검색
 select * from product where p_name like '%링'; 
-
---옵션만 업데이트
-update product set p_option='골드' where p_no = 1;
-
---cart에서 user,product option 접근
-
-select count(*) as p_count from cart c join userinfo u on c.userid=u.userid join product p on c.p_no = p.p_no where u.userid = 'test1' and c.p_no='3' and p.p_option = 'whitegold';
-
--- 검색 결과에서 정렬
-select * from (select rownum rn,e.* from (select * from product order by p_price desc) e) where p_name like '%웨딩%';
