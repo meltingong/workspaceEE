@@ -14,7 +14,8 @@
 		String sort_option = request.getParameter("sort_option");
 		List<Product> productList = new ArrayList<Product>();
 
-		if(keyword != null){
+
+	 	if(keyword != null){
 			if(sort_option.equals("sort_asc")){
 				productList = productService.searchSortAsc(keyword);
 			}else if(sort_option.equals("sort_desc")){
@@ -40,7 +41,7 @@
 					productList = productService.productList();
 				}
 			}
-		}
+		} 
  
 		
 	%>
