@@ -4,7 +4,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
+<%		
 		String type_noStr = request.getParameter("type_no");
 		String sort_option = request.getParameter("sort_option");
 		ProductService productService = new ProductService();

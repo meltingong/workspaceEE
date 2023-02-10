@@ -25,7 +25,7 @@
 					productList = productService.searchCaNo(Integer.parseInt(type_noStr));
 				}
 			}
-		}else{
+		}else if(type_noStr == null){
 			if(keyword != null){
 				if(sort_option.equals("sort_asc")){
 					productList = productService.searchSortAsc(keyword);
@@ -34,7 +34,7 @@
 				}else{
 					productList = productService.searchProductName(keyword);
 				}		
-			}else{
+			}else if(keyword == null){
 				if(sort_option.equals("sort_asc")){
 					productList = productService.priceSortAsc();
 				}else if(sort_option.equals("sort_desc")){
