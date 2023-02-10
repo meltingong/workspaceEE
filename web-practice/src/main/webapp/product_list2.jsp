@@ -16,7 +16,7 @@
 
 		
  		if(type_noStr != null){
-			if(keyword == null){
+			if(keyword.equals("null")){
 				if(sort_option.equals("sort_asc")){
 					productList = productService.categorySortAsc(Integer.parseInt(type_noStr));
 				}else if(sort_option.equals("sort_desc")){
@@ -26,7 +26,7 @@
 				}
 			}
 		}else if(type_noStr == null){
-			if(keyword != null){
+			if(!keyword.equals("null")){
 				if(sort_option.equals("sort_asc")){
 					productList = productService.searchSortAsc(keyword);
 				}else if(sort_option.equals("sort_desc")){
@@ -34,7 +34,7 @@
 				}else{
 					productList = productService.searchProductName(keyword);
 				}		
-			}else if(keyword == null){
+			}else if(keyword.equals("null")){
 				if(sort_option.equals("sort_asc")){
 					productList = productService.priceSortAsc();
 				}else if(sort_option.equals("sort_desc")){
