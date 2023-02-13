@@ -10,11 +10,12 @@
 <h1>기본객체 pageContext[PageContext]</h1>
 <hr/>
 <ol>
-	<li><%=pageContext.getRequest()%></li>
-	<li><%=pageContext.getResponse()%></li>
-	<li><%=pageContext.getSession()%></li>
-	<li><%=pageContext.getServletContext()%></li>
-	<li><%=pageContext.getServletConfig()%></li>
+	<li><%=pageContext%></li>
+	<li><%=pageContext.getRequest()%> == <%=request%></li>
+	<li><%=pageContext.getResponse()%> == <%=response %></li>
+	<li><%=pageContext.getSession()%> == <%=session %></li>
+	<li><%=pageContext.getServletContext()%> == <%=application %></li>
+	<li><%=pageContext.getServletConfig()%> == <%=config %></li>
 </ol>
 </body>
 </html>
