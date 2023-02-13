@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>기본객체 application(ServletContect)</h1>
+<h1>기본객체 application(ServletContext)</h1>
 <hr/>
 <ol>
 <li>서버정보<%=application.getServerInfo()%></li>
