@@ -40,7 +40,7 @@ public class GuestWriteActionServlet extends HttpServlet {
 					new Guest(0,guest_name,null,guest_email,guest_homepage,guest_title,guest_content);
 		
 			int insertRowCount=guestService.insert(insertGuest);
-			forwardPath = "redirect:guest_main.do";
+			forwardPath = "redirect:guest_list.do";
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
