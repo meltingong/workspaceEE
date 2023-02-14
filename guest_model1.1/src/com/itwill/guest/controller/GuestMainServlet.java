@@ -14,25 +14,30 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/guest_main.do")
 public class GuestMainServlet extends HttpServlet {
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String forwardPath = "forward:/WEB-INF/views/guest_main.jsp";
+
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String forwardPath ="";
+		forwardPath="forward:/WEB-INF/views/guest_main.jsp";
+
+		/************forward or redirect*************/
 		/*
-		 * forward  ==> forward:/WEB-INF/views/guest_xxx.jsp
-		 * redirect ==> redirect:guest_xxx.do
+		 * forward ---> forward:/WEB-INF/views/guest_xxx.jsp
+		 * redirect---> redirect:guest_xxx.do
 		 */
 		String[] pathArray = forwardPath.split(":");
-		String forwardOrRedirect = pathArray[0];
-		String path = pathArray[1];
-		
+		String forwardOrRedirect=pathArray[0];
+		String path=pathArray[1];
 		if(forwardOrRedirect.equals("redirect")) {
 			//redirect
 			response.sendRedirect(path);
 		}else {
-			//forward
-			
+			//forwarding
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 		}
+		/*****************************************/
+
 	}
+
 }

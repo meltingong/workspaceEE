@@ -1,32 +1,20 @@
 <%@page import="com.itwill.guest.Guest"%>
+<%@page import="com.itwill.guest.GuestService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
      
 <%
-	
- Guest guest = (Guest)request.getAttribute("guest");
+Guest guest=(Guest)request.getAttribute("guest");
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>방명록 관리</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
-
-
-
-
 <link rel="stylesheet"
 	href="css/styles.css">
 <link rel="stylesheet"
 	href="css/guest.css">
-
-
-
-
-
-
 <script	src="js/guest.js"></script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
