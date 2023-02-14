@@ -9,13 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.itwill.guest.Guest;
+import com.itwill.guest.GuestService;
+
 /**
- * Servlet implementation class GuestModifyActionMainServlet
+ * Servlet implementation class GuestWriteFormSevlet
  */
-@WebServlet("/guest_modfiy_action.do")
-public class GuestModifyActionMainServlet extends HttpServlet {
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String forwardPath = "/WEB-INF/views/guest_modify_action.jsp";
+@WebServlet("/guest_modify_form.do")
+public class GuestModifyFormServlet extends HttpServlet {
+
+
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String forwardPath = "";
+		forwardPath = "/WEB-INF/views/guest_modify_form.jsp";
+		
 		RequestDispatcher rd = request.getRequestDispatcher(forwardPath);
 		rd.forward(request, response);
 	}

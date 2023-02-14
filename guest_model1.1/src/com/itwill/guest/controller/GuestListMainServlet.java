@@ -18,19 +18,38 @@ import com.itwill.guest.GuestService;
  */
 @WebServlet("/guest_list.do")
 public class GuestListMainServlet extends HttpServlet {
+	private GuestService guestService;
+	public GuestListMainServlet() throws Exception {
+		guestService = new GuestService();
+	}
+	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String forwardPath = "";
 		try {
-		GuestService guestService=new GuestService();
 		List<Guest> guestList=guestService.findAll();
-		forwardPath="/WEB-INF/views/guest_list.jsp";
+		forwardPath="forward:/WEB-INF/views/guest_list.jsp";
 		request.setAttribute("userList", guestList);
 		}catch(Exception e) {
 			e.printStackTrace();
-			forwardPath="/WEB-INF/views/guest_error.jsp";
+			forwardPath="forward:/WEB-INF/views/guest_error.jsp";
 		}
-		RequestDispatcher rd = request.getRequestDispatcher(forwardPath);
-		rd.forward(request, response);
+		/*
+		 * forward  ==> forward:/WEB-INF/views/guest_xxx.jsp
+		 * redirect ==> redirect:guest_xxx.do
+		 */
+		String[] pathArray = forwardPath.split(":");
+		String forwardOrRedirect = pathArray[0];
+		String path = pathArray[1];
+		
+		if(forwardOrRedirect.equals("redirect")) {
+			//redirect
+			response.sendRedirect(path);
+		}else {
+			//forward
+			
+			RequestDispatcher rd = request.getRequestDispatcher(path);
+			rd.forward(request, response);
+		}
 		
 	}
 

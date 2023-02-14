@@ -15,9 +15,24 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/guest_remove_action.do")
 public class GuestRemoveActionMainServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String forwardPath = "/WEB-INF/views/guest_remove_action.jsp";
-		RequestDispatcher rd = request.getRequestDispatcher(forwardPath);
-		rd.forward(request, response);
+		String forwardPath = "forward:/WEB-INF/views/guest_remove_action.jsp";
+		/*
+		 * forward  ==> forward:/WEB-INF/views/guest_xxx.jsp
+		 * redirect ==> redirect:guest_xxx.do
+		 */
+		String[] pathArray = forwardPath.split(":");
+		String forwardOrRedirect = pathArray[0];
+		String path = pathArray[1];
+		
+		if(forwardOrRedirect.equals("redirect")) {
+			//redirect
+			response.sendRedirect(path);
+		}else {
+			//forward
+			
+			RequestDispatcher rd = request.getRequestDispatcher(path);
+			rd.forward(request, response);
+		}
 	}
 
 }

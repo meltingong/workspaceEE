@@ -4,13 +4,8 @@
 <html>
 <head>
 <title>행복을 주는 쇼핑세상, G마켓</title>
-<meta http-equiv='Content-Type' content='text/html; charset=euc-kr'>
-<link href='/challenge/neo_include/good2.css' rel='stylesheet'
-	type='text/css'>
-<script Language='JavaScript' src='/challenge/neo_include/neverdie.js'></script>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 </head>
-
-
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 	<br>
 	<br>
@@ -32,7 +27,7 @@
 							<td height="10"></td>
 						</tr>
 						<tr>
-							<td>에러메세지:<%--=exception.getMessage()--%></td>
+							<td>에로메세지:<%--=exception.getMessage()--%></td>
 						</tr>
 						<tr>
 							<td></td>

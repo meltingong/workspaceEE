@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,6 +8,8 @@
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/guest.css">
 <script src="js/guest.js"></script>
+
+
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -17,14 +18,14 @@
 		<!-- header start -->
 		<div id="header">
 			<!-- include_common_top.jsp start-->
-			<jsp:include page="include_common_top.jsp"/>
+			<jsp:include page="include_common_top.jsp"/>  
 			<!-- include_common_top.jsp end-->
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
 		<div id="navigation">
 			<!-- include_common_left.jsp start-->
-			<jsp:include page="include_common_left.jsp"/>
+			<jsp:include page="include_common_left.jsp"/>  
 			<!-- include_common_left.jsp end-->
 		</div>
 		<!-- navigation end-->
@@ -81,9 +82,9 @@
 							</form> <br />
 							<table width=590 border=0 cellpadding=0 cellspacing=0>
 								<tr>
-									<td align=center><input type="button" value="방명록쓰기"
-										onClick="guestCreate();"> &nbsp; <input type="button"
-										value="방명록목록" onClick="guestList()"></td>
+									<td align=center>
+									<input type="button" value="방명록쓰기" onclick="guestCreate();"> &nbsp; 
+									<input type="button" value="방명록목록" onclick="guestList()"></td>
 								</tr>
 							</table>
 						</td>
@@ -96,7 +97,7 @@
 		<!-- footer start-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			<jsp:include page="include_common_bottom.jsp"/>
+			<jsp:include page="include_common_bottom.jsp"/>  
 			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>
