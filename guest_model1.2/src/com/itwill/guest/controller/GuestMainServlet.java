@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class GuestMainServlet
  */
-@WebServlet("/guest_main.do")
+//@WebServlet("/guest_main.do")
 public class GuestMainServlet extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

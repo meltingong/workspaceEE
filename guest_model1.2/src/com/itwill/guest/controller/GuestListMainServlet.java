@@ -16,7 +16,7 @@ import com.itwill.guest.GuestService;
 /**
  * Servlet implementation class GuestListMainServlet
  */
-@WebServlet("/guest_list.do")
+//@WebServlet("/guest_list.do")
 public class GuestListMainServlet extends HttpServlet {
 	private GuestService guestService;
 	public GuestListMainServlet() throws Exception {

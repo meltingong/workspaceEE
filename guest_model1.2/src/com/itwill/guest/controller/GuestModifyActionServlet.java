@@ -15,7 +15,7 @@ import com.itwill.guest.GuestService;
 /**
  * Servlet implementation class GuestWriteFormSevlet
  */
-@WebServlet("/guest_modify_action.do")
+//@WebServlet("/guest_modify_action.do")
 public class GuestModifyActionServlet extends HttpServlet {
 	private GuestService guestService;
 	public GuestModifyActionServlet() throws Exception {

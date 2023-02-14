@@ -14,7 +14,7 @@ import com.itwill.guest.GuestService;
 /**
  * Servlet implementation class GuestRemoveActionMainServlet
  */
-@WebServlet("/guest_remove_action.do")
+//@WebServlet("/guest_remove_action.do")
 public class GuestRemoveActionMainServlet extends HttpServlet {
 	private GuestService guestService;
 	public GuestRemoveActionMainServlet() throws Exception {
