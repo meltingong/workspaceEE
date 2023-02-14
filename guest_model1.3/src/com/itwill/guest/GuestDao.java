@@ -9,7 +9,7 @@ import java.util.List;
 public class GuestDao {
 	private DataSource dataSource;
 	
-	public GuestDao() throws Exception{
+	public GuestDao() {
 		dataSource=new DataSource();
 	}
 	
