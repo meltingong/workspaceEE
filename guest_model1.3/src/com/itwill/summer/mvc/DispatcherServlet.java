@@ -128,6 +128,16 @@ public class DispatcherServlet extends HttpServlet {
 		 * redirect---> redirect:guest_xxx.do
 		 */
 		String[] pathArray = forwardPath.split(":");
+		/*
+		  << pathArray >>
+		  |----0---|-----------------1------------|
+		  |forward |/WEB-INF/views/guest_main.jsp |
+		  |--------|------------------------------|
+		  
+		  |----0---|-------1-----|
+		  |redirect|guest_main.do|
+		  |--------|-------------|
+		 */
 		String forwardOrRedirect=pathArray[0];
 		String path=pathArray[1];
 		if(forwardOrRedirect.equals("redirect")) {
