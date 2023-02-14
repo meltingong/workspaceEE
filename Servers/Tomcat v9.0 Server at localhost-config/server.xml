@@ -153,7 +153,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 	
 	
-      <Context docBase="web-practice" path="/web-practice" reloadable="true" source="org.eclipse.jst.jee.server:web-practice"/><Context docBase="web-project-team2-tiffany-and-coding" path="/web-project-team2-tiffany-and-coding" reloadable="true" source="org.eclipse.jst.jee.server:web-project-team2-tiffany-and-coding"/><Context docBase="user_model1" path="/user_model1" reloadable="true" source="org.eclipse.jst.jee.server:user_model1"/><Context docBase="guest_model1.1" path="/guest_model1.1" reloadable="true" source="org.eclipse.jst.jee.server:guest_model1.1"/></Host>
+      <Context docBase="web-practice" path="/web-practice" reloadable="true" source="org.eclipse.jst.jee.server:web-practice"/><Context docBase="web-project-team2-tiffany-and-coding" path="/web-project-team2-tiffany-and-coding" reloadable="true" source="org.eclipse.jst.jee.server:web-project-team2-tiffany-and-coding"/><Context docBase="user_model1" path="/user_model1" reloadable="true" source="org.eclipse.jst.jee.server:user_model1"/><Context docBase="guest_model1.2" path="/guest_model1.2" reloadable="true" source="org.eclipse.jst.jee.server:guest_model1.2"/><Context docBase="guest_model1.1" path="/guest_model1.1" reloadable="true" source="org.eclipse.jst.jee.server:guest_model1.1"/></Host>
     </Engine>
   </Service>
 </Server>
