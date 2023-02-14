@@ -60,7 +60,6 @@ public class GuestWriteActionServlet extends HttpServlet {
 			response.sendRedirect(path);
 		}else {
 			//forward
-			
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 		}
