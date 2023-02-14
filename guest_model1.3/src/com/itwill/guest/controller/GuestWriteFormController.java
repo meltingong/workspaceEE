@@ -1,7 +1,9 @@
-package com.itwill.summer.mvc;
+package com.itwill.guest.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.itwill.summer.mvc.Controller;
 
 public class GuestWriteFormController implements Controller {
 
