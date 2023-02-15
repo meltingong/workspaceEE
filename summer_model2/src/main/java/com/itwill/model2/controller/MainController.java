@@ -1,4 +1,4 @@
-package summer_model2;
+package com.itwill.model2.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +10,7 @@ public class MainController implements Controller {
 	@Override
 	public String handleRequest(HttpServletRequest arg0, HttpServletResponse arg1) {
 		
-		return "/WEB-INF/views/main.jsp";
+		return "forward:/WEB-INF/views/main.jsp";
 	}
 
 }
