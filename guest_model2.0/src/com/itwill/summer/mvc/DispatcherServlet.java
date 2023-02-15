@@ -57,7 +57,7 @@ public class DispatcherServlet extends HttpServlet {
 			
 			try {
 				/*
-				 설정파일 
+				 설정파일(guest_controller_mapping.properties)을 읽어서 Properties객체생성
 				 */
 				InputStream fis = new FileInputStream(configFilePath);
 				Properties controllerMappingProperties = new Properties();
@@ -76,9 +76,19 @@ public class DispatcherServlet extends HttpServlet {
 				 --------------------------------------------	
 				*/
 				Set commandKeySet = controllerMappingProperties.keySet();
-				Iterator commandKeyIterator = commandKeySet.iterator();
-				
-				
+				Iterator<String> commandKeyIterator = commandKeySet.iterator();
+				while(commandKeyIterator.hasNext()) {
+					String command = commandKeyIterator.next();
+					String controllerClassName = controllerMappingProperties.getProperty(command);
+					/*
+					 * Controller 클래스이름을 사용해서 Controller객체 생성
+					 * 	1. Controller클래스 이름을 사용해서 클래스를 메모리에 로딩
+					 * 	2. 메모리에 로딩된 클래스의 기본생성자를 호출해서 객체 생성
+					 */
+					Class controllerClass = Class.forName("com.itwill.guest.controller.GuestMainController");
+					Object controllerObject = controllerClass.newInstance();
+					System.out.println(controllerObject);
+				}
 				
 			} catch (Exception e) {
 				e.printStackTrace();
