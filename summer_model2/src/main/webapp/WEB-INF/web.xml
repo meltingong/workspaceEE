@@ -3,7 +3,7 @@
   <display-name>summer_model2</display-name>
   <filter>
 		<filter-name>encoding filter</filter-name>
-		<filter-class>com.itwill.summer.mvc.EncodingFilter</filter-class>
+		<filter-class>com.itwill.summer.filter.EncodingFilter</filter-class>
 		<init-param>
 			<param-name>encoding</param-name>
 			<param-value>UTF-8</param-value>
