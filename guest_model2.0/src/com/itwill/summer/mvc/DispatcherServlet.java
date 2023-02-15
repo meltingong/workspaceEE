@@ -1,17 +1,20 @@
 package com.itwill.summer.mvc;
 
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.itwill.guest.Guest;
-import com.itwill.guest.GuestService;
 import com.itwill.guest.controller.GuestErrorController;
 import com.itwill.guest.controller.GuestListController;
 import com.itwill.guest.controller.GuestMainController;
@@ -37,9 +40,82 @@ import com.itwill.guest.controller.GuestWriteFormController;
  */
 
 public class DispatcherServlet extends HttpServlet {
-	public DispatcherServlet() throws Exception{
-	}
+	/*
+	 * Controller 객체를 저장할 Map
+	 */
+	private Map<String,Controller> handlerMapping;
 	
+	
+	@Override
+		public void init() throws ServletException {
+			super.init();
+			handlerMapping = new HashMap<String,Controller>();
+			
+			String configFile = "/WEB-INF/guest_controller_mapping.properties";
+			String siteRootRealPath = this.getServletContext().getRealPath("/");
+			String configFilePath = siteRootRealPath+configFile;
+			
+			try {
+				/*
+				 설정파일 
+				 */
+				InputStream fis = new FileInputStream(configFilePath);
+				Properties controllerMappingProperties = new Properties();
+				controllerMappingProperties.load(fis);
+				System.out.println(">>:"+controllerMappingProperties);
+				/*
+				 <<Properties객체>>
+				 --------------------------------------------
+				 |key(String)      |      value(String)     |
+				 --------------------------------------------
+				 |/guest_main.do   |com..GuestMainController|	
+				  -------------------------------------------
+				 |/guest_list.do   |com..GuestListController|		
+				  -------------------------------------------
+				 |/guest_view.do   |com..GuestViewController|		
+				 --------------------------------------------	
+				*/
+				Set commandKeySet = controllerMappingProperties.keySet();
+				Iterator commandKeyIterator = commandKeySet.iterator();
+				
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			/*
+			 << Map<String, Controller> handlerMapping>>
+			 ------------------------------------------------
+			 |key(String)      |      value(Controller객체) |
+			 ------------------------------------------------
+			 |/guest_main.do   |com..GuestMainController객체|	
+			  -----------------------------------------------
+			 |/guest_list.do   |com..GuestListController객체|		
+			  -----------------------------------------------
+			 |/guest_view.do   |com..GuestViewController객체|		
+			 ------------------------------------------------
+			 */
+			/********************직접생성***************************
+			handlerMapping.put("/guest_main.do", new GuestMainController());
+			handlerMapping.put("/guest_list.do", new GuestListController());
+			handlerMapping.put("/guest_view.do", new GuestViewController());
+			handlerMapping.put("/guest_write_form.do", new GuestWriteFormController());
+			handlerMapping.put("/guest_write_action.do", new GuestWriteActionController());
+			handlerMapping.put("/guest_modify_form.do", new GuestModifyFormController());
+			handlerMapping.put("/guest_modify_action.do", new GuestModifyActionController());
+			handlerMapping.put("/guest_remove_action.do", new GuestRemoveActionController());
+			handlerMapping.put("/guest_error.do", new GuestErrorController());
+			System.out.println(">>init:" + handlerMapping);
+			***********************************************************/
+		} 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request, response);
@@ -71,42 +147,17 @@ public class DispatcherServlet extends HttpServlet {
 		String contextPath=request.getContextPath();
 		String command = requestURI.substring(contextPath.length());
 		/*
-		 * 2-1.DispatcherServlet이 클라이언트요청에따른 업무실행할 Controller객체생성
+		 * 2-1.DispatcherServlet이 클라이언트요청에따른 업무실행할 Controller객체얻기
+		 * 	<< handlerMapping객체로부터 요청command를 처리할 Controller객체 얻기 >>
 		 */
-		String forwardPath="";
-		Controller controller=null;
-		if(command.equals("/guest_main.do")) {
-			/****guest_main.do를 처리하는 Controller객체생성****/
-			controller=new GuestMainController();
-		}else if(command.equals("/guest_list.do")) {
-			/****guest_list.do를 처리하는 Controller객체생성****/
-			controller=new GuestListController();
-		}else if(command.equals("/guest_view.do")) {
-			/****guest_view.do를 처리하는 Controller객체생성****/
-			controller=new GuestViewController();
-		}else if(command.equals("/guest_write_form.do")) {
-			/****guest_write_form.do를 처리하는 Controller객체생성****/
-			controller=new GuestWriteFormController();
-		}else if(command.equals("/guest_write_action.do")) {
-			/****guest_write_action.do를 처리하는 Controller객체생성***/
-			controller=new GuestWriteActionController();
-		}else if(command.equals("/guest_modify_form.do")) {
-			/***guest_modify_form.do를 처리하는 Controller객체생성**********/
-			controller=new GuestModifyFormController();
-		}else if(command.equals("/guest_modify_action.do")) {
-			/***guest_modify_action.do를 처리하는 Controller객체생성******/
-			controller=new GuestModifyActionController();
-		}else if(command.equals("/guest_remove_action.do")) {
-			/***guest_remove_action.do를 처리하는 Controller객체생성*****/
-			controller=new GuestRemoveActionController();
-		}else{
-			controller=new GuestErrorController();
-		}
+		
+		Controller controller=handlerMapping.get(command);
+		
 		/*
 		 * 2-2.DispatcherServlet이 Controller객체의 handleRequest메쏘드 실행
 		 * 2-3.DispatcherServlet이 Controller객체의 handleRequest메쏘드 실행반환값인 forwardPath를 받는다.
 		 */
-		forwardPath=controller.handleRequest(request, response);
+		String forwardPath=controller.handleRequest(request, response);
 		/*
 		 * 3.DispatcherServlet이 forwardPath를 사용해서 forward 혹은 redirect를 한다.
 		 */
