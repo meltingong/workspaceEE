@@ -90,7 +90,7 @@ public class DispatcherServlet extends HttpServlet {
 					 * 	2. 메모리에 로딩된 클래스의 기본생성자를 호출해서 객체 생성
 					 */
 					Class controllerClass = Class.forName(controllerClassName);
-					Controller controllerObject =(Controller)controllerClass.newInstance();
+					Controller controllerObject =(Controller)controllerClass.newInstance(); //기본생성자 호출
 					handlerMapping.put(command, controllerObject);
 					System.out.println(command+"="+controllerObject);
 					
