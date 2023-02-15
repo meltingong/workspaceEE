@@ -37,9 +37,7 @@ import com.itwill.guest.controller.GuestWriteFormController;
  */
 
 public class DispatcherServlet extends HttpServlet {
-	private GuestService guestService;
 	public DispatcherServlet() throws Exception{
-		guestService=new GuestService();
 	}
 	
 	
