@@ -8,7 +8,7 @@
 1.request기본 객체로부터 속성객체 뽑기
 2.request기본 객체로부터 뽑은속성객체 Guest 출력
 */
-
+Guest guest = (Guest)request.getAttribute("guest");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -76,37 +76,37 @@
 							</table> <!-- view Form  -->
 							<form name="f" method="post">
 								<input type="hidden" name="guest_no"
-									value="1" />
+									value="<%=guest.getGuest_no() %>" />
 								<table border="0" cellpadding="0" cellspacing="1" width="590"
 									bgcolor="BBBBBB">
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">번호</td>
 										<td width=490 bgcolor="ffffff" align="left"
-											style="padding-left: 10px">1</td>
+											style="padding-left: 10px"><%=guest.getGuest_no() %></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
 										<td width=490 bgcolor="ffffff" align="left"
-											style="padding-left: 10px">김경호1</td>
+											style="padding-left: 10px"><%=guest.getGuest_name() %></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">날짜</td>
 										<td width=490 bgcolor="ffffff" align="left"
-											style="padding-left: 10px">2022-03-08</td>
+											style="padding-left: 10px"><%=guest.getGuest_date() %></td>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">홈페이지</td>
 										<td width=490 bgcolor="ffffff" align="left"
-											style="padding-left: 10px">http://www.google.co.kr</td>
+											style="padding-left: 10px"><%=guest.getGuest_homepage() %></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
 										<td width=490 bgcolor="ffffff" align="left"
-											style="padding-left: 10px">방명록제목1</td>
+											style="padding-left: 10px"><%=guest.getGuest_title() %></td>
 									</tr>
 									<tr>
 										<td width=100 align=center bgcolor="E6ECDE" height="110">내용</td>
 										<td width=490 bgcolor="ffffff" align="left"
-											style="padding-left: 10px">방명록내용1</td>
+											style="padding-left: 10px"><%=guest.getGuest_content() %></td>
 									</tr>
 								</table>
 							</form> <br />

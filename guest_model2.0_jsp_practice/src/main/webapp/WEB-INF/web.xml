@@ -3,7 +3,7 @@
   <display-name>guest_model2.0_jsp_practice</display-name>
   <filter>
     <filter-name>Encoding Filter</filter-name>
-    <filter-class>com.itwill.summer.EncodingFilter</filter-class>
+    <filter-class>com.itwill.summer.filter.EncodingFilter</filter-class>
     <init-param>
       <param-name>encoding</param-name>
       <param-value>UTF-8</param-value>
@@ -15,7 +15,7 @@
   </filter-mapping>
   <servlet>
     <servlet-name>dispatcher</servlet-name>
-    <servlet-class>com.itwill.summer.DispatcherServlet</servlet-class>
+    <servlet-class>com.itwill.summer.mvc.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>configFile</param-name>
       <param-value>/WEB-INF/guest_controller_mapping.properties</param-value>

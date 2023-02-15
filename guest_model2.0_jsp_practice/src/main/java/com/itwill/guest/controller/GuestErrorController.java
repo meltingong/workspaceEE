@@ -3,7 +3,7 @@ package com.itwill.guest.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.itwill.summer.Controller;
+import com.itwill.summer.mvc.Controller;
 
 public class GuestErrorController implements Controller{
 

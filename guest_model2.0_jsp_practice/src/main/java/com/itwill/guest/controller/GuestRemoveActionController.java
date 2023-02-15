@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.itwill.guest.GuestService;
-import com.itwill.summer.Controller;
+import com.itwill.summer.mvc.Controller;
 
 /*
  * - 클라이언트요청한개를 처리하는 비즈니스로직을 담고있는 객체

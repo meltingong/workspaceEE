@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="com.itwill.guest.Guest"%>
 <%@page import="java.util.ArrayList"%>
 
@@ -9,7 +10,7 @@
 1.request기본 객체로부터 속성객체 뽑기
 2.request기본 객체로부터 뽑은속성객체 ArrayList<Guest> 출력
 */
-
+	List<Guest> guestList = (List<Guest>)request.getAttribute("guestList");
 %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -64,28 +65,18 @@
 									
 								
 									<!-- guest start -->
-									<tr>
-										<td width=50 align=center bgcolor="ffffff" height="20">1</td>
-										<td width=300 bgcolor="ffffff" style="padding-left: 10">
-										<a href="guest_view.do?guest_no=1" class="user"> 
-											방명록타이틀1
-										</a>
-										</td>
-										<td width=120 align=center bgcolor="ffffff">김경호</td>
-										<td width=120 align=center bgcolor="ffffff">2022-03-08</td>
-									</tr>
-									<!-- guest end -->
-									<!-- guest start -->
-									<tr>
-										<td width=50 align=center bgcolor="ffffff" height="20">2</td>
-										<td width=300 bgcolor="ffffff" style="padding-left: 10">
-										<a href="guest_view.do?guest_no=2" class="user"> 
-											방명록타이틀2
-										</a>
-										</td>
-										<td width=120 align=center bgcolor="ffffff">김경호2</td>
-										<td width=120 align=center bgcolor="ffffff">2022-03-08</td>
-									</tr>
+									<%for(Guest guest : guestList){ %>
+										<tr>
+											<td width=50 align=center bgcolor="ffffff" height="20"><%=guest.getGuest_no()%></td>
+											<td width=300 bgcolor="ffffff" style="padding-left: 10">
+											<a href="guest_view.do?guest_no=<%=guest.getGuest_no() %>" class="user"> 
+												<%=guest.getGuest_title()%>
+											</a>
+											</td>
+											<td width=120 align=center bgcolor="ffffff"><%=guest.getGuest_name()%></td>
+											<td width=120 align=center bgcolor="ffffff"><%=guest.getGuest_date().substring(0,10)%></td>
+										</tr>
+									<%} %>
 									<!-- guest end -->
 									
 									
