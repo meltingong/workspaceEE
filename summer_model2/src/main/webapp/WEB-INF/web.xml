@@ -18,7 +18,7 @@
 	  	<servlet-class>com.itwill.summer.mvc.DispatcherServlet</servlet-class>
 	  	<init-param>
 			<param-name>configFile</param-name>
-			<param-value>/WEB-INF/xxx.properties</param-value>
+			<param-value>/WEB-INF/summer_model2.properties</param-value>
 		</init-param>
 	  	<load-on-startup>0</load-on-startup>
 	  </servlet>
