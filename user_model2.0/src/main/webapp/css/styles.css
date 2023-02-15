@@ -1,0 +1,123 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 76% arial, sans-serif;
+	text-align: center
+}
+p {
+	margin: 0 10px 10px
+}
+a {
+	padding: 5px;
+	color: #000000;
+	text-decoration: none;
+}
+input {
+	font-size: 8pt;
+	color: #333333;
+}
+td {
+	font-size: 12px;
+	color: #333333;
+	line-height: 18px;
+}
+table {
+	width: 100%;
+	height: 100%;
+	
+}
+form {
+	margin:10px;
+	margin-right: 0px;
+	text-align: center;
+}
+/*
+layout
+*/
+
+div#header {
+	background-color: #F3F2ED;
+	background: #fff url('../image/nav_bg01.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%
+}
+div#header h1 {
+	height: 80px;
+	line-height: 80px;
+	margin: 17px 0 0 0;
+	padding-left: 10px;
+}
+div#container {
+	text-align: left
+}
+
+div#content p {
+	line-height: 1.4
+}
+
+div#navigation {
+	background: #F6F0E0;
+}
+
+div#navigation {
+	margin-top: 10px;;
+	margin-bottom: 10px
+}
+
+div#navigation ul {
+	margin: 15px 10px;
+	padding: 0;
+	list-style-type: none;
+}
+
+div#navigation li {
+	margin-bottom: 5px;
+}
+
+div#navigation p {
+	margin-top: 20px;
+	margin-left: 15px
+}
+
+div#extra{background:#CCC8B3;}
+
+div#footer {
+	background: #BFBD93;
+}
+
+div#footer p {
+	margin: 0;
+	padding: 5px 10px
+}
+
+div#container {
+	width: 700px;
+	margin: 0 auto
+}
+/*
+div#navigation{float:left;width:150px;height:350px;margin-left:-700px}
+*/
+div#navigation {
+	float: left;
+	width: 150px;
+	height: 350px;
+}
+/*
+div#wrapper{float:left;width:100%}
+*/
+div#wrapper {
+	margin-left: 0px;
+	width: 100%
+}
+
+div#content {
+	margin: 0 0 0 150px
+}
+
+div#footer {
+	clear: left;
+	width: 100%
+}

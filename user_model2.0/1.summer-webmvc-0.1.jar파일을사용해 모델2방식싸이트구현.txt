@@ -1,0 +1,39 @@
+A.라이브러리다운로드후[summer-webmvc-0.1.jar] context/WEB-INF/lib 폴더에위치시킨다.(summer-webmvc-0.0.1.jar)
+B./WEB-INF/user_controller_mapping.properties 파일생성
+
+C.모든클라이언트요청(*.do)을 DispatcherServlet이 실행하도록  web.xml설정
+
+D.인코딩필터클래스설정  web.xml설정	  
+
+	<filter>
+		<filter-name>encoding filter</filter-name>
+		<filter-class>com.itwill.summer.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encoding filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+E.contoller설정파일위치파라메타등록	
+
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>com.itwill.summer.mvc.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>configFile</param-name>
+			<param-value>/WEB-INF/user_controller_mapping.properties</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+
+F. Controller작성(반드시 summer-webmvc-0.1.jar 에서 제공하는 Controller interface implement)
+G. properties파일에설정(mapping)
