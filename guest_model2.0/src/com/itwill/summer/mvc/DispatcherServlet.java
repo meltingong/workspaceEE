@@ -10,6 +10,7 @@ import java.util.Properties;
 import java.util.Set;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,15 +29,15 @@ import com.itwill.guest.controller.GuestWriteFormController;
 /*
  * 1. 클라이언트(웹브라우져)의 모든요청을 받는 서블릿작성(front Controller)
  * 2. 확장자가 *.do인 모든클라이언트의 요청이 서블릿을 실행하도록 web.xml에 url pattern mapping
-   << web.xml >>
-    <servlet>
-		<servlet-name>dispatcher</servlet-name>
-		<servlet-class>com.itwill.summer.mvc.DispatcherServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>*.do</url-pattern>
-	</servlet-mapping>
+   <servlet>
+    <servlet-name>dispatcher</servlet-name>
+    <servlet-class>com.itwill.summer.mvc.DispatcherServlet</servlet-class>
+     <init-param>
+      <param-name>configFile</param-name>
+      <param-value>/WEB-INF/guest_controller_mapping.properties</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
  */
 
 public class DispatcherServlet extends HttpServlet {
@@ -47,11 +48,13 @@ public class DispatcherServlet extends HttpServlet {
 	
 	
 	@Override
-		public void init() throws ServletException {
-			super.init();
+		public void init(ServletConfig config) throws ServletException {
+			super.init(config);
 			handlerMapping = new HashMap<String,Controller>();
 			
-			String configFile = "/WEB-INF/guest_controller_mapping.properties";
+			//String configFile = "/WEB-INF/guest_controller_mapping.properties";
+			String configFile = config.getInitParameter("configFile");
+			
 			String siteRootRealPath = this.getServletContext().getRealPath("/");
 			String configFilePath = siteRootRealPath+configFile;
 			
@@ -77,6 +80,7 @@ public class DispatcherServlet extends HttpServlet {
 				*/
 				Set commandKeySet = controllerMappingProperties.keySet();
 				Iterator<String> commandKeyIterator = commandKeySet.iterator();
+				System.out.println("---------설정파일["+configFile+"]을 이용해서 handlerMapping객체 생성--------");
 				while(commandKeyIterator.hasNext()) {
 					String command = commandKeyIterator.next();
 					String controllerClassName = controllerMappingProperties.getProperty(command);
@@ -85,22 +89,16 @@ public class DispatcherServlet extends HttpServlet {
 					 * 	1. Controller클래스 이름을 사용해서 클래스를 메모리에 로딩
 					 * 	2. 메모리에 로딩된 클래스의 기본생성자를 호출해서 객체 생성
 					 */
-					Class controllerClass = Class.forName("com.itwill.guest.controller.GuestMainController");
-					Object controllerObject = controllerClass.newInstance();
-					System.out.println(controllerObject);
+					Class controllerClass = Class.forName(controllerClassName);
+					Controller controllerObject =(Controller)controllerClass.newInstance();
+					handlerMapping.put(command, controllerObject);
+					System.out.println(command+"="+controllerObject);
+					
 				}
-				
+				System.out.println("--------------------------------------------------------");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			
-			
-			
-			
-			
-			
-			
-			
 			/*
 			 << Map<String, Controller> handlerMapping>>
 			 ------------------------------------------------
