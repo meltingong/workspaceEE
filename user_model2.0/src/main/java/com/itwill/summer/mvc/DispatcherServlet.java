@@ -3,6 +3,7 @@ package com.itwill.summer.mvc;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
@@ -22,6 +23,7 @@ public class DispatcherServlet extends HttpServlet {
    @Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
+		handlerMapping = new HashMap<String, Controller>();
 		String configFile = config.getInitParameter("configFile");
 		String siteRootRealPath = this.getServletContext().getRealPath("/");
 		String configFilePath = siteRootRealPath+configFile;
@@ -52,8 +54,10 @@ public class DispatcherServlet extends HttpServlet {
    
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request, response);
 	}
 	
 	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

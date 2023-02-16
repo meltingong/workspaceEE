@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.itwill.summer.mvc.Controller;
-import com.itwill.user.User;
 import com.itwill.user.UserService;
 
 public class UserLoginActionController implements Controller {

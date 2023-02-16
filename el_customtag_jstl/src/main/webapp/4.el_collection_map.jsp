@@ -18,6 +18,8 @@ guestMap.put("g1", g1);
 guestMap.put("g2", g2);
 guestMap.put("g3", g3);
 
+request.setAttribute("guestList", guestList);
+request.setAttribute("guestMap", guestMap);
 
 %>    
 <!DOCTYPE html>
@@ -30,41 +32,31 @@ guestMap.put("g3", g3);
 <h1>EL Collection(배열,List),Map 출력</h1><hr/>
 <ul>
 	<li>---------List(배열)---------------</li>
-	<li>${guestList}</li>
-	<li>${guestList[0]}</li>
+	<li>${guestList }</li>
 	<li>${guestList[0].guest_no}</li>
-	<li>${guestList[0].guest_name}</li>
-	<li>${guestList[1]}</li>
+	<li>${guestList[0].guest_name }</li>
 	<li>${guestList[1].guest_no}</li>
-	<li>${guestList[1].guest_name}</li>
-	<li>${guestList[2]}</li>
+	<li>${guestList[1].guest_name }</li>
 	<li>${guestList[2].guest_no}</li>
-	<li>${guestList[2].guest_name}</li>
+	<li>${guestList[2].guest_name }</li>
+	
 	<li>-------------for문----------------</li>
-	<%
-	for(int i=0;i<3;i++){
+	<%for(int i =0; i < 3; i++){ 
 		pageContext.setAttribute("i", i);
 	%>
-		<li>${guestList[i]}</li>
-		<li>${guestList[i].guest_no}</li>
-		<li>${guestList[i].guest_name}</li>
+	<li>${guestList[i].guest_no}</li>
+	<li>${guestList[i].guest_name}</li>
 	<%}%>
 	<li>-------------Map------------------</li>
 	<li>${guestMap}</li>	
-	<li>${guestMap['g1']}</li>	
 	<li>${guestMap['g1'].guest_no}</li>	
 	<li>${guestMap['g1'].guest_name}</li>	
-	<li>${guestMap['g1'].guest_email}</li>	
 	
-	<li>${guestMap.g2}</li>	
 	<li>${guestMap.g2.guest_no}</li>	
 	<li>${guestMap.g2.guest_name}</li>	
-	<li>${guestMap.g2.guest_email}</li>	
-	
-	<li>${guestMap.g3}</li>	
-	<li>${guestMap.g3.guest_no}</li>	
-	<li>${guestMap.g3.guest_name}</li>	
-	<li>${guestMap.g3.guest_email}</li>	
+	<li>${guestMap['g3'].guest_no}</li>	
+	<li>${guestMap['g3'].guest_name}</li>	
+
 	
 </ul>
 </body>
