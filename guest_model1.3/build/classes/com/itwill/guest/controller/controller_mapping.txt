@@ -1,0 +1,9 @@
+<<요청 url(command)>>
+/guest_main.do  		---forward---> guest_main.jsp
+/guest_list.do			---forward---> guest_list.jsp
+/guest_view.do			---forward---> guest_view.jsp
+/guest_write_form.do	---forward---> guest_write_form.jsp
+/guest_write_action.do	---forward---> guest_write_action.jsp
+/guest_modify_form.do	---forward---> guest_modify_form.jsp
+/guest_modify_action.do	---forward---> guest_modify_action.jsp
+/guest_remove_action.do	---forward---> guest_remove_action.jsp
