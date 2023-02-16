@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+ web-jsptaglibrary_2_0.xsd"
+	version="2.4">
+	<description>Simple 스타일의 커스텀 태그 예제</description>
+	<display-name>Simple스타일예제</display-name>
+	<tlib-version>2.0</tlib-version>
+	<short-name>simpleStyle</short-name>
+	<uri>http://www.itwill.co.kr/jsp/simpleTag</uri>
+	<info>
+		A simple sample tag library
+	</info>
+	<tag>
+		<name>hello</name>
+		<tagclass>com.itwill.tag.HelloTag</tagclass>
+		<bodycontent>empty</bodycontent>
+	</tag>
+	<tag>
+		<name>helloAttr</name>
+		<tagclass>com.itwill.tag.HelloAttributeTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>irum</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<name>if</name>
+		<tagclass>com.itwill.tag.IfBodyTag</tagclass>
+		<bodycontent>JSP</bodycontent>
+		<attribute>
+			<name>test</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+	
+</taglib>
+

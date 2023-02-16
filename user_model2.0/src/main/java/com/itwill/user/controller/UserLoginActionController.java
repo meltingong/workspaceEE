@@ -15,6 +15,7 @@ public class UserLoginActionController implements Controller {
 	}
 	@Override
 	public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
 		/*
 		0  . GET방식요청일때 redirect:user_login_form.do forwardPath반환
 		2  . 파라메타 받기
@@ -37,7 +38,7 @@ public class UserLoginActionController implements Controller {
 				}else if(login == 1) {
 					forwardPath = "forward:/WEB-INF/views/user_login_form.jsp";
 				}else {
-					//session.setAttribute("sUserId", userId);
+					session.setAttribute("sUserId", userId);
 					forwardPath = "redirect:user_main.do";
 				}
 			}

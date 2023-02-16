@@ -153,7 +153,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 	
 	
-      <Context docBase="summer_model2" path="/summer_model2" reloadable="true" source="org.eclipse.jst.jee.server:summer_model2"/><Context docBase="user_model1" path="/user_model1" reloadable="true" source="org.eclipse.jst.jee.server:user_model1"/><Context docBase="guest_model2.0_controller_practice" path="/guest_model2.0_controller_practice" reloadable="true" source="org.eclipse.jst.jee.server:guest_model2.0_controller_practice"/><Context docBase="guest_model2.0_jsp_practice" path="/guest_model2.0_jsp_practice" reloadable="true" source="org.eclipse.jst.jee.server:guest_model2.0_jsp_practice"/></Host>
+      <Context docBase="summer_model2" path="/summer_model2" reloadable="true" source="org.eclipse.jst.jee.server:summer_model2"/><Context docBase="user_model1" path="/user_model1" reloadable="true" source="org.eclipse.jst.jee.server:user_model1"/><Context docBase="guest_model2.0_controller_practice" path="/guest_model2.0_controller_practice" reloadable="true" source="org.eclipse.jst.jee.server:guest_model2.0_controller_practice"/><Context docBase="guest_model2.0_jsp_practice" path="/guest_model2.0_jsp_practice" reloadable="true" source="org.eclipse.jst.jee.server:guest_model2.0_jsp_practice"/><Context docBase="user_model2.0" path="/user_model2.0" reloadable="true" source="org.eclipse.jst.jee.server:user_model2.0"/></Host>
     </Engine>
   </Service>
 </Server>

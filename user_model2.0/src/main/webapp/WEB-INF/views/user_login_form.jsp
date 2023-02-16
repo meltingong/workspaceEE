@@ -6,6 +6,8 @@
 1.request기본 객체로부터 애트리뷰트 이름 msg1,msg2,fuser 의 값뽑기
 2.request기본 객체로부터 뽑은애트리뷰트 객체 msg1(String),msg2(String),fuser(User) 객체출력
 **********************************************************************************/	
+String userId = (String)request.getAttribute("userId");
+String password = (String)request.getAttribute("password");
 %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
