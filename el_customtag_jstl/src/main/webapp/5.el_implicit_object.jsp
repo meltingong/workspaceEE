@@ -2,6 +2,11 @@
     pageEncoding="UTF-8" session="true"%>
 <%
 
+pageContext.setAttribute("url", "page.jsp");
+request.setAttribute("url", "request.jsp");
+session.setAttribute("url", "session.jsp");
+application.setAttribute("url", "application.jsp");
+
 %>    
 <!DOCTYPE html>
 <html>
@@ -13,7 +18,11 @@
 <h1>EL 내장객체(implicit object) 타입은맵이다.</h1><hr>
 <ul>
 	<li>---pageScope,requestScope,sessionScope,applicationScope---</li>
-	
+	${url }
+	${pageScope.url }
+	${request['url']}
+	${sessionScope.url }
+	${applicationScope.url }
 	
 	<li>--------param---------</li>
 	
