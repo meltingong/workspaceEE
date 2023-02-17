@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.0">
 	<display-name>user_model2.0</display-name>
 	<filter>
-		<filter-name>encoding filter</filter-name>
+		<filter-name>Encoding filter</filter-name>
 		<filter-class>com.itwill.summer.filter.EncodingFilter</filter-class>
 		<init-param>
 			<param-name>encoding</param-name>
@@ -11,7 +11,7 @@
 		</init-param>
 	</filter>
 	<filter-mapping>
-		<filter-name>encoding filter</filter-name>
+		<filter-name>Encoding filter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	<servlet>

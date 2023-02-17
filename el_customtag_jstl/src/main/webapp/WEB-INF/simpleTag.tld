@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="euc-kr" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <taglib xmlns="http://java.sun.com/xml/ns/j2ee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
  web-jsptaglibrary_2_0.xsd"
 	version="2.4">
-	<description>Simple ½ºÅ¸ÀÏÀÇ Ä¿½ºÅÒ ÅÂ±× ¿¹Á¦</description>
-	<display-name>Simple½ºÅ¸ÀÏ¿¹Á¦</display-name>
+	<description>Simple ìŠ¤íƒ€ì¼ì˜ ì»¤ìŠ¤í…€ íƒœê·¸ ì˜ˆì œ</description>
+	<display-name>SimpleìŠ¤íƒ€ì¼ì˜ˆì œ</display-name>
 	<tlib-version>2.0</tlib-version>
 	<short-name>simpleStyle</short-name>
 	<uri>http://www.itwill.co.kr/jsp/simpleTag</uri>
@@ -16,28 +16,6 @@
 		<name>hello</name>
 		<tagclass>com.itwill.tag.HelloTag</tagclass>
 		<bodycontent>empty</bodycontent>
-	</tag>
-	<tag>
-		<name>helloAttr</name>
-		<tagclass>com.itwill.tag.HelloAttributeTag</tagclass>
-		<bodycontent>empty</bodycontent>
-		<attribute>
-			<name>irum</name>
-			<required>true</required>
-			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.String</type>
-		</attribute>
-	</tag>
-	<tag>
-		<name>if</name>
-		<tagclass>com.itwill.tag.IfBodyTag</tagclass>
-		<bodycontent>JSP</bodycontent>
-		<attribute>
-			<name>test</name>
-			<required>true</required>
-			<rtexprvalue>true</rtexprvalue>
-			<type>java.lang.Boolean</type>
-		</attribute>
 	</tag>
 	
 </taglib>
