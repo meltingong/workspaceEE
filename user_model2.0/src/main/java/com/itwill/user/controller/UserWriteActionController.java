@@ -8,7 +8,10 @@ import com.itwill.user.User;
 import com.itwill.user.UserService;
 
 public class UserWriteActionController implements Controller{
-	
+	private UserService userService;
+	public UserWriteActionController() throws Exception {
+		userService = new UserService();
+	}
 	@Override
 	public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 		/*
@@ -21,7 +24,30 @@ public class UserWriteActionController implements Controller{
 	    5-2. 가입성공이면    redirect:user_login_form.do forwardPath 반환
 	*/
 	String forwardPath="";	
-	
+	if(request.getMethod().equalsIgnoreCase("GET")) {
+		forwardPath = "redirect:user_main.do";
+	}
+	try {
+		String userId = request.getParameter("userId");
+		String password = request.getParameter("password");
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		User newUser = new User(userId,password,name,email);
+		int join = userService.create(newUser);
+		
+		if(join == -1) {
+			String msg = "중복된 아이디 입니다.";
+			request.setAttribute("msg", msg);
+			request.setAttribute("fuser", newUser);
+			forwardPath = "forward:WEB-INF/views/user_write_form.jsp";
+		}else {
+			request.setAttribute("user", newUser);
+			forwardPath = "redirect:user_login_form.do";
+		}
+	}catch (Exception e) {
+		e.printStackTrace();
+		forwardPath = "redirect:user_error.do";
+	}
 	return forwardPath;
 	}
 }

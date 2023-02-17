@@ -16,9 +16,10 @@ public class HelloTag extends TagSupport{
 		try {
 			JspWriter out = pageContext.getOut();
 			String sUserId = (String)pageContext.getSession().getAttribute("sUserId");
-			if(sUserId == null) {
-				sUserId = "Guest";
+			if(sUserId==null) {
+				sUserId="GUEST";
 			}
+			
 			out.println(sUserId+" 님 안뇽하세요<br>");
 			
 		}catch (IOException e) {

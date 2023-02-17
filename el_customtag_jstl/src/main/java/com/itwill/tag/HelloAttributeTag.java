@@ -6,28 +6,29 @@ import javax.servlet.jsp.tagext.TagSupport;
 public class HelloAttributeTag extends TagSupport{
 	private String irum;
 	public HelloAttributeTag() {
-		System.out.println("1.HelloAttributeTag 기본 생성자");
+		System.out.println("1.HelloAttributeTag기본생성자");
 	}
-	
-	public String getIrum() {
-		System.out.println("2.setIrum("+irum+")메소드 호출");
-		return irum;
-	}
-	
-	
 	public void setIrum(String irum) {
+		System.out.println("2.setIrum("+irum+")메쏘드호출");
 		this.irum = irum;
 	}
+
+	
+	
 	@Override
 	public int doStartTag() throws JspException {
-		
-		return super.doStartTag();
+		try {
+			String msg="";
+			if(irum.equals("김경호")) {
+				msg= "잘생긴 "+ irum+" 님 안녕하세요.<br>";
+			}else {
+				msg= irum+" 님 안녕하세요.<br>";
+			}
+			pageContext.getOut().println(msg);
+		}catch (Exception e) {
+		}
+		return SKIP_BODY;
 	}
 
 
-	@Override
-	public int doEndTag() throws JspException {
-	
-		return super.doEndTag();
-	}
 }
