@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.itwill.summer.mvc.Controller;
+import com.itwill.user.User;
 import com.itwill.user.UserService;
 
 public class UserLoginActionController implements Controller {
@@ -31,10 +32,19 @@ public class UserLoginActionController implements Controller {
 			}else {
 				String userId = request.getParameter("userId");
 				String password = request.getParameter("password");
+				
+				User fuser = new User(userId, password, "", "");
+				
 				int login = userService.login(userId, password);
 				if(login == 0) {
+					String msg1=userId+" 는 존재하지 않는 아이디입니다.";
+					request.setAttribute("msg1", msg1);
+					request.setAttribute("fuser", fuser);
 					forwardPath = "forward:/WEB-INF/views/user_login_form.jsp";
 				}else if(login == 1) {
+					String msg2="비밀번호가 일치하지 않습니다.";
+					request.setAttribute("msg2", msg2);
+					request.setAttribute("fuser", fuser);
 					forwardPath = "forward:/WEB-INF/views/user_login_form.jsp";
 				}else {
 					session.setAttribute("sUserId", userId);
