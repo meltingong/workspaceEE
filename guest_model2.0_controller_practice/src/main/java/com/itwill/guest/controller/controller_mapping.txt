@@ -1,0 +1,9 @@
+<<요청 url(command)>>
+/guest_main.do 		
+/guest_list.do		
+/guest_view.do		
+/guest_write_form.do
+/guest_write_action.do
+/guest_modify_form.do
+/guest_modify_action.do	
+/guest_remove_action.do

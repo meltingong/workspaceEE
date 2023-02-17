@@ -1,0 +1,9 @@
+<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>com.itwill.summer.mvc.DispatcherServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
