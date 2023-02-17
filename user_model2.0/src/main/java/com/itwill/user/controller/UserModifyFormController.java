@@ -30,10 +30,10 @@ public class UserModifyFormController implements Controller{
 		try {
 			User user = userService.findUser(sUserId);
 			request.setAttribute("user", user);
-			forwardPath = "/WEB-INF/views/user_modify_form.jsp";
+			forwardPath = "forward:/WEB-INF/views/user_modify_form.jsp";
 		}catch (Exception e) {
 			e.printStackTrace();
-			forwardPath = "/WEB-INF/views/user_error.jsp";
+			forwardPath = "forward:/WEB-INF/views/user_error.jsp";
 		}
 		return forwardPath;
 	}

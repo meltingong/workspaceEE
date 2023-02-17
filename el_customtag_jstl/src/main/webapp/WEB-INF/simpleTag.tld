@@ -17,6 +17,15 @@
 		<tagclass>com.itwill.tag.HelloTag</tagclass>
 		<bodycontent>empty</bodycontent>
 	</tag>
-	
+	<tag>
+		<name>helloAttr</name>
+		<tagclass>com.itwill.tag.HelloAttributeTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>irum</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
 </taglib>
 

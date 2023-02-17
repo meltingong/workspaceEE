@@ -17,10 +17,7 @@
 <itwill:hello/>
 <itwill:hello/>
 ---------------helloAttr tag----------------------<br>
-<itwill:hello irum = "김경호"/>
-<itwill:hello irum = "공유"/>
-<itwill:hello irum = "${name}"/>
-<itwill:hello irum = "${cookie.JSESSIONID.value}"/>
+<itwill:helloAttr irum="김경호"/>
 ---------------if tag[body]----------------------<br>
 
 
