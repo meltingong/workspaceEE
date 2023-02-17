@@ -21,8 +21,6 @@ public class UserModifyActionController implements Controller {
 		String sUserId = (String)session.getAttribute("sUserId");
 		if(sUserId == null) {
 			forwardPath="redirect:user_login_form.do";
-		}else {
-			forwardPath="redirect:user_modify_form.do";
 		}
 		/*********************************************/
 		/*
@@ -42,8 +40,8 @@ public class UserModifyActionController implements Controller {
 				String name = request.getParameter("name");
 				String email = request.getParameter("email");
 				
-				User updateUser = new User(sUserId,password,name,email);
-				userService.update(updateUser);
+				User user = new User(sUserId,password,name,email);
+				userService.update(user);
 				forwardPath = "redirect:user_view.do";
 			}catch (Exception e) {
 				e.printStackTrace();

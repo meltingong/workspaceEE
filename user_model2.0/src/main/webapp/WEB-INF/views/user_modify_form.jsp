@@ -7,6 +7,7 @@
 1.request기본 객체로부터 속성객체 뽑기
 2.request기본 객체로부터 뽑은속성객체   User객체를 form  element  value 값으로 출력
 */
+User user = (User)request.getAttribute("user");
 
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
