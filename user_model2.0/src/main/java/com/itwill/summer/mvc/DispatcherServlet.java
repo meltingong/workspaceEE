@@ -127,82 +127,31 @@ public class DispatcherServlet extends HttpServlet {
 	}
 	
 	private void processRequest(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
-		/*
-		<<요청 url(command)>>
-		/guest_main.do  		
-		/guest_list.do			
-		/guest_view.do			
-		/guest_write_form.do	
-		/guest_write_action.do	
-		/guest_modify_form.do	
-		/guest_modify_action.do	
-		/guest_remove_action.do	
-		 */
-		
-		/*
-		 * 1.DispatcherServlet이 클라이언트의 요청URI를 사용해서 요청분석
-		 */
-		
+	
 		String requestURI=request.getRequestURI();
 		String contextPath=request.getContextPath();
 		String command = requestURI.substring(contextPath.length());
-		/*
-		 * 2-1.DispatcherServlet이 클라이언트요청에따른 업무실행할 Controller객체얻기
-		 * 	<< handlerMapping객체로부터 요청command를 처리할 Controller객체 얻기 >>
-		 */
+	
 		
 		Controller controller=handlerMapping.get(command);
 		
-		/*
-		 * 2-2.DispatcherServlet이 Controller객체의 handleRequest메쏘드 실행
-		 * 2-3.DispatcherServlet이 Controller객체의 handleRequest메쏘드 실행반환값인 forwardPath를 받는다.
-		 */
+	
 		String forwardPath=controller.handleRequest(request, response);
-		/*
-		 * 3.DispatcherServlet이 forwardPath를 사용해서 forward 혹은 redirect를 한다.
-		 */
-		/************forward or redirect*************/
-		/*
-		 * forward ---> forward:/WEB-INF/views/guest_xxx.jsp
-		 * redirect---> redirect:guest_xxx.do
-		 */
+	
 		String[] pathArray = forwardPath.split(":");
-		/*
-		  << pathArray >>
-		  |----0---|-----------------1------------|
-		  |forward |/WEB-INF/views/guest_main.jsp |
-		  |--------|------------------------------|
-		  
-		  |----0---|-------1-----|
-		  |redirect|guest_main.do|
-		  |--------|-------------|
-		 */
+	
 		String forwardOrRedirect=pathArray[0];
 		String path=pathArray[1];
 		if(forwardOrRedirect.equals("redirect")) {
-			//redirect
 			response.sendRedirect(path);
 		}else {
-			//forwarding
 			RequestDispatcher rd = request.getRequestDispatcher(path);
 			rd.forward(request, response);
 		}
-		/*****************************************/
+	
 		
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 
 }
