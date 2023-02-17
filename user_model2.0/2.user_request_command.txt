@@ -1,0 +1,12 @@
+<<요청command>>
+/user_main.do
+/user_write_form.do
+/user_write_action.do
+/user_login_form.do
+/user_login_action.do
+/user_logout_action.do
+/user_view.do
+/user_modify_form.do
+/user_modify_action.do
+/user_remove_action.do
+/user_error.do

@@ -1,0 +1,64 @@
+
+A:link {
+	color: #333333;
+	font-size: 12px;
+	text-decoration: none;
+}
+A:visited {
+	color: #333333;
+	font-size: 12px;
+}
+A:active {
+	color: #333333;
+	font-size: 12px;
+}
+A:hover {
+	color: #BEA12C;
+	font-size: 12px;
+}
+
+A.user:link {
+	color: #333333;
+	font-size: 12px;
+	text-decoration: underline;
+}
+A.user:visited {
+	color: #333333;
+	font-size: 12px;
+}
+A.user:active {
+	color: #333333;
+	font-size: 12px;
+}
+A:user:hover {
+	color: #BEA12C;
+	font-size: 12px;
+}
+.title {
+	font-size: 12pt;
+	color: #000000;
+	line-height: 22px;
+}
+
+/* Form css */
+.text {
+	font-size: 8pt;
+	color: #333333;
+}
+.textarea {
+	font-size: 8pt;
+	color: #333333;
+}
+.password {
+	font-size: 8pt;
+	color: #333333;
+}
+.file {
+	font-size: 8pt;
+	color: #333333;
+}
+.select {
+	font-size: 8pt;
+	color: #333333;
+}
+
