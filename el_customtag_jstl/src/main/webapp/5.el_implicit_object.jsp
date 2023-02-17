@@ -18,15 +18,16 @@ application.setAttribute("url", "application.jsp");
 <h1>EL 내장객체(implicit object) 타입은맵이다.</h1><hr>
 <ul>
 	<li>---pageScope,requestScope,sessionScope,applicationScope---</li>
-	${url }
-	${pageScope.url }
-	${request['url']}
-	${sessionScope.url }
-	${applicationScope.url }
+	<li>${url }</li>
+	<li>${pageScope.url }</li>
+	<li>${request['url']}</li>
+	<li>${sessionScope.url }</li>
+	<li>${applicationScope.url }</li>
 	
 	<li>--------param---------</li>
-	
+	<li>${param }</li>
 	<li>--------paramValues---------</li>
+	<li>${paramValues }</li>
 	
 	<li>--------cookie---------</li>
 	
