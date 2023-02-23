@@ -1,5 +1,5 @@
 <%@page import="com.itwill.guest.GuestService"%>
-<%@page import="com.itwill.guest.Guest"%>
+<%@page import="com.itwill.guest.dao.jdbc.Guest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
